@@ -27,6 +27,8 @@ import pana from "~/assets/images/pana.png";
 import grid from "~/assets/icons/grid.svg";
 import slides from "~/assets/icons/slides.svg";
 import teachers from "~/assets/icons/teachers.svg";
+import id_front from "~/assets/images/id_card_front.png";
+import id_back from "~/assets/images/id_card_back.png";
 </script>
 
 <template>
@@ -148,12 +150,56 @@ import teachers from "~/assets/icons/teachers.svg";
     </div>
   </section>
   <section class="pt-[185px] pb-[245px] px-[80px] gap-[110px] flex flex-col ">
+
+
+    <div class="mx-[49.3px] flex gap-[39px]">
+      <div class="flex flex-col gap-[44px]">
+        <div class="gap-[24px] flex flex-col">
+          <span
+            class="rounded-[10px] px-[25px] py-[10px] bg-[#F5F5F5] font-raleway font-[500] text-[18px] leading-none tracking-[0.02] w-fit h-fit text-[#0B7077]">Benefits</span>
+          <h1 class="font-inter font-[700] text-[48px] text-[#0B7077] leading-[62.4px] tracking-[-0.06] w-fit h-fit">Get
+            Student ID card</h1>
+        </div>
+        <div class="flex flex-col gap-[40px]">
+          <div class="flex gap-[32px]">
+            <span class="my-[2px] size-[60px] bg-[#FBFBFB] shadow-[0px_15px_44px_0px_#0D0F1C1F] rounded-full">
+              <img :src="grid" alt="Grid icon" class="my-[19px] mx-[17px]" />
+            </span>
+            <span
+              class="font-raleway font-[500] text-[18px] leading-[1.8] tracking-[0.02] text-[#696984] w-[443px] h-[64px] ">Teachers
+              don’t get lost in the grid view and have a dedicated Podium space.</span>
+          </div>
+          <div class="flex gap-[32px]">
+            <span class="my-[2px] size-[60px] bg-[#FBFBFB] shadow-[0px_15px_44px_0px_#0D0F1C1F] rounded-full">
+              <img :src="slides" alt="Slides icon" class="my-[19px] mx-[17px]" />
+            </span>
+            <span
+              class="font-raleway font-[500] text-[18px] leading-[1.8] tracking-[0.02] text-[#696984] w-[443px] h-[64px] ">TA’s
+              and presenters can be moved to the front of the class.</span>
+          </div>
+          <div class="flex gap-[32px]">
+            <span class="my-[2px] size-[60px] bg-[#FBFBFB] shadow-[0px_15px_44px_0px_#0D0F1C1F] rounded-full">
+              <img :src="teachers" alt="Teachers icon" class="my-[19px] mx-[17px]" />
+            </span>
+            <span
+              class="font-raleway font-[500] text-[18px] leading-[1.8] tracking-[0.02] text-[#696984] w-[443px] h-[64px] ">Teachers
+              can easily see all students and class data at one time.</span>
+          </div>
+        </div>
+      </div>
+      <div class="my-[12.7px] rounded-[20px] px-[75px] py-[37px] bg-[#D2E6E4] gap-[10px] flex flex-shrink-0 max-w-full">
+        <img :src="id_front" alt="Student ID Card front page" class="w-[211.6px] h-[344.6px]" />
+        <img :src="id_back" alt="Student ID Card back page" class="w-[211.6px] h-[344.6px]" />
+      </div>
+    </div>
+
+
     <div class="mx-[50.21px] flex gap-[94px]">
       <img :src="pana" alt="Team Meeting Visual" class="mt-[91.59px]">
       <div class="flex flex-col gap-[44px]">
         <div class="gap-[24px] flex flex-col">
           <span
-            class="rounded-[10px] px-[25px] py-[10px] bg-[#D4E1FF] font-raleway font-[500] text-[18px] leading-none tracking-[0.02] w-fit h-fit">Training</span>
+            class="rounded-[10px] px-[25px] py-[10px] bg-[#D4E1FF] font-raleway font-[500] text-[#0B7077] text-[18px] leading-none tracking-[0.02] w-fit h-fit">Training</span>
           <h1 class="font-inter font-[700] text-[48px] text-[#FD661F] leading-[62.4px] tracking-[-0.06] w-fit h-fit">Staff
             training</h1>
         </div>
