@@ -22,10 +22,15 @@ import top_lines5 from "~/assets/icons/top_lines5.svg";
 import top_lines6 from "~/assets/icons/top_lines6.svg";
 import top_lines7 from "~/assets/icons/top_lines7.svg";
 import top_lines8 from "~/assets/icons/top_lines8.svg";
+import star_outline from "~/assets/icons/star_outline.svg";
+import pana from "~/assets/images/pana.png";
+import grid from "~/assets/icons/grid.svg";
+import slides from "~/assets/icons/slides.svg";
+import teachers from "~/assets/icons/teachers.svg";
 </script>
 
 <template>
-  <section class="relative bg-[#D2E6E4] h-screen rounded-b-[50px] overflow-clip">
+  <section class="relative bg-[#D2E6E4] h-screen rounded-b-[50px] overflow-hidden">
     <!-- header -->
     <header class="header relative z-[30] grid grid-cols-[auto_auto_auto] px-[82px] py-[43px] items-center">
       <div class="logo flex items-center lg:gap-[15px] lg:ml-[37px] w-auto h-fit">
@@ -143,14 +148,68 @@ import top_lines8 from "~/assets/icons/top_lines8.svg";
     </div>
   </section>
   <section class="pt-[185px] pb-[245px] px-[80px] gap-[110px] flex flex-col ">
-    <div class="mx-[33px] overflow-clip h-[542px] w-full">
+    <div class="mx-[50.21px] flex gap-[94px]">
+      <img :src="pana" alt="Team Meeting Visual" class="mt-[91.59px]">
+      <div class="flex flex-col gap-[44px]">
+        <div class="gap-[24px] flex flex-col">
+          <span class="rounded-[10px] px-[25px] py-[10px] bg-[#D4E1FF] font-raleway font-[500] text-[18px] leading-none tracking-[0.02] w-fit h-fit">Training</span>
+          <h1 class="font-inter font-[700] text-[48px] text-[#FD661F] leading-[62.4px] tracking-[-0.06] w-fit h-fit">Staff training</h1>
+        </div>
+        <div class="flex flex-col gap-[40px]">
+          <div class="flex gap-[32px]">
+            <span class="my-[2px] size-[60px] bg-[#FBFBFB] shadow-[0px_15px_44px_0px_#0D0F1C1F] rounded-full">
+              <img :src="grid" alt="Grid icon" class="my-[19px] mx-[17px]" />
+            </span>
+            <span class="font-raleway font-[500] text-[18px] leading-[1.8] tracking-[0.02] text-[#696984] w-[443px] h-[64px] ">Teachers don’t get lost in the grid view and have a dedicated Podium space.</span>
+          </div>
+          <div class="flex gap-[32px]">
+            <span class="my-[2px] size-[60px] bg-[#FBFBFB] shadow-[0px_15px_44px_0px_#0D0F1C1F] rounded-full">
+              <img :src="slides" alt="Slides icon" class="my-[19px] mx-[17px]" />
+            </span>
+            <span class="font-raleway font-[500] text-[18px] leading-[1.8] tracking-[0.02] text-[#696984] w-[443px] h-[64px] ">TA’s and presenters can be moved to the front of the class.</span>
+          </div>
+          <div class="flex gap-[32px]">
+            <span class="my-[2px] size-[60px] bg-[#FBFBFB] shadow-[0px_15px_44px_0px_#0D0F1C1F] rounded-full">
+              <img :src="teachers" alt="Teachers icon" class="my-[19px] mx-[17px]" />
+            </span>
+            <span class="font-raleway font-[500] text-[18px] leading-[1.8] tracking-[0.02] text-[#696984] w-[443px] h-[64px] ">Teachers can easily see all students and class data at one time.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mx-[33px] overflow-hidden h-[542px] w-full">
       <img :src="giftcards" alt="Giftcards Visual" class="absolute ml-[521px] z-10">
-      <div class="mx-[33px] mt-[141px] w-auto h-[401px] bg-[#DF1C25] z-0 rounded-[16px]">
+      <div
+        class="mx-[33px] mt-[141px] px-[59px] py-[29px] flex flex-col w-auto h-[401px] bg-[#DF1C25] z-0 rounded-[16px]">
+        <h1
+          class="h-[141.2px] font-[700] mt-[22.1px] font-inter text-[48px] leading-[62.4px] tracking-[-0.06] text-white ">
+          Why You should buy<br>gift cards ?</h1>
+        <ul class="mt-[10.7px] gap-[9px] flex flex-col">
+          <li class="flex gap-[5px] ">
+            <img :src="star_outline" class="size-[20px]" />
+            <span class="font-raleway text-white font-[500] text-[14px] leading-[1.2] tracking-wide">Teachers don’t get
+              lost in the grid view and have a dedicated Podium space.</span>
+          </li>
+          <li class="flex gap-[5px] ">
+            <img :src="star_outline" class="size-[20px]" />
+            <span class="font-raleway text-white font-[500] text-[14px] leading-[1.2] tracking-wide">Teachers don’t get
+              lost in the grid view and have a dedicated Podium space.</span>
+          </li>
+          <li class="flex gap-[5px] ">
+            <img :src="star_outline" class="size-[20px]" />
+            <span class="font-raleway text-white font-[500] text-[14px] leading-[1.2] tracking-wide">Teachers don’t get
+              lost in the grid view and have a dedicated Podium space.</span>
+          </li>
+        </ul>
+        <button type="button"
+          class="mt-[30px] px-[30px] py-[15px] rounded-[10px] w-fit h-fit bg-white font-raleway font-[500] text-[16px] leading-none tracking-wide text-[#0B7077]">BUY
+          NOW</button>
       </div>
     </div>
   </section>
 
-  <footer class="footer h-fit w-screen">
+  <footer class="footer h-fit w-screen overflow-hidden">
     <div class="pt-[105px] pl-[144px] h-fit pb-[69.69px] pr-[477.72] flex w-full">
       <div class="flex flex-col gap-[28px]">
         <div class="logo flex items-center lg:gap-[15px] w-full h-fit text-left">
@@ -259,7 +318,9 @@ import top_lines8 from "~/assets/icons/top_lines8.svg";
 /* * {
   border: 0.2px solid red;
 } */
-html, body {
+
+html,
+body {
   overflow-x: hidden;
 }
 
@@ -287,5 +348,4 @@ html, body {
 
 .half {
   background: linear-gradient(to right, #161618 50%, transparent 50%);
-}
-</style>
+}</style>
