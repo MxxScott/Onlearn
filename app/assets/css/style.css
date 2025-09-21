@@ -2,7 +2,7 @@
   position: relative;
   width: 17.40px;
   height: 16.55px;
-  background: url('/icons/star.svg') no-repeat center/contain;
+  background: url('../icons/star.svg') no-repeat center/contain;
 }
 
 .star-fill {
@@ -12,15 +12,12 @@
   height: 100%;
   width: 100%;
   background: #161618;
-  -webkit-mask: url('/icons/star_filled.svg') no-repeat center/contain;
-  mask: url('/icons/star_filled.svg') no-repeat center/contain;
+  -webkit-mask: url('../icons/star_filled.svg') no-repeat center/contain;
+  mask: url('../icons/star_filled.svg') no-repeat center/contain;
 }
 
-.half{
-  background: linear-gradient(
-    to right,
-    #161618 50%,
-    transparent 50%
-  );
+.half {
+  background: linear-gradient(to right,
+      #161618 50%,
+      transparent 50%);
 }
-
