@@ -95,4 +95,28 @@ import logo from '~/assets/images/logo.png'
 * {
   border: 1px solid black;
 }
+
+.star {
+  position: relative;
+  width: 17.40px;
+  height: 16.55px;
+  background: url('assets/icons/star.svg') no-repeat center/contain;
+}
+
+.star-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #161618;
+  -webkit-mask: url('assets/icons/star_filled.svg') no-repeat center/contain;
+  mask: url('assets/icons/star_filled.svg') no-repeat center/contain;
+}
+
+.half {
+  background: linear-gradient(to right,
+      #161618 50%,
+      transparent 50%);
+}
 </style>
