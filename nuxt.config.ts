@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   app: {
-    baseURL: '/',   // if deploying to a subfolder, set it (e.g. '/my-app/')
+    baseURL: '/Onlearn/',   // if deploying to a subfolder, set it (e.g. '/my-app/')
     buildAssetsDir: '/_nuxt/', // default, don’t remove
   },
   compatibilityDate: '2025-07-15',
