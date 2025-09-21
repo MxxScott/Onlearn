@@ -13,6 +13,7 @@ import Calling from "~/assets/icons/Calling.svg";
 import Location from "~/assets/icons/Location.svg";
 import Message from "~/assets/icons/Message.svg";
 import Time from "~/assets/icons/Time.svg";
+import giftcards from "~/assets/images/giftcards.png";
 import top_lines1 from "~/assets/icons/top_lines1.svg";
 import top_lines2 from "~/assets/icons/top_lines2.svg";
 import top_lines3 from "~/assets/icons/top_lines3.svg";
@@ -24,10 +25,10 @@ import top_lines8 from "~/assets/icons/top_lines8.svg";
 </script>
 
 <template>
-  <section class="relative bg-[#D2E6E4] h-screen w-screen rounded-b-[50px] overflow-hidden">
+  <section class="relative bg-[#D2E6E4] h-screen rounded-b-[50px] overflow-clip">
     <!-- header -->
     <header class="header relative z-[30] grid grid-cols-[auto_auto_auto] px-[82px] py-[43px] items-center">
-      <div class="logo flex items-center lg:gap-[15px] lg:ml-[37px] w-[182.42px] h-fit">
+      <div class="logo flex items-center lg:gap-[15px] lg:ml-[37px] w-auto h-fit">
         <img :src="logo" alt="Logo" class="lg:h-[37.69px] w-[62.42px]" />
         <span
           class=" w-[105px] font-extrabold font-picoblackal not-italic text-[30px] leading-[100%] tracking-normal text-[#0B7077]">
@@ -141,8 +142,12 @@ import top_lines8 from "~/assets/icons/top_lines8.svg";
       <img :src="chart" alt="chart" class="w-[47.3px] h-[44.85px] rounded-[8px]" />
     </div>
   </section>
-  <section class="pt-[185px] pb-[245px] px-[80px] gap-[110px] flex flex-col">
-
+  <section class="pt-[185px] pb-[245px] px-[80px] gap-[110px] flex flex-col ">
+    <div class="mx-[33px] overflow-clip h-[542px] w-full">
+      <img :src="giftcards" alt="Giftcards Visual" class="absolute ml-[521px] z-10">
+      <div class="mx-[33px] mt-[141px] w-auto h-[401px] bg-[#DF1C25] z-0 rounded-[16px]">
+      </div>
+    </div>
   </section>
 
   <footer class="footer h-fit w-screen">
@@ -254,6 +259,9 @@ import top_lines8 from "~/assets/icons/top_lines8.svg";
 /* * {
   border: 0.2px solid red;
 } */
+html, body {
+  overflow-x: hidden;
+}
 
 .footer {
   background: url("~/assets/images/footer_bgimg.png") no-repeat bottom/cover;
