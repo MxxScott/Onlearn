@@ -1,8 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   app: {
-    baseURL: '/',
-    buildAssetsDir: '/_nuxt/', 
+    baseURL: process.env.NODE_ENV === 'production' ? '/Onlearn/' : '/',
   },
   compatibilityDate: '2025-07-15',
   css: [
