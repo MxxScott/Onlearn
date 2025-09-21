@@ -1,5 +1,5 @@
 <script setup>
-import logo from '~/assets/images/logo.png'
+import logo from './assets/images/logo.png'
 </script>
 
 <template class="">
@@ -9,7 +9,8 @@ import logo from '~/assets/images/logo.png'
       <img src="/lines.svg" class="w-full h-full object-cover" />
     </div> -->
 
-    <header class=" header grid grid-cols-[auto_auto_auto] between items-center justify-between px-[82px] py-[43px] contain">
+    <header
+      class=" header grid grid-cols-[auto_auto_auto] between items-center justify-between px-[82px] py-[43px] contain">
       <div class="logo flex items-center lg:gap-[15px] lg:ml-[37px]">
         <img :src="logo" alt="Logo" class="lg:h-[37.69px] w-[62.42px]" />
         <span
@@ -43,8 +44,11 @@ import logo from '~/assets/images/logo.png'
     </header>
 
     <section class="mt-[61px] px-[80px]">
-      <span class= " bg-white w-[222px] h[41px] rounded-[10px] font-raleway font-[500] text-[18px] leading-none tracking-[2%] text-[#252641] py-[10px] px-[25px]">Never stop learning</span>
-      <span class=" w-[688px] h-[225px] px-[25px] py-[15px] font-raleway text-[64px] font-bold leading[75px] tracking-normal text-[#0B7077]">
+      <span
+        class=" bg-white w-[222px] h[41px] rounded-[10px] font-raleway font-[500] text-[18px] leading-none tracking-[2%] text-[#252641] py-[10px] px-[25px]">Never
+        stop learning</span>
+      <span
+        class=" w-[688px] h-[225px] px-[25px] py-[15px] font-raleway text-[64px] font-bold leading[75px] tracking-normal text-[#0B7077]">
         Grow up your skills by online courses with Onlearning
       </span>
 
@@ -100,7 +104,7 @@ import logo from '~/assets/images/logo.png'
   position: relative;
   width: 17.40px;
   height: 16.55px;
-  background: url('assets/icons/star.svg') no-repeat center/contain;
+  background: url('./assets/images/logo.png') no-repeat center/contain;
 }
 
 .star-fill {
@@ -110,13 +114,12 @@ import logo from '~/assets/images/logo.png'
   height: 100%;
   width: 100%;
   background: #161618;
-  -webkit-mask: url('assets/icons/star_filled.svg') no-repeat center/contain;
-  mask: url('assets/icons/star_filled.svg') no-repeat center/contain;
+  -webkit-mask: url('./assets/icons/star_filled.svg') no-repeat center/contain;
+  mask: url('./assets/icons/star_filled.svg') no-repeat center/contain;
 }
 
 .half {
   background: linear-gradient(to right,
       #161618 50%,
       transparent 50%);
-}
-</style>
+}</style>
