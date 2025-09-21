@@ -152,27 +152,35 @@ import teachers from "~/assets/icons/teachers.svg";
       <img :src="pana" alt="Team Meeting Visual" class="mt-[91.59px]">
       <div class="flex flex-col gap-[44px]">
         <div class="gap-[24px] flex flex-col">
-          <span class="rounded-[10px] px-[25px] py-[10px] bg-[#D4E1FF] font-raleway font-[500] text-[18px] leading-none tracking-[0.02] w-fit h-fit">Training</span>
-          <h1 class="font-inter font-[700] text-[48px] text-[#FD661F] leading-[62.4px] tracking-[-0.06] w-fit h-fit">Staff training</h1>
+          <span
+            class="rounded-[10px] px-[25px] py-[10px] bg-[#D4E1FF] font-raleway font-[500] text-[18px] leading-none tracking-[0.02] w-fit h-fit">Training</span>
+          <h1 class="font-inter font-[700] text-[48px] text-[#FD661F] leading-[62.4px] tracking-[-0.06] w-fit h-fit">Staff
+            training</h1>
         </div>
         <div class="flex flex-col gap-[40px]">
           <div class="flex gap-[32px]">
             <span class="my-[2px] size-[60px] bg-[#FBFBFB] shadow-[0px_15px_44px_0px_#0D0F1C1F] rounded-full">
               <img :src="grid" alt="Grid icon" class="my-[19px] mx-[17px]" />
             </span>
-            <span class="font-raleway font-[500] text-[18px] leading-[1.8] tracking-[0.02] text-[#696984] w-[443px] h-[64px] ">Teachers don’t get lost in the grid view and have a dedicated Podium space.</span>
+            <span
+              class="font-raleway font-[500] text-[18px] leading-[1.8] tracking-[0.02] text-[#696984] w-[443px] h-[64px] ">Teachers
+              don’t get lost in the grid view and have a dedicated Podium space.</span>
           </div>
           <div class="flex gap-[32px]">
             <span class="my-[2px] size-[60px] bg-[#FBFBFB] shadow-[0px_15px_44px_0px_#0D0F1C1F] rounded-full">
               <img :src="slides" alt="Slides icon" class="my-[19px] mx-[17px]" />
             </span>
-            <span class="font-raleway font-[500] text-[18px] leading-[1.8] tracking-[0.02] text-[#696984] w-[443px] h-[64px] ">TA’s and presenters can be moved to the front of the class.</span>
+            <span
+              class="font-raleway font-[500] text-[18px] leading-[1.8] tracking-[0.02] text-[#696984] w-[443px] h-[64px] ">TA’s
+              and presenters can be moved to the front of the class.</span>
           </div>
           <div class="flex gap-[32px]">
             <span class="my-[2px] size-[60px] bg-[#FBFBFB] shadow-[0px_15px_44px_0px_#0D0F1C1F] rounded-full">
               <img :src="teachers" alt="Teachers icon" class="my-[19px] mx-[17px]" />
             </span>
-            <span class="font-raleway font-[500] text-[18px] leading-[1.8] tracking-[0.02] text-[#696984] w-[443px] h-[64px] ">Teachers can easily see all students and class data at one time.</span>
+            <span
+              class="font-raleway font-[500] text-[18px] leading-[1.8] tracking-[0.02] text-[#696984] w-[443px] h-[64px] ">Teachers
+              can easily see all students and class data at one time.</span>
           </div>
         </div>
       </div>
@@ -225,7 +233,7 @@ import teachers from "~/assets/icons/teachers.svg";
               <div class="flex gap-[12px]">
                 <img :src="Location" alt="Location">
                 <span
-                  class="w-[56px] h-[26px] text-[#0B7077] font-iranyekan font-[700] text-[14px] tracking-normal leading-[26px] text-right">Address:</span>
+                  class="w-[56px] h-[26px] text-[#0B7077] font-iranyekan font-[700] text-[14px] tracking-normal leading-[26px]">Address:</span>
               </div>
               <p
                 class="w-[279px] h-[52px] text-[#0B7077] font-raleway font-[500] text-[14px] leading-[26px] tracking-normal">
@@ -287,7 +295,7 @@ import teachers from "~/assets/icons/teachers.svg";
               us</li>
             <li
               class="w-[30px] h-[16px] font-raleway font-[500] text-[14px] leading-[100%] tracking-normal text-[#0B7077]">
-              Blog</li>
+              blog</li>
           </ul>
         </div>
       </div>
@@ -299,7 +307,7 @@ import teachers from "~/assets/icons/teachers.svg";
         <div
           class="flex h-[73.68px] w-fit rounded-[15px] bg-white shadow-[0px_10px_60px_0px_#262D7614] px-[11.14px] py-[9.84px]">
           <input type="email" name="Email" placeholder="Email" id="e_mail"
-            class="py-[13px] px-[11px] border-none outline-none font-iranyekan w-[264px] text-[#0B7077] font-[400] text-[16px] leading-[30px] tracking-normal">
+            class="py-[13px] px-[11px] border-none outline-none font-iranyekan placeholder:font-iranyekan w-[264px] placeholder:text-[#0B7077] placeholder:font-[400] placeholder:text-[16px] placeholder:leading-[30px] placeholder:tracking-normal placeholder:opacity-[0.5] text-[#0B7077] font-[400] text-[16px] leading-[30px] tracking-normal">
           <button type="submit"
             class=" rounded-[20px] px-[50px] py-[13px] bg-[#0B7077] font-iranyekan font-[500] text-[16px] leading-[100%] tracking-normal text-white">Send</button>
         </div>
@@ -348,4 +356,5 @@ body {
 
 .half {
   background: linear-gradient(to right, #161618 50%, transparent 50%);
-}</style>
+}
+</style>
