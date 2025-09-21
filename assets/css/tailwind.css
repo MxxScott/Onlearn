@@ -2,7 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-
+.btn-primary {
+    @apply font-raleway font-[500] text-[16px] uppercase rounded-[10px] px-[40px] py-[20px];
+}
+.btn-outline {
+    @apply bg-white text-[#0B7077];
+}
+.btn-filled {
+    @apply bg-[#0B7077] text-white;
+}
+  
 
 /* ==================== Picoblackal ==================== */
 @font-face {
