@@ -2,14 +2,14 @@
 import logo from '/images/logo.png'
 </script>
 
-<template>
-  <div class="bg-[#D2E6E4] h-screen">
+<template class="">
+  <div class="bg-[#D2E6E4] h-screen rounded-b-[50px]">
     <!-- background lines
     <div class="absolute inset-0 z-[-1]">
       <img src="/lines.svg" class="w-full h-full object-cover" />
     </div> -->
 
-    <header class="header grid grid-cols-[auto_auto_auto] between items-center justify-between px-[82px] py-[43px]">
+    <header class=" header grid grid-cols-[auto_auto_auto] between items-center justify-between px-[82px] py-[43px] contain">
       <div class="logo flex items-center lg:gap-[15px] lg:ml-[37px]">
         <img :src="logo" alt="Logo" class="lg:h-[37.69px] w-[62.42px]" />
         <span
@@ -42,11 +42,11 @@ import logo from '/images/logo.png'
       </div>
     </header>
 
-    <section class="content text-center py-12 sm:py-16 md:py-20 max-w-2xl mx-auto">
-      <p class="">Never stop learning</p>
-      <h1 class="">
+    <section class="mt-[61px] px-[80px]">
+      <span class= " bg-white w-[222px] h[41px] rounded-[10px] font-raleway font-[500] text-[18px] leading-none tracking-[2%] text-[#252641] py-[10px] px-[25px]">Never stop learning</span>
+      <span class=" w-[688px] h-[225px] px-[25px] py-[15px] font-raleway text-[64px] font-bold leading[75px] tracking-normal text-[#0B7077]">
         Grow up your skills by online courses with Onlearning
-      </h1>
+      </span>
 
       <div class="cta flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 md:gap-8">
         <button
@@ -59,33 +59,40 @@ import logo from '/images/logo.png'
             <img src="" alt="reviewer" class="w-8 sm:w-10 md:w-12 h-8 sm:h-10 md:h-12 rounded-full border" />
             <img src="" alt="reviewer" class="w-8 sm:w-10 md:w-12 h-8 sm:h-10 md:h-12 rounded-full border" />
           </div>
-          <div class="text-xs sm:text-sm md:text-base h-fit">
+          <div class="h-fit flex gap-[1.74px] p-[1.74px]">
             <div class="star">
-              <div class="star-fill w-full"></div>
+              <div class="star-fill"></div>
             </div>
             <div class="star">
-              <div class="star-fill w-full"></div>
+              <div class="star-fill"></div>
             </div>
             <div class="star">
-              <div class="star-fill w-full"></div>
+              <div class="star-fill"></div>
             </div>
             <div class="star">
-              <div class="star-fill w-full"></div>
+              <div class="star-fill"></div>
             </div>
             <div class="star">
-              <div class="star-fill w-1/2"></div>
+              <div class="star-fill half"></div>
             </div>
             <p class="text-xs sm:text-sm md:text-base">(10k+ Reviews)</p>
           </div>
         </div>
       </div>
     </section>
+  </div>
+  <div class=""></div>
+  <div class=""></div>
+  <div class=""></div>
+  <div class=""></div>
+  <div class=""></div>
 
-    <div class="slice"></div>
-    <div class="slice"></div>
-    <div class="slice"></div>
-    <div class="slice"></div>
-    <div class="slice"></div>
+  <footer class="footer h-fit">
+  </footer>
+</template>
 
-    <footer class="footer h-fit"></footer>
-</div></template>
+<style>
+* {
+  border: 1px solid black;
+}
+</style>
