@@ -1,4 +1,15 @@
 <script setup>
+/**
+ * @file This Vue component renders the complete landing page for the "Onlearn" online learning platform.
+ * @description It includes a hero section, course categories, feature highlights, a promotional section for gift cards, and a comprehensive footer.
+ * @author [Your Name/Team Name]
+ * @version 1.0.0
+ */
+
+// Import all necessary assets for the component.
+// Grouping imports by type (images, icons) can improve readability.
+
+// Images for branding, content, and illustrations
 import logo from "~/assets/images/logo.png";
 import reviewer1 from "~/assets/images/reviewer1.png";
 import reviewer2 from "~/assets/images/reviewer2.png";
@@ -10,6 +21,12 @@ import beauty from "~/assets/images/beauty.png";
 import medical from "~/assets/images/medical.png";
 import sports from "~/assets/images/sports.png";
 import nutrition from "~/assets/images/nutrition.png";
+import giftcards from "~/assets/images/giftcards.png";
+import pana from "~/assets/images/pana.png";
+import id_front from "~/assets/images/id_card_front.png";
+import id_back from "~/assets/images/id_card_back.png";
+
+// SVG Icons used for decorative purposes and UI elements
 import line1 from "~/assets/icons/line1.svg";
 import line2 from "~/assets/icons/line2.svg";
 import line3 from "~/assets/icons/line3.svg";
@@ -17,7 +34,6 @@ import Calling from "~/assets/icons/Calling.svg";
 import Location from "~/assets/icons/Location.svg";
 import Message from "~/assets/icons/Message.svg";
 import Time from "~/assets/icons/Time.svg";
-import giftcards from "~/assets/images/giftcards.png";
 import top_lines1 from "~/assets/icons/top_lines1.svg";
 import top_lines2 from "~/assets/icons/top_lines2.svg";
 import top_lines3 from "~/assets/icons/top_lines3.svg";
@@ -35,18 +51,20 @@ import bottom_lines6 from "~/assets/icons/bottom_lines6.svg";
 import bottom_lines7 from "~/assets/icons/bottom_lines7.svg";
 import bottom_lines8 from "~/assets/icons/bottom_lines8.svg";
 import star_outline from "~/assets/icons/star_outline.svg";
-import pana from "~/assets/images/pana.png";
 import grid from "~/assets/icons/grid.svg";
 import slides from "~/assets/icons/slides.svg";
 import teachers from "~/assets/icons/teachers.svg";
-import id_front from "~/assets/images/id_card_front.png";
-import id_back from "~/assets/images/id_card_back.png";
 import vector1 from "~/assets/icons/popular_vector.svg";
 import vector2 from "~/assets/icons/course_vector.svg";
 </script>
 
 <template>
+  <!-- ========================================================================= -->
+  <!-- HERO SECTION -->
+  <!-- The main landing view with navigation, headline, and call-to-action. -->
+  <!-- ========================================================================= -->
   <section class="relative bg-[#D2E6E4] h-screen rounded-b-[50px] overflow-hidden justify-between">
+    <!-- Decorative background lines for visual flair -->
     <div class="relative opacity-[0.6] z-[15] w-full">
       <img :src="top_lines1" class="absolute left-[165.28px]" />
       <img :src="top_lines2" class="absolute left-[123.15px]" />
@@ -57,8 +75,10 @@ import vector2 from "~/assets/icons/course_vector.svg";
       <img :src="top_lines7" class="absolute left-[116.86px]" />
       <img :src="top_lines8" class="absolute left-[130.25px]" />
     </div>
-    <!-- header -->
+
+    <!-- Header: Contains the logo, navigation links, and authentication buttons. -->
     <header class="header relative z-[30] grid grid-cols-[auto_auto_auto] py-[43px] items-center">
+      <!-- Logo -->
       <div class="logo flex items-center lg:gap-[15px] w-auto h-fit absolute left-[119px] top-[53.66px]">
         <img :src="logo" alt="Logo" class="lg:h-[37.69px] w-[62.42px]" />
         <span class=" w-[105px] font-extrabold font-picoblackal not-italic text-[30px] leading-[100%]  text-[#0B7077]">
@@ -66,6 +86,7 @@ import vector2 from "~/assets/icons/course_vector.svg";
         </span>
       </div>
 
+      <!-- Main Navigation -->
       <nav class="absolute flex h-fit lg:gap-[80px] w-auto self-center top-[62px] left-[437.42px] ">
         <NuxtLink to="/" class="h-fit text-[#FD661F] font-raleway font-bold text-[18px] leading-[100%] tracking-wide">Home
         </NuxtLink>
@@ -79,6 +100,7 @@ import vector2 from "~/assets/icons/course_vector.svg";
         </NuxtLink>
       </nav>
 
+      <!-- User Authentication Buttons -->
       <div class="flex justify-between w-[301.58px] h-fit absolute right-[82px] top-[43px]">
         <button type="button" class="btn-primary btn-outline h-fit">
           LOG IN
@@ -89,15 +111,15 @@ import vector2 from "~/assets/icons/course_vector.svg";
       </div>
     </header>
 
-    <!-- background lines -->
+    <!-- Additional decorative background lines -->
     <img :src="line1" alt="line 1" class="absolute z-[0] bottom-[339.33px] left-[171.12px] ">
     <img :src="line2" alt="line 2" class="absolute z-[0] left-[219.16px] bottom-[260px]">
     <img :src="line3" alt="line 3" class="absolute z-[0] bottom-[413.72px] left-[526.16px] ">
 
-    <!-- student above lines -->
+    <!-- Student Illustration -->
     <img :src="student" alt="Student illustration" class="absolute bottom-0 right-0 z-[10]" />
 
-    <!-- hero section -->
+    <!-- Hero Content: Main headline and introductory text. -->
     <span
       class="absolute z-[20] left-[105px] bottom-[480px] bg-white w-fit h-fit rounded-[10px] font-raleway font-[500] text-[18px] leading-none tracking-wide text-[#252641] py-[10px] px-[25px]">
       Never stop learning
@@ -107,12 +129,15 @@ import vector2 from "~/assets/icons/course_vector.svg";
       Grow up your skills by online courses with Onlearning
     </h1>
 
-    <div class="absolute z-[20] left-[112px] bottom-[153px] flex flex-row">
+    <!-- Call to Action & Social Proof -->
+    <div class="absolute z-[20] left-[112px] bottom-[153px] flex flex-row items-center">
+      <!-- Primary CTA Button -->
       <button
         class="bg-[#FD661F] mx-[7px] text-white px-[30px] py-[20px] rounded-[10px] h-fit w-fit font-raleway font-[500] text-[16px] leading-none tracking-[0.02em] uppercase">
         EXPLORE PATH
       </button>
 
+      <!-- Social Proof: Reviewer avatars and star rating -->
       <div class="mx-[5px] flex flex-row h-fit w-fit gap-[8.7px]">
         <div class="flex -space-x-[14.795px] h-fit">
           <img :src="reviewer1" alt="Reviewer profile 1" class="w-[52.21px] h-[52.21px] rounded-full border-[#0B7077]" />
@@ -120,6 +145,7 @@ import vector2 from "~/assets/icons/course_vector.svg";
           <img :src="reviewer3" alt="Reviewer profile 3" class="w-[52.21px] h-[52.21px] rounded-full border-[#0B7077]" />
         </div>
         <div class="h-fit">
+          <!-- Star Rating Display (uses custom CSS for fill) -->
           <div class="h-fit flex flex-row gap-[1.74px] p-[1.74px]">
             <div class="star">
               <div class="star-fill"></div>
@@ -144,7 +170,7 @@ import vector2 from "~/assets/icons/course_vector.svg";
       </div>
     </div>
 
-    <!-- floating card -->
+    <!-- Floating Card: Displays key metrics or stats -->
     <div
       class="absolute flex gap-[32px] items-center px-[28px] py-[15px] bottom-[184.11px] right-[420px] h-[100px] rounded-[20px] bg-white opacity-80 backdrop-blur-[20px] z-[20]">
       <div class="size-[50px] p-[11.25px] bg-[#23BDEE] rounded-[8px] text-center items-center">
@@ -161,20 +187,27 @@ import vector2 from "~/assets/icons/course_vector.svg";
       </div>
     </div>
 
-    <!-- chart floating -->
+    <!-- Floating Chart Icon -->
     <div
       class="absolute bottom-[327px] right-[121px] size-[69px] rounded-[14px] border bg-[#FD661F] shadow-[0px_8px_40px_0px_#D24D6542] border-[#FD661F] p-[12px] z-[20]">
       <img :src="chart" alt="chart" class="w-[47.3px] h-[44.85px] rounded-[8px]" />
     </div>
   </section>
 
+  <!-- ========================================================================= -->
+  <!-- MAIN CONTENT SECTION -->
+  <!-- Contains all sections below the hero. -->
+  <!-- ========================================================================= -->
   <section class="pt-[185px] pb-[245px] px-[80px] gap-[110px] flex flex-col ">
+    <!-- This div appears to be an empty placeholder. -->
     <div class="mx[10.5px] flex gap-[39px]">
 
     </div>
 
-    <div class="w-full flex flex-col gap-[83px] justify-center items-center">
+    <!-- Course Category Section -->
+    <div class="w-fit flex flex-col gap-[83px] justify-center items-center">
       <div class="flex flex-col w-full justify-center gap-[59px]">
+        <!-- Section Header -->
         <div class="flex flex-col gap-[39.83px] text-center items-center relative">
           <h1 class="font-inter font-[700] text-[48px] leading-[62.4px] text-[#0B7077] tracking-[-0.06em]">Courses
             Category
@@ -183,107 +216,109 @@ import vector2 from "~/assets/icons/course_vector.svg";
             powerful online software suite that combines all the tools needed to run a successful school or office.</span>
           <img :src="vector2" class="absolute top-[64.05px] left-[653px]" />
         </div>
+
+        <!-- Grid of Course Category Cards -->
         <div class="grid grid-cols-4 gap-[40px]">
 
+        <!-- Card 1: Beauty -->
+        <div class="relative h-[329px] group bg-white px-[15px] transition-shadow duration-500 flex flex-col items-center rounded-[15px] hover:shadow-[0px_50px_80px_0px_#0000000D]">
+          <span class="relative inline-block mt-[30px] rounded-full size-[50px] bg-[#A3D3FF]">
+            <img :src="beauty" class="absolute size-[50px] object-cover left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" />
+          </span>
+          <span class="mt-[24px] font-raleway font-[600] text-[27px] leading-none text-[#0B7077]">Beauty</span>
+          <span class="text-center mt-[23px] mb-[112px] w-[260px] font-raleway font-[500] text-[18px] leading-[29px] text-[#696984]">
+            One powerful online software suite that combines
+          </span>
+          <!-- Interactive button changes text and style on hover -->
+          <button class="
+            top-[255px] absolute rounded-[10px] px-[62px] py-[12px]
+            bg-white text-[#0B7077]
+            font-raleway font-[500] text-[15px] leading-none text-center
+            shadow-[0px_10px_60px_0px_#262D7614]
+            transition-all ease-in-out duration-300
+            group-hover:bg-[#FD661F] group-hover:text-white group-hover:px-[40px]
+            group-hover:hover:bg-white group-hover:hover:text-[#0B7077] group-hover:hover:border group-hover:hover:border-[#0B7077]">
+            <span class="hidden group-hover:block">Explore courses</span>
+            <span class="block group-hover:hidden">more</span>
+          </button>
+        </div>
 
-          <div
-            class="group bg-white px-[15px] transition-shadow duration-500 flex flex-col items-center justify-center rounded-[15px] hover:shadow-[0px_50px_80px_0px_#0000000D]">
-            <span class="relative inline-block mt-[30px] rounded-full size-[50px] bg-[#A3D3FF] overflow-visible">
-              <img :src="beauty"
-                class="absolute size-[50px] object-cover left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" />
-            </span>
-
-            <span class="mt-[24px] font-raleway font-[600] text-[27px] leading-none text-[#0B7077]">Beauty</span>
-            <span
-              class="text-center mt-[23px] w-[260px]  font-raleway font-[500] text-[18px] leading-[29px] text-[#696984]">
-              One powerful
-              online software suite that combines</span>
-            <button class="mt-[38px] mb-[32px] rounded-[10px] px-[62px] py-[12px] font-raleway font-[500] text-[15px] leading-none text-center text-[#0B7077] bg-white shadow-[0px_10px_60px_0px_#262D7614] 
-                    transition-[colors,shadow] ease-in-out duration-500
-                    hover:shadow-[0px_10px_60px_0px_#262D7614] group-hover:bg-[#FD661F] group-hover:text-white 
-                    group-hover:px-[40px]">
-
-              <span class="hidden group-hover:block">Explore courses</span>
-              <span class="block group-hover:hidden">more</span>
-            </button>
+        <!-- Card 2: Medical -->
+        <div class="relative h-[329px] group bg-white px-[15px] transition-shadow duration-500 flex flex-col items-center rounded-[15px] hover:shadow-[0px_50px_80px_0px_#0000000D]">
+          <div class="relative mt-[30px] flex items-center justify-center rounded-full size-[50px] bg-[#F1C9FF]">
+            <img :src="medical" class="absolute size-[72px] object-cover left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" />
           </div>
+          <span class="mt-[24px] font-raleway font-[600] text-[27px] leading-none text-[#0B7077]">Medical</span>
+          <span class="text-center mt-[23px] mb-[112px] w-[260px] font-raleway font-[500] text-[18px] leading-[29px] text-[#696984]">
+            One powerful online software suite that combines
+          </span>
+          <button class="
+            top-[255px] absolute rounded-[10px] px-[62px] py-[12px]
+            bg-white text-[#0B7077]
+            font-raleway font-[500] text-[15px] leading-none text-center
+            shadow-[0px_10px_60px_0px_#262D7614]
+            transition-all ease-in-out duration-300
+            group-hover:bg-[#FD661F] group-hover:text-white group-hover:px-[40px]
+            group-hover:hover:bg-white group-hover:hover:text-[#0B7077] group-hover:hover:border group-hover:hover:border-[#0B7077]">
+            <span class="hidden group-hover:block">Explore courses</span>
+            <span class="block group-hover:hidden">more</span>
+          </button>
+        </div>
 
-          <div
-            class="group bg-white px-[15px] transition-shadow duration-500 flex flex-col items-center justify-center rounded-[15px] hover:shadow-[0px_50px_80px_0px_#0000000D]">
-            <span class="relative mt-[30px] flex items-center justify-center rounded-full size-[50px] bg-[#F1C9FF]">
-              <img :src="medical"
-                class="absolute size-[72px] object-cover left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" />
-            </span>
-
-            <span class="mt-[24px] font-raleway font-[600] text-[27px] leading-none text-[#0B7077]">medical</span>
-            <span
-              class="text-center mt-[23px] w-[260px]  font-raleway font-[500] text-[18px] leading-[29px] text-[#696984]">
-              One powerful
-              online software suite that combines</span>
-            <button class="mt-[38px] mb-[32px] rounded-[10px] px-[62px] py-[12px] font-raleway font-[500] text-[15px] leading-none text-center text-[#0B7077] bg-white shadow-[0px_10px_60px_0px_#262D7614] 
-                    transition-[colors,shadow] ease-in-out duration-500
-                    hover:shadow-[0px_10px_60px_0px_#262D7614] group-hover:bg-[#FD661F] group-hover:text-white 
-                    group-hover:px-[40px]">
-
-              <span class="hidden group-hover:block">Explore courses</span>
-              <span class="block group-hover:hidden">more</span>
-            </button>
+        <!-- Card 3: Sports -->
+        <div class="relative h-[329px] group bg-white px-[15px] transition-shadow duration-500 flex flex-col items-center rounded-[15px] hover:shadow-[0px_50px_80px_0px_#0000000D]">
+          <div class="relative inline-block mt-[30px] rounded-full h-[50px] w-[103px]">
+            <img :src="sports" class="absolute size-[103px] object-cover left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" />
           </div>
+          <span class="mt-[24px] font-raleway font-[600] text-[27px] leading-none text-[#0B7077]">Sports</span>
+          <span class="text-center mt-[23px] mb-[112px] w-[260px] font-raleway font-[500] text-[18px] leading-[29px] text-[#696984]">
+            One powerful online software suite that combines
+          </span>
+          <button class="
+            top-[255px] absolute rounded-[10px] px-[62px] py-[12px]
+            bg-white text-[#0B7077]
+            font-raleway font-[500] text-[15px] leading-none text-center
+            shadow-[0px_10px_60px_0px_#262D7614]
+            transition-all ease-in-out duration-300
+            group-hover:bg-[#FD661F] group-hover:text-white group-hover:px-[40px]
+            group-hover:hover:bg-white group-hover:hover:text-[#0B7077] group-hover:hover:border group-hover:hover:border-[#0B7077]">
+            <span class="hidden group-hover:block">Explore courses</span>
+            <span class="block group-hover:hidden">more</span>
+          </button>
+        </div>
 
-          <div
-            class="group bg-white px-[15px] transition-shadow duration-500 flex flex-col items-center justify-center rounded-[15px] hover:shadow-[0px_50px_80px_0px_#0000000D]">
-            <span class="relative inline-block mt-[30px] rounded-full size-[50px] bg-[#FFB800]">
-              <img :src="sports"
-                class="absolute size-[103px] object-cover left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" />
-            </span>
-            <span class=" mt-[24px] font-raleway font-[600] text-[27px] leading-none text-[#0B7077]">sports</span>
-            <span
-              class="text-center mt-[23px] w-[260px]  font-raleway font-[500] text-[18px] leading-[29px] text-[#696984]">
-              One powerful
-              online software suite that combines</span>
-            <button class="mt-[38px] mb-[32px] rounded-[10px] px-[62px] py-[12px] font-raleway font-[500] text-[15px] leading-none text-center text-[#0B7077] bg-white shadow-[0px_10px_60px_0px_#262D7614] 
-                    transition-[colors,shadow] ease-in-out duration-500
-                    hover:shadow-[0px_10px_60px_0px_#262D7614] group-hover:bg-[#FD661F] group-hover:text-white 
-                    group-hover:px-[40px]">
-
-              <span class="hidden group-hover:block">Explore courses</span>
-              <span class="block group-hover:hidden">more</span>
-            </button>
-          </div>
-
-          <div
-            class="group bg-white px-[15px] transition-shadow duration-500 flex flex-col items-center justify-center rounded-[15px] hover:shadow-[0px_50px_80px_0px_#0000000D]">
-            <span class="relative inline-block mt-[30px] rounded-full size-[50px] bg-[#CAC9FF] overflow-visible">
-              <img :src="nutrition"
-                class="absolute size-[50px] object-cover left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" />
-            </span>
-
-
-            <span class="mt-[24px] font-raleway font-[600] text-[27px] leading-none text-[#0B7077]">Nutrition</span>
-            <span
-              class="text-center mt-[23px] w-[260px]  font-raleway font-[500] text-[18px] leading-[29px] text-[#696984]">
-              One powerful
-              online software suite that combines</span>
-            <button class="mt-[38px] mb-[32px] rounded-[10px] px-[62px] py-[12px] font-raleway font-[500] text-[15px] leading-none text-center text-[#0B7077] bg-white shadow-[0px_10px_60px_0px_#262D7614] 
-                    transition-[colors,shadow] ease-in-out duration-500
-                    hover:shadow-[0px_10px_60px_0px_#262D7614] group-hover:bg-[#FD661F] group-hover:text-white 
-                    group-hover:px-[40px]">
-
-              <span class="hidden group-hover:block">Explore courses</span>
-              <span class="block group-hover:hidden">more</span>
-            </button>
-          </div>
-
-
+        <!-- Card 4: Nutrition -->
+        <div class="relative h-[329px] group bg-white px-[15px] transition-shadow duration-500 flex flex-col items-center rounded-[15px] hover:shadow-[0px_50px_80px_0px_#0000000D]">
+          <span class="relative inline-block mt-[30px] rounded-full size-[50px] bg-[#CAC9FF]">
+            <img :src="nutrition" class="absolute size-[50px] object-cover left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" />
+          </span>
+          <span class="mt-[24px] font-raleway font-[600] text-[27px] leading-none text-[#0B7077]">Nutrition</span>
+          <span class="text-center mt-[23px] mb-[112px] w-[260px] font-raleway font-[500] text-[18px] leading-[29px] text-[#696984]">
+            One powerful online software suite that combines
+          </span>
+          <button class="
+            top-[255px] absolute rounded-[10px] px-[62px] py-[12px]
+            bg-white text-[#0B7077]
+            font-raleway font-[500] text-[15px] leading-none text-center
+            shadow-[0px_10px_60px_0px_#262D7614]
+            transition-all ease-in-out duration-300
+            group-hover:bg-[#FD661F] group-hover:text-white group-hover:px-[40px]
+            group-hover:hover:bg-white group-hover:hover:text-[#0B7077] group-hover:hover:border group-hover:hover:border-[#0B7077]">
+            <span class="hidden group-hover:block">Explore courses</span>
+            <span class="block group-hover:hidden">more</span>
+          </button>
+        </div>
 
         </div>
       </div>
       <button type="button"
-        class="w-fit rounded-[10px] border px-[62px] py-[12px] hover:text-white hover:bg-[#0B7077] bg-white border-[#0B7077] shadow-[0px_10px_60px_0px_#262D7614] font-raleway font-[500] text-[15px] leading-none  text-center text-[#0B7077]">view
+        class="w-fit rounded-[10px] transition duration-500 border px-[62px] py-[12px] hover:text-white hover:bg-[#0B7077] bg-white border-[#0B7077] shadow-[0px_10px_60px_0px_#262D7614] font-raleway font-[500] text-[15px] leading-none  text-center text-[#0B7077]">view
         all</button>
     </div>
 
+    <!-- Student ID Card Benefit Section -->
     <div class="mx-[49.3px] flex gap-[39px]">
+      <!-- Text Content -->
       <div class="flex flex-col gap-[44px]">
         <div class="gap-[24px] flex flex-col">
           <span
@@ -291,6 +326,7 @@ import vector2 from "~/assets/icons/course_vector.svg";
           <h1 class="font-inter font-[700] text-[48px] text-[#0B7077] leading-[62.4px] tracking-[-0.06em] w-fit h-fit">Get
             Student ID card</h1>
         </div>
+        <!-- List of Features -->
         <div class="flex flex-col gap-[40px]">
           <div class="flex gap-[32px]">
             <span class="my-[2px] size-[60px] bg-[#FBFBFB] shadow-[0px_15px_44px_0px_#0D0F1C1F] rounded-full">
@@ -318,14 +354,17 @@ import vector2 from "~/assets/icons/course_vector.svg";
           </div>
         </div>
       </div>
+      <!-- Visual Content: ID Card Images -->
       <div class="my-[12.7px] rounded-[20px] px-[75px] py-[37px] bg-[#D2E6E4] gap-[10px] flex flex-shrink-0 max-w-full">
         <img :src="id_front" alt="Student ID Card front page" class="w-[211.6px] h-[344.6px]" />
         <img :src="id_back" alt="Student ID Card back page" class="w-[211.6px] h-[344.6px]" />
       </div>
     </div>
 
+    <!-- Staff Training Section -->
     <div class="mx-[50.21px] flex gap-[94px]">
       <img :src="pana" alt="Team Meeting Visual" class="mt-[91.59px]">
+      <!-- Text Content -->
       <div class="flex flex-col gap-[44px]">
         <div class="gap-[24px] flex flex-col">
           <span
@@ -334,6 +373,7 @@ import vector2 from "~/assets/icons/course_vector.svg";
             Staff
             training</h1>
         </div>
+        <!-- List of Features -->
         <div class="flex flex-col gap-[40px]">
           <div class="flex gap-[32px]">
             <span class="my-[2px] size-[60px] bg-[#FBFBFB] shadow-[0px_15px_44px_0px_#0D0F1C1F] rounded-full">
@@ -363,6 +403,7 @@ import vector2 from "~/assets/icons/course_vector.svg";
       </div>
     </div>
 
+    <!-- Gift Cards Promotional Section -->
     <div class="mx-[33px] overflow-hidden h-[542px] w-full">
       <img :src="giftcards" alt="Giftcards Visual" class="absolute ml-[521px] z-10">
       <div
@@ -394,8 +435,13 @@ import vector2 from "~/assets/icons/course_vector.svg";
     </div>
   </section>
 
+  <!-- ========================================================================= -->
+  <!-- FOOTER SECTION -->
+  <!-- Contains contact info, links, and newsletter subscription. -->
+  <!-- ========================================================================= -->
   <footer class="footer h-fit overflow-hidden">
     <div class="main relative w-full h-[447.38px]">
+      <!-- Contact and Brand Information -->
       <div class="flex flex-col gap-[28px] absolute left-[144px] top-[105px] bottom-[69.69px]">
         <div class="logo flex items-center lg:gap-[15px] w-full h-fit text-left">
           <img :src="logo" alt="Onlearn Logo" class="lg:h-[37.69px] w-[62.42px]" />
@@ -404,6 +450,7 @@ import vector2 from "~/assets/icons/course_vector.svg";
             Onlearn
           </span>
         </div>
+        <!-- Contact Details List -->
         <div class="flex flex-col gap-[17px]">
           <div class="flex flex-col">
             <div class="flex flex-col">
@@ -437,7 +484,9 @@ import vector2 from "~/assets/icons/course_vector.svg";
         </div>
       </div>
 
+      <!-- Footer Navigation Links -->
       <div class="flex gap-[56px] absolute left-[556px] top-[134px]">
+        <!-- Categories Links -->
         <div class="flex flex-col gap-[29px] w-[155px] h-[171px]">
           <span
             class="w-[79px] h-[18px] font-raleway font-[700] text-[15px] leading-[100%]  text-[#0A033C]">Categories</span>
@@ -454,6 +503,7 @@ import vector2 from "~/assets/icons/course_vector.svg";
               more</li>
           </ul>
         </div>
+        <!-- General Links -->
         <div class="flex flex-col gap-[29px] w-[59px] h-[99px]">
           <span class="w-[79px] h-[18px] font-raleway font-[700] text-[15px] leading-[100%]  text-[#0A033C]">Links</span>
           <ul class="flex flex-col gap-[20px]">
@@ -466,6 +516,7 @@ import vector2 from "~/assets/icons/course_vector.svg";
         </div>
       </div>
 
+      <!-- Newsletter Subscription Form -->
       <div class="flex flex-col gap-[20px] absolute left-[880px] top-[152px]">
         <span class="w-full text-center h-[18px] font-raleway font-[400] text-[15px] text-[#0A033C] leading-[100%] ">
           Stay up to date with the latest courses
@@ -479,6 +530,7 @@ import vector2 from "~/assets/icons/course_vector.svg";
         </div>
       </div>
     </div>
+    <!-- Decorative lines for the footer background -->
     <div class="relative opacity-[0.6] z-[15]">
       <img :src="bottom_lines1" class="absolute left-[952.25px] bottom-0" />
       <img :src="bottom_lines2" class="absolute left-[910.13px] bottom-0" />
@@ -493,37 +545,66 @@ import vector2 from "~/assets/icons/course_vector.svg";
 </template>
 
 <style>
-/* * {
+/**
+ * Custom styles for the Onlearn landing page component.
+ * These styles handle specific visual effects not easily achieved with Tailwind CSS utility classes.
+ */
+
+/* Debugging helper: Uncomment to visualize the layout of all elements. */
+/* 
+* {
   border: 0.2px solid red;
-} */
+} 
+*/
 
-
+/**
+ * Sets a background image for the footer.
+ * The image is positioned at the bottom and covers the entire footer area without repeating.
+ */
 .footer {
   background: url("~/assets/images/footer_bgimg.png") no-repeat bottom/cover;
 }
 
-.footer .main * {
+/**
+ * Ensures that all direct children of the footer's main content area
+ * appear above the decorative background lines.
+ */
+.footer .main > * {
   z-index: 30;
 }
 
+/**
+ * Custom styling for the star rating component.
+ */
 .star {
   position: relative;
   width: 17.4px;
   height: 16.55px;
+  /* The background is the empty star icon. */
   background: url("~/assets/icons/star.svg") no-repeat center/contain;
 }
 
+/**
+ * The filled part of the star.
+ * A CSS mask is used to clip the background color into the shape of the filled star icon.
+ * This allows for easy coloring and dynamic filling (e.g., half-stars).
+ */
 .star-fill {
   position: absolute;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
-  background: #161618;
+  background: #161618; /* Color of the filled star */
   -webkit-mask: url("~/assets/icons/star_filled.svg") no-repeat center/contain;
   mask: url("~/assets/icons/star_filled.svg") no-repeat center/contain;
 }
 
+/**
+ * Modifier class for a half-filled star.
+ * A linear gradient is used as the background, creating a sharp color stop at 50%
+ * to give the appearance of a half-filled star.
+ */
 .half {
   background: linear-gradient(to right, #161618 50%, transparent 50%);
 }
