@@ -220,17 +220,21 @@ import vector2 from "~/assets/icons/course_vector.svg";
         <!-- Grid of Course Category Cards -->
         <div class="grid grid-cols-4 gap-[40px]">
 
-        <!-- Card 1: Beauty -->
-        <div class="relative h-[329px] group bg-white px-[15px] transition-shadow duration-500 flex flex-col items-center rounded-[15px] hover:shadow-[0px_50px_80px_0px_#0000000D]">
-          <span class="relative inline-block mt-[30px] rounded-full size-[50px] bg-[#A3D3FF]">
-            <img :src="beauty" class="absolute size-[50px] object-cover left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" />
-          </span>
-          <span class="mt-[24px] font-raleway font-[600] text-[27px] leading-none text-[#0B7077]">Beauty</span>
-          <span class="text-center mt-[23px] mb-[112px] w-[260px] font-raleway font-[500] text-[18px] leading-[29px] text-[#696984]">
-            One powerful online software suite that combines
-          </span>
-          <!-- Interactive button changes text and style on hover -->
-          <button class="
+          <!-- Card 1: Beauty -->
+          <div
+            class="relative h-[329px] group bg-white px-[15px] transition-shadow duration-500 flex flex-col items-center rounded-[15px] hover:shadow-[0px_50px_80px_0px_#0000000D]">
+            <span class="relative inline-block mt-[30px] rounded-full size-[50px] bg-[#A3D3FF]">
+              <img :src="beauty"
+                class="absolute size-[50px] object-cover left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" />
+            </span>
+            <span class="mt-[24px] font-raleway font-[600] text-[27px] leading-none text-[#0B7077]">Beauty</span>
+            <span
+              class="text-center mt-[23px] mb-[112px] w-[260px] font-raleway font-[500] text-[18px] leading-[29px] text-[#696984]">
+              One powerful online software suite that combines
+            </span>
+            <!-- Interactive button changes text and style on hover -->
+            <button
+              class="
             top-[255px] absolute rounded-[10px] px-[62px] py-[12px]
             bg-white text-[#0B7077]
             font-raleway font-[500] text-[15px] leading-none text-center
@@ -238,21 +242,25 @@ import vector2 from "~/assets/icons/course_vector.svg";
             transition-all ease-in-out duration-300
             group-hover:bg-[#FD661F] group-hover:text-white group-hover:px-[40px]
             group-hover:hover:bg-white group-hover:hover:text-[#0B7077] group-hover:hover:border group-hover:hover:border-[#0B7077]">
-            <span class="hidden group-hover:block">Explore courses</span>
-            <span class="block group-hover:hidden">more</span>
-          </button>
-        </div>
-
-        <!-- Card 2: Medical -->
-        <div class="relative h-[329px] group bg-white px-[15px] transition-shadow duration-500 flex flex-col items-center rounded-[15px] hover:shadow-[0px_50px_80px_0px_#0000000D]">
-          <div class="relative mt-[30px] flex items-center justify-center rounded-full size-[50px] bg-[#F1C9FF]">
-            <img :src="medical" class="absolute size-[72px] object-cover left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" />
+              <span class="hidden group-hover:block">Explore courses</span>
+              <span class="block group-hover:hidden">more</span>
+            </button>
           </div>
-          <span class="mt-[24px] font-raleway font-[600] text-[27px] leading-none text-[#0B7077]">Medical</span>
-          <span class="text-center mt-[23px] mb-[112px] w-[260px] font-raleway font-[500] text-[18px] leading-[29px] text-[#696984]">
-            One powerful online software suite that combines
-          </span>
-          <button class="
+
+          <!-- Card 2: Medical -->
+          <div
+            class="relative h-[329px] group bg-white px-[15px] transition-shadow duration-500 flex flex-col items-center rounded-[15px] hover:shadow-[0px_50px_80px_0px_#0000000D]">
+            <div class="relative mt-[30px] flex items-center justify-center rounded-full size-[50px] bg-[#F1C9FF]">
+              <img :src="medical"
+                class="absolute size-[72px] object-cover left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" />
+            </div>
+            <span class="mt-[24px] font-raleway font-[600] text-[27px] leading-none text-[#0B7077]">Medical</span>
+            <span
+              class="text-center mt-[23px] mb-[112px] w-[260px] font-raleway font-[500] text-[18px] leading-[29px] text-[#696984]">
+              One powerful online software suite that combines
+            </span>
+            <button
+              class="
             top-[255px] absolute rounded-[10px] px-[62px] py-[12px]
             bg-white text-[#0B7077]
             font-raleway font-[500] text-[15px] leading-none text-center
@@ -260,43 +268,25 @@ import vector2 from "~/assets/icons/course_vector.svg";
             transition-all ease-in-out duration-300
             group-hover:bg-[#FD661F] group-hover:text-white group-hover:px-[40px]
             group-hover:hover:bg-white group-hover:hover:text-[#0B7077] group-hover:hover:border group-hover:hover:border-[#0B7077]">
-            <span class="hidden group-hover:block">Explore courses</span>
-            <span class="block group-hover:hidden">more</span>
-          </button>
-        </div>
-
-        <!-- Card 3: Sports -->
-        <div class="relative h-[329px] group bg-white px-[15px] transition-shadow duration-500 flex flex-col items-center rounded-[15px] hover:shadow-[0px_50px_80px_0px_#0000000D]">
-          <div class="relative inline-block mt-[30px] rounded-full h-[50px] w-[103px]">
-            <img :src="sports" class="absolute size-[103px] object-cover left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" />
+              <span class="hidden group-hover:block">Explore courses</span>
+              <span class="block group-hover:hidden">more</span>
+            </button>
           </div>
-          <span class="mt-[24px] font-raleway font-[600] text-[27px] leading-none text-[#0B7077]">Sports</span>
-          <span class="text-center mt-[23px] mb-[112px] w-[260px] font-raleway font-[500] text-[18px] leading-[29px] text-[#696984]">
-            One powerful online software suite that combines
-          </span>
-          <button class="
-            top-[255px] absolute rounded-[10px] px-[62px] py-[12px]
-            bg-white text-[#0B7077]
-            font-raleway font-[500] text-[15px] leading-none text-center
-            shadow-[0px_10px_60px_0px_#262D7614]
-            transition-all ease-in-out duration-300
-            group-hover:bg-[#FD661F] group-hover:text-white group-hover:px-[40px]
-            group-hover:hover:bg-white group-hover:hover:text-[#0B7077] group-hover:hover:border group-hover:hover:border-[#0B7077]">
-            <span class="hidden group-hover:block">Explore courses</span>
-            <span class="block group-hover:hidden">more</span>
-          </button>
-        </div>
 
-        <!-- Card 4: Nutrition -->
-        <div class="relative h-[329px] group bg-white px-[15px] transition-shadow duration-500 flex flex-col items-center rounded-[15px] hover:shadow-[0px_50px_80px_0px_#0000000D]">
-          <span class="relative inline-block mt-[30px] rounded-full size-[50px] bg-[#CAC9FF]">
-            <img :src="nutrition" class="absolute size-[50px] object-cover left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" />
-          </span>
-          <span class="mt-[24px] font-raleway font-[600] text-[27px] leading-none text-[#0B7077]">Nutrition</span>
-          <span class="text-center mt-[23px] mb-[112px] w-[260px] font-raleway font-[500] text-[18px] leading-[29px] text-[#696984]">
-            One powerful online software suite that combines
-          </span>
-          <button class="
+          <!-- Card 3: Sports -->
+          <div
+            class="relative h-[329px] group bg-white px-[15px] transition-shadow duration-500 flex flex-col items-center rounded-[15px] hover:shadow-[0px_50px_80px_0px_#0000000D]">
+            <div class="relative inline-block mt-[30px] rounded-full h-[50px] w-[103px]">
+              <img :src="sports"
+                class="absolute size-[103px] object-cover left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" />
+            </div>
+            <span class="mt-[24px] font-raleway font-[600] text-[27px] leading-none text-[#0B7077]">Sports</span>
+            <span
+              class="text-center mt-[23px] mb-[112px] w-[260px] font-raleway font-[500] text-[18px] leading-[29px] text-[#696984]">
+              One powerful online software suite that combines
+            </span>
+            <button
+              class="
             top-[255px] absolute rounded-[10px] px-[62px] py-[12px]
             bg-white text-[#0B7077]
             font-raleway font-[500] text-[15px] leading-none text-center
@@ -304,10 +294,36 @@ import vector2 from "~/assets/icons/course_vector.svg";
             transition-all ease-in-out duration-300
             group-hover:bg-[#FD661F] group-hover:text-white group-hover:px-[40px]
             group-hover:hover:bg-white group-hover:hover:text-[#0B7077] group-hover:hover:border group-hover:hover:border-[#0B7077]">
-            <span class="hidden group-hover:block">Explore courses</span>
-            <span class="block group-hover:hidden">more</span>
-          </button>
-        </div>
+              <span class="hidden group-hover:block">Explore courses</span>
+              <span class="block group-hover:hidden">more</span>
+            </button>
+          </div>
+
+          <!-- Card 4: Nutrition -->
+          <div
+            class="relative h-[329px] group bg-white px-[15px] transition-shadow duration-500 flex flex-col items-center rounded-[15px] hover:shadow-[0px_50px_80px_0px_#0000000D]">
+            <span class="relative inline-block mt-[30px] rounded-full size-[50px] bg-[#CAC9FF]">
+              <img :src="nutrition"
+                class="absolute size-[50px] object-cover left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" />
+            </span>
+            <span class="mt-[24px] font-raleway font-[600] text-[27px] leading-none text-[#0B7077]">Nutrition</span>
+            <span
+              class="text-center mt-[23px] mb-[112px] w-[260px] font-raleway font-[500] text-[18px] leading-[29px] text-[#696984]">
+              One powerful online software suite that combines
+            </span>
+            <button
+              class="
+            top-[255px] absolute rounded-[10px] px-[62px] py-[12px]
+            bg-white text-[#0B7077]
+            font-raleway font-[500] text-[15px] leading-none text-center
+            shadow-[0px_10px_60px_0px_#262D7614]
+            transition-all ease-in-out duration-300
+            group-hover:bg-[#FD661F] group-hover:text-white group-hover:px-[40px]
+            group-hover:hover:bg-white group-hover:hover:text-[#0B7077] group-hover:hover:border group-hover:hover:border-[#0B7077]">
+              <span class="hidden group-hover:block">Explore courses</span>
+              <span class="block group-hover:hidden">more</span>
+            </button>
+          </div>
 
         </div>
       </div>
@@ -429,7 +445,7 @@ import vector2 from "~/assets/icons/course_vector.svg";
           </li>
         </ul>
         <button type="button"
-          class="mt-[30px] px-[30px] py-[15px] rounded-[10px] w-fit h-fit bg-white font-raleway font-[500] text-[16px] leading-none tracking-wide text-[#0B7077]">BUY
+          class="hover:text-white hover:bg-[#0B7077] transition-all ease-in-out duration-500 mt-[30px] px-[30px] py-[15px] rounded-[10px] w-fit h-fit bg-white font-raleway font-[500] text-[16px] leading-none tracking-wide text-[#0B7077]">BUY
           NOW</button>
       </div>
     </div>
@@ -569,7 +585,7 @@ import vector2 from "~/assets/icons/course_vector.svg";
  * Ensures that all direct children of the footer's main content area
  * appear above the decorative background lines.
  */
-.footer .main > * {
+.footer .main>* {
   z-index: 30;
 }
 
@@ -595,7 +611,8 @@ import vector2 from "~/assets/icons/course_vector.svg";
   left: 0;
   height: 100%;
   width: 100%;
-  background: #161618; /* Color of the filled star */
+  background: #161618;
+  /* Color of the filled star */
   -webkit-mask: url("~/assets/icons/star_filled.svg") no-repeat center/contain;
   mask: url("~/assets/icons/star_filled.svg") no-repeat center/contain;
 }
