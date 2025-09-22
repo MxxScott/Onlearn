@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .btn-primary {
-    @apply font-raleway font-[500] text-[16px] uppercase rounded-[10px] px-[40px] py-[20px];
+    @apply font-raleway font-[500] text-[16px] rounded-[10px] px-[40px] py-[20px] w-fit h-fit;
 }
 .btn-outline {
     @apply bg-white text-[#0B7077];

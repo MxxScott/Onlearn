@@ -32,10 +32,20 @@ import id_back from "~/assets/images/id_card_back.png";
 </script>
 
 <template>
-  <section class="relative bg-[#D2E6E4] h-screen rounded-b-[50px] overflow-hidden">
+  <section class="relative bg-[#D2E6E4] h-screen rounded-b-[50px] overflow-hidden justify-between">
+    <div class="opacity-[0.6] z-[15] w-full">
+      <img :src="top_lines1" class="absolute left-[165.28px] w-[745.63px]" />
+      <img :src="top_lines2" class="absolute left-[123.15px] w-[839.28px]" />
+      <img :src="top_lines3" class="absolute left-[204.7px] w-[673.28px]" />
+      <img :src="top_lines4" class="absolute left-[133.49px] w-[781.03px]" />
+      <img :src="top_lines5" class="absolute left-[149.93px] w-[749.87px]" />
+      <img :src="top_lines6" class="absolute left-[140.8px] w-[767.09px]" />
+      <img :src="top_lines7" class="absolute left-[116.86px] w-[808.62px]" />
+      <img :src="top_lines8" class="absolute left-[130.25px] w-[809.62px]" />
+    </div>
     <!-- header -->
-    <header class="header relative z-[30] grid grid-cols-[auto_auto_auto] px-[82px] py-[43px] items-center">
-      <div class="logo flex items-center lg:gap-[15px] lg:ml-[37px] w-auto h-fit">
+    <header class="header relative z-[30] grid grid-cols-[auto_auto_auto] py-[43px] items-center">
+      <div class="logo flex items-center lg:gap-[15px] w-auto h-fit absolute left-[119px] top-[53.66px]">
         <img :src="logo" alt="Logo" class="lg:h-[37.69px] w-[62.42px]" />
         <span
           class=" w-[105px] font-extrabold font-picoblackal not-italic text-[30px] leading-[100%] tracking-normal text-[#0B7077]">
@@ -43,7 +53,7 @@ import id_back from "~/assets/images/id_card_back.png";
         </span>
       </div>
 
-      <nav class="flex h-fit justify-between ml-[136px] mr-[125px] w-[483px]">
+      <nav class="absolute flex h-fit lg:gap-[80px] w-auto self-center top-[62px] left-[437.42px] ">
         <NuxtLink to="/" class="h-fit text-[#FD661F] font-raleway font-bold text-[18px] leading-[100%] tracking-wide">Home
         </NuxtLink>
         <NuxtLink to="/careers"
@@ -56,11 +66,11 @@ import id_back from "~/assets/images/id_card_back.png";
         </NuxtLink>
       </nav>
 
-      <div class="flex justify-between w-[301.58px] h-fit">
-        <button type="button" class="btn-primary btn-outline">
+      <div class="flex justify-between w-[301.58px] h-fit absolute right-[82px] top-[43px]">
+        <button type="button" class="btn-primary btn-outline h-fit">
           LOG IN
         </button>
-        <button type="button" class="btn-primary btn-filled">
+        <button type="button" class="btn-primary btn-filled h-fit">
           SIGN UP
         </button>
       </div>
@@ -68,25 +78,24 @@ import id_back from "~/assets/images/id_card_back.png";
 
     <!-- background lines -->
     <!-- <img :src="lines" class="absolute z-[0] top-[-701.42px] left-[69.34px] rotate opacity-[60%]" /> -->
-    <img :src="line1" alt="line 1" class="absolute z-[0] top-[377.67px] left-[181.12px] ">
-    <img :src="line2" alt="line 2" class="absolute z-[0] top-[446.78px] left-[229.16px] backdrop-hue-rotate-[-2.66deg]">
-    <img :src="line3" alt="line 3" class="absolute z-[0] top-[303.28px] left-[536.16px] ">
+    <img :src="line1" alt="line 1" class="absolute z-[0] bottom-[349.33px] left-[181.12px] ">
+    <img :src="line2" alt="line 2" class="absolute z-[0] left-[299.16px] bottom-[270px] backdrop-hue-rotate-[-2.66deg]">
+    <img :src="line3" alt="line 3" class="absolute z-[0] bottom-[423.72px] left-[536.16px] ">
 
     <!-- student above lines -->
-    <img :src="student" alt="Student illustration" class="absolute h-[623.89px] top-[102.29px] left-[697px] z-[10]" />
+    <img :src="student" alt="Student illustration" class="absolute bottom-0 right-0 z-[10]" />
 
     <!-- hero section -->
-    <section class="relative z-[20] mt-[61px] px-[80px] flex flex-col">
       <span
-        class="bg-white mx-[25px] w-fit h-fit rounded-[10px] font-raleway font-[500] text-[18px] leading-none tracking-wide text-[#252641] py-[10px] px-[25px]">
+        class="absolute z-[20] left-[105px] bottom-[480px] bg-white w-fit h-fit rounded-[10px] font-raleway font-[500] text-[18px] leading-none tracking-wide text-[#252641] py-[10px] px-[25px]">
         Never stop learning
       </span>
       <h1
-        class="w-[688px] h-[225px] mx-[25px] my-[15px] font-raleway text-[64px] font-bold leading-[75px] tracking-normal text-[#0B7077]">
+        class="absolute z-[20] left-[105px] bottom-[240px] w-[688px] font-raleway text-[64px] font-bold leading-[75px] tracking-normal text-[#0B7077]">
         Grow up your skills by online courses with Onlearning
       </h1>
 
-      <div class="py-[13px] px-[25px] flex flex-row">
+      <div class="absolute z-[20] left-[112px] bottom-[153px] flex flex-row">
         <button
           class="bg-[#FD661F] mx-[7px] text-white px-[30px] py-[20px] rounded-[10px] h-fit w-fit font-raleway font-[500] text-[16px] leading-none tracking-[0.02] uppercase">
           EXPLORE PATH
@@ -125,11 +134,10 @@ import id_back from "~/assets/images/id_card_back.png";
           </div>
         </div>
       </div>
-    </section>
 
     <!-- floating card -->
     <div
-      class="absolute flex gap-[32px] items-center px-[28px] py-[15px] top-[442px] left-[720px] w-[300px] h-[100px] rounded-[20px] bg-white opacity-80 backdrop-blur-[20px] z-[20]">
+      class="absolute flex gap-[32px] items-center px-[28px] py-[15px] bottom-[184.11px] right-[420px] w-[300px] h-[100px] rounded-[20px] bg-white opacity-80 backdrop-blur-[20px] z-[20]">
       <div class="size-[50px] p-[11.25px] bg-[#23BDEE] rounded-[8px] text-center items-center">
         <img :src="calendar" alt="calendar" class="size-[27.5px]" />
       </div>
@@ -145,7 +153,7 @@ import id_back from "~/assets/images/id_card_back.png";
 
     <!-- chart floating -->
     <div
-      class="absolute top-[331px] left-[1250px] size-[69px] rounded-[14px] border bg-[#FD661F] shadow-[0px_8px_40px_0px_#D24D6542] border-[#FD661F] p-[12px] z-[20]">
+      class="absolute bottom-[327px] right-[121px] size-[69px] rounded-[14px] border bg-[#FD661F] shadow-[0px_8px_40px_0px_#D24D6542] border-[#FD661F] p-[12px] z-[20]">
       <img :src="chart" alt="chart" class="w-[47.3px] h-[44.85px] rounded-[8px]" />
     </div>
   </section>
