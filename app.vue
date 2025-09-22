@@ -78,62 +78,59 @@ import id_back from "~/assets/images/id_card_back.png";
 
     <!-- background lines -->
     <!-- <img :src="lines" class="absolute z-[0] top-[-701.42px] left-[69.34px] rotate opacity-[60%]" /> -->
-    <img :src="line1" alt="line 1" class="absolute z-[0] bottom-[349.33px] left-[181.12px] ">
-    <img :src="line2" alt="line 2" class="absolute z-[0] left-[299.16px] bottom-[270px] backdrop-hue-rotate-[-2.66deg]">
-    <img :src="line3" alt="line 3" class="absolute z-[0] bottom-[423.72px] left-[536.16px] ">
+    <img :src="line1" alt="line 1" class="absolute z-[0] bottom-[339.33px] left-[171.12px] ">
+    <img :src="line2" alt="line 2" class="absolute z-[0] left-[219.16px] bottom-[260px]">
+    <img :src="line3" alt="line 3" class="absolute z-[0] bottom-[413.72px] left-[526.16px] ">
 
     <!-- student above lines -->
     <img :src="student" alt="Student illustration" class="absolute bottom-0 right-0 z-[10]" />
 
     <!-- hero section -->
-      <span
-        class="absolute z-[20] left-[105px] bottom-[480px] bg-white w-fit h-fit rounded-[10px] font-raleway font-[500] text-[18px] leading-none tracking-wide text-[#252641] py-[10px] px-[25px]">
-        Never stop learning
-      </span>
-      <h1
-        class="absolute z-[20] left-[105px] bottom-[240px] w-[688px] font-raleway text-[64px] font-bold leading-[75px] tracking-normal text-[#0B7077]">
-        Grow up your skills by online courses with Onlearning
-      </h1>
+    <span
+      class="absolute z-[20] left-[105px] bottom-[480px] bg-white w-fit h-fit rounded-[10px] font-raleway font-[500] text-[18px] leading-none tracking-wide text-[#252641] py-[10px] px-[25px]">
+      Never stop learning
+    </span>
+    <h1
+      class="absolute z-[20] left-[105px] bottom-[240px] w-[688px] font-raleway text-[64px] font-bold leading-[75px] tracking-normal text-[#0B7077]">
+      Grow up your skills by online courses with Onlearning
+    </h1>
 
-      <div class="absolute z-[20] left-[112px] bottom-[153px] flex flex-row">
-        <button
-          class="bg-[#FD661F] mx-[7px] text-white px-[30px] py-[20px] rounded-[10px] h-fit w-fit font-raleway font-[500] text-[16px] leading-none tracking-[0.02] uppercase">
-          EXPLORE PATH
-        </button>
+    <div class="absolute z-[20] left-[112px] bottom-[153px] flex flex-row">
+      <button
+        class="bg-[#FD661F] mx-[7px] text-white px-[30px] py-[20px] rounded-[10px] h-fit w-fit font-raleway font-[500] text-[16px] leading-none tracking-[0.02] uppercase">
+        EXPLORE PATH
+      </button>
 
-        <div class="mx-[5px] flex flex-row h-fit w-fit gap-[8.7px]">
-          <div class="flex -space-x-[14.795px] h-fit">
-            <img :src="reviewer1" alt="Reviewer profile 1"
-              class="w-[52.21px] h-[52.21px] rounded-full border-[#0B7077]" />
-            <img :src="reviewer2" alt="Reviewer profile 2"
-              class="w-[52.21px] h-[52.21px] rounded-full border-[#0B7077]" />
-            <img :src="reviewer3" alt="Reviewer profile 3"
-              class="w-[52.21px] h-[52.21px] rounded-full border-[#0B7077]" />
-          </div>
-          <div class="h-fit">
-            <div class="h-fit flex flex-row gap-[1.74px] p-[1.74px]">
-              <div class="star">
-                <div class="star-fill"></div>
-              </div>
-              <div class="star">
-                <div class="star-fill"></div>
-              </div>
-              <div class="star">
-                <div class="star-fill"></div>
-              </div>
-              <div class="star">
-                <div class="star-fill"></div>
-              </div>
-              <div class="star">
-                <div class="star-fill half"></div>
-              </div>
+      <div class="mx-[5px] flex flex-row h-fit w-fit gap-[8.7px]">
+        <div class="flex -space-x-[14.795px] h-fit">
+          <img :src="reviewer1" alt="Reviewer profile 1" class="w-[52.21px] h-[52.21px] rounded-full border-[#0B7077]" />
+          <img :src="reviewer2" alt="Reviewer profile 2" class="w-[52.21px] h-[52.21px] rounded-full border-[#0B7077]" />
+          <img :src="reviewer3" alt="Reviewer profile 3" class="w-[52.21px] h-[52.21px] rounded-full border-[#0B7077]" />
+        </div>
+        <div class="h-fit">
+          <div class="h-fit flex flex-row gap-[1.74px] p-[1.74px]">
+            <div class="star">
+              <div class="star-fill"></div>
             </div>
-            <span class="font-raleway font-semibold text-[12.18px] leading-[165%] tracking-normal text-[#230F0F]">
-              (10k+ Reviews)
-            </span>
+            <div class="star">
+              <div class="star-fill"></div>
+            </div>
+            <div class="star">
+              <div class="star-fill"></div>
+            </div>
+            <div class="star">
+              <div class="star-fill"></div>
+            </div>
+            <div class="star">
+              <div class="star-fill half"></div>
+            </div>
           </div>
+          <span class="font-raleway font-semibold text-[12.18px] leading-[165%] tracking-normal text-[#230F0F]">
+            (10k+ Reviews)
+          </span>
         </div>
       </div>
+    </div>
 
     <!-- floating card -->
     <div
