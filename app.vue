@@ -22,6 +22,14 @@ import top_lines5 from "~/assets/icons/top_lines5.svg";
 import top_lines6 from "~/assets/icons/top_lines6.svg";
 import top_lines7 from "~/assets/icons/top_lines7.svg";
 import top_lines8 from "~/assets/icons/top_lines8.svg";
+import bottom_lines1 from "~/assets/icons/bottom_lines1.svg";
+import bottom_lines2 from "~/assets/icons/bottom_lines2.svg";
+import bottom_lines3 from "~/assets/icons/bottom_lines3.svg";
+import bottom_lines4 from "~/assets/icons/bottom_lines4.svg";
+import bottom_lines5 from "~/assets/icons/bottom_lines5.svg";
+import bottom_lines6 from "~/assets/icons/bottom_lines6.svg";
+import bottom_lines7 from "~/assets/icons/bottom_lines7.svg";
+import bottom_lines8 from "~/assets/icons/bottom_lines8.svg";
 import star_outline from "~/assets/icons/star_outline.svg";
 import pana from "~/assets/images/pana.png";
 import grid from "~/assets/icons/grid.svg";
@@ -33,15 +41,15 @@ import id_back from "~/assets/images/id_card_back.png";
 
 <template>
   <section class="relative bg-[#D2E6E4] h-screen rounded-b-[50px] overflow-hidden justify-between">
-    <div class="opacity-[0.6] z-[15] w-full">
-      <img :src="top_lines1" class="absolute left-[165.28px] w-[745.63px]" />
-      <img :src="top_lines2" class="absolute left-[123.15px] w-[839.28px]" />
-      <img :src="top_lines3" class="absolute left-[204.7px] w-[673.28px]" />
-      <img :src="top_lines4" class="absolute left-[133.49px] w-[781.03px]" />
-      <img :src="top_lines5" class="absolute left-[149.93px] w-[749.87px]" />
-      <img :src="top_lines6" class="absolute left-[140.8px] w-[767.09px]" />
-      <img :src="top_lines7" class="absolute left-[116.86px] w-[808.62px]" />
-      <img :src="top_lines8" class="absolute left-[130.25px] w-[809.62px]" />
+    <div class="relative opacity-[0.6] z-[15] w-full">
+      <img :src="top_lines1" class="absolute left-[165.28px]" />
+      <img :src="top_lines2" class="absolute left-[123.15px]" />
+      <img :src="top_lines3" class="absolute left-[204.7px]" />
+      <img :src="top_lines4" class="absolute left-[133.49px]" />
+      <img :src="top_lines5" class="absolute left-[149.93px]" />
+      <img :src="top_lines6" class="absolute left-[140.8px]" />
+      <img :src="top_lines7" class="absolute left-[116.86px]" />
+      <img :src="top_lines8" class="absolute left-[130.25px]" />
     </div>
     <!-- header -->
     <header class="header relative z-[30] grid grid-cols-[auto_auto_auto] py-[43px] items-center">
@@ -268,9 +276,9 @@ import id_back from "~/assets/images/id_card_back.png";
     </div>
   </section>
 
-  <footer class="footer h-fit w-screen overflow-hidden">
-    <div class="pt-[105px] pl-[144px] h-fit pb-[69.69px] pr-[477.72] flex w-full">
-      <div class="flex flex-col gap-[28px]">
+  <footer class="footer h-fit overflow-hidden">
+    <div class="main relative w-full h-[447.38px]">
+      <div class="flex flex-col gap-[28px] absolute left-[144px] top-[105px] bottom-[69.69px]">
         <div class="logo flex items-center lg:gap-[15px] w-full h-fit text-left">
           <img :src="logo" alt="Onlearn Logo" class="lg:h-[37.69px] w-[62.42px]" />
           <span
@@ -314,8 +322,7 @@ import id_back from "~/assets/images/id_card_back.png";
         </div>
       </div>
 
-
-      <div class="flex mt-[29px] ml-[133px] mb-[72.69px] gap-[56px]">
+      <div class="flex gap-[56px] absolute right-[614px] top-[134px]">
         <div class="flex flex-col gap-[29px] w-[155px] h-[171px]">
           <span
             class="w-[79px] h-[18px] font-raleway font-[700] text-[15px] leading-[100%] tracking-normal text-[#0A033C]">Categories</span>
@@ -351,10 +358,11 @@ import id_back from "~/assets/images/id_card_back.png";
         </div>
       </div>
 
-      <div class="flex flex-col mt-[47px] ml-[54px] mb-[41.32px] gap-[20px]">
+      <div class="flex flex-col gap-[20px] absolute right-[134.72px] top-[152px]">
         <span
-          class="w-full text-center h-[18px] font-raleway font-[400] text-[15px] text-[#0A033C] leading-[100%] tracking-normal">Stay
-          up to date with the latest courses</span>
+          class="w-full text-center h-[18px] font-raleway font-[400] text-[15px] text-[#0A033C] leading-[100%] tracking-normal">
+          Stay up to date with the latest courses
+        </span>
         <div
           class="flex h-[73.68px] w-fit rounded-[15px] bg-white shadow-[0px_10px_60px_0px_#262D7614] px-[11.14px] py-[9.84px]">
           <input type="email" name="Email" placeholder="Email" id="e_mail"
@@ -363,6 +371,16 @@ import id_back from "~/assets/images/id_card_back.png";
             class=" rounded-[20px] px-[50px] py-[13px] bg-[#0B7077] font-iranyekan font-[500] text-[16px] leading-[100%] tracking-normal text-white">Send</button>
         </div>
       </div>
+    </div>
+    <div class="relative opacity-[0.6] z-[15]">
+      <img :src="bottom_lines1" class="absolute left-[952.25px] bottom-0" />
+      <img :src="bottom_lines2" class="absolute left-[910.13px] bottom-0" />
+      <img :src="bottom_lines3" class="absolute left-[991.68px] bottom-0" />
+      <img :src="bottom_lines4" class="absolute left-[920.47px] bottom-0" />
+      <img :src="bottom_lines5" class="absolute left-[936.9px] bottom-0" />
+      <img :src="bottom_lines6" class="absolute left-[927.77px] bottom-0" />
+      <img :src="bottom_lines7" class="absolute left-[903.82px] bottom-0" />
+      <img :src="bottom_lines8" class="absolute left-[917.23px] bottom-0" />
     </div>
   </footer>
 </template>
@@ -378,13 +396,13 @@ import id_back from "~/assets/images/id_card_back.png";
   border: 0.2px solid red;
 } */
 
-html,
-body {
-  overflow-x: hidden;
-}
 
 .footer {
-  background: url("~/assets/images/footer_bgimg.png") no-repeat bottom/cover;
+  background: url("~/assets/images/footer_bgimg.png") no-repeat bottom/contain;
+}
+
+.footer .main * {
+  z-index: 30;
 }
 
 .star {
