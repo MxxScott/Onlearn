@@ -173,7 +173,7 @@ import strikethrough from "~/assets/icons/strikethrough.svg";
               <img :src="line1" alt="line 1" class="absolute z-[0] top-[115.67px] left-[76.12px] ">
               <img :src="line2" alt="line 2" class="absolute z-[0] top-[184.78px] left-[124.16px]">
               <img :src="line3" alt="line 3" class="absolute z-[0] top-[41.28px] left-[431.16px] ">
-            </div>            
+            </div>
           </div>
 
           <!-- Call to Action & Social Proof -->
@@ -496,32 +496,75 @@ import strikethrough from "~/assets/icons/strikethrough.svg";
     </div>
 
     <!-- Gift Cards Promotional Section -->
-    <div class="relative bg-[#DF1C25] rounded-2xl p-8 md:p-12 lg:p-16 max-w-screen-xl mx-auto overflow-hidden">
-      <div class="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-        <div class="text-white space-y-8">
-          <h1 class="font-inter font-bold text-4xl lg:text-5xl tracking-tighter">Why You should buy gift cards?</h1>
-          <ul class="space-y-4">
+    <div class="max-w-screen-xl mx-auto">
+      <!-- DESKTOP AND TABLET LAYOUT  -->
+      <div class="hidden lg:block relative w-full h-[542px] px-[33px]">
+        <!-- The image, absolutely positioned to overlap the red box -->
+        <img :src="giftcards" alt="Giftcards Visual" class="hidden md:block lg:block absolute left-[554px] top-0 z-10">
+        <!-- The red box, positioned below the image -->
+        <div
+          class="relative top-[141px] px-[59px] py-[29px] flex flex-col w-full h-[401px] bg-[#DF1C25] z-0 rounded-[16px]">
+
+          <!-- Text content is constrained to the left side to allow for image overlap -->
+          <div class="max-w-lg">
+            <h1 class="font-[700] mt-[22.1px] font-inter text-[48px] leading-[62.4px] tracking-[-0.06em] text-white ">
+              Why You should buy<br>gift cards ?
+            </h1>
+            <ul class="mt-[10.7px] gap-[9px] flex flex-col">
+              <li class="flex gap-[5px] items-start">
+                <img :src="star_outline" class="size-[20px] flex-shrink-0 mt-0.5" />
+                <span class="font-raleway text-white font-[500] text-[14px] leading-[1.2] tracking-wide">Teachers don’t
+                  get
+                  lost in the grid view and have a dedicated Podium space.</span>
+              </li>
+              <li class="flex gap-[5px] items-start">
+                <img :src="star_outline" class="size-[20px] flex-shrink-0 mt-0.5" />
+                <span class="font-raleway text-white font-[500] text-[14px] leading-[1.2] tracking-wide">Teachers don’t
+                  get
+                  lost in the grid view and have a dedicated Podium space.</span>
+              </li>
+              <li class="flex gap-[5px] items-start">
+                <img :src="star_outline" class="size-[20px] flex-shrink-0 mt-0.5" />
+                <span class="font-raleway text-white font-[500] text-[14px] leading-[1.2] tracking-wide">Teachers don’t
+                  get
+                  lost in the grid view and have a dedicated Podium space.</span>
+              </li>
+            </ul>
+            <button type="button"
+              class="hover:text-white hover:bg-[#0B7077] transition-all ease-in-out duration-500 mt-[30px] px-[30px] py-[15px] rounded-[10px] w-fit h-fit bg-white font-raleway font-[500] text-[16px] leading-none tracking-wide text-[#0B7077]">BUY
+              NOW</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- MOBILE -->
+      <div class="block  md:hidden lg:hidden bg-[#DF1C25] rounded-2xl p-8 overflow-hidden">
+        <div class="flex justify-center mb-8">
+          <img :src="giftcards" alt="Giftcards Visual" class="relative w-full left-[-13%] max-w-xs sm:max-w-sm">
+        </div>
+        <div class="text-white space-y-6 text-center">
+          <h1 class="font-inter font-bold text-3xl sm:text-4xl tracking-tighter">
+            Why You should buy gift cards?
+          </h1>
+          <ul class="space-y-4 max-w-md mx-auto text-left">
             <li class="flex gap-3 items-start">
-              <img :src="star_outline" class="size-5 mt-1 flex-shrink-0" />
-              <span class="font-raleway text-base">Teachers don’t get lost in the grid view and have a dedicated Podium
+              <img :src="star_outline" class="size-5 mt-0.5 flex-shrink-0" />
+              <span class="font-raleway text-sm">Teachers don’t get lost in the grid view and have a dedicated Podium
                 space.</span>
             </li>
             <li class="flex gap-3 items-start">
-              <img :src="star_outline" class="size-5 mt-1 flex-shrink-0" />
-              <span class="font-raleway text-base">TA’s and presenters can be moved to the front of the class.</span>
+              <img :src="star_outline" class="size-5 mt-0.5 flex-shrink-0" />
+              <span class="font-raleway text-sm">TA’s and presenters can be moved to the front of the class.</span>
             </li>
             <li class="flex gap-3 items-start">
-              <img :src="star_outline" class="size-5 mt-1 flex-shrink-0" />
-              <span class="font-raleway text-base">Teachers can easily see all students and class data at one time.</span>
+              <img :src="star_outline" class="size-5 mt-0.5 flex-shrink-0" />
+              <span class="font-raleway text-sm">Teachers can easily see all students and class data at one time.</span>
             </li>
           </ul>
           <button type="button"
-            class="bg-white text-[#0B7077] hover:bg-gray-200 transition-colors px-8 py-4 rounded-lg font-raleway font-semibold text-base tracking-wide">
+            class="bg-white text-[#0B7077] hover:bg-gray-200 transition-colors mt-4 px-8 py-4 rounded-lg font-raleway font-semibold text-base tracking-wide inline-block">
             BUY NOW
           </button>
-        </div>
-        <div class="hidden lg:flex justify-center">
-          <img :src="giftcards" alt="Giftcards Visual" class="w-full max-w-lg">
         </div>
       </div>
     </div>
@@ -586,7 +629,8 @@ import strikethrough from "~/assets/icons/strikethrough.svg";
 
         <!-- Newsletter Subscription Form -->
         <div class="space-y-4 lg:relative lg:right-[134.72px] lg:items-center lg:justify-center lg:w-[425.28px] ">
-          <h3 class="font-raleway font-medium text-base text-center text-[#0A033C] lg:relative lg:w-full">Stay up to date with the
+          <h3 class="font-raleway font-medium text-base text-center text-[#0A033C] lg:relative lg:w-full">Stay up to date
+            with the
             latest courses</h3>
           <div class="flex flex-col sm:flex-row h-fit w-full rounded-lg bg-white shadow-lg p-2 gap-2">
             <input type="email" name="Email" placeholder="Your Email"
@@ -603,16 +647,15 @@ import strikethrough from "~/assets/icons/strikethrough.svg";
       </div>
     </div>
 
-    <!-- Decorative lines for the footer background (hidden on smaller screens) -->
-    <div class="absolute bottom-0 right-0 opacity-60 z-10 hidden lg:block">
-      <img :src="bottom_lines1" class="absolute right-[215px] bottom-0" />
-      <img :src="bottom_lines2" class="absolute right-[257px] bottom-0" />
-      <img :src="bottom_lines3" class="absolute right-[176px] bottom-0" />
-      <img :src="bottom_lines4" class="absolute right-[247px] bottom-0" />
-      <img :src="bottom_lines5" class="absolute right-[231px] bottom-0" />
-      <img :src="bottom_lines6" class="absolute right-[240px] bottom-0" />
-      <img :src="bottom_lines7" class="absolute right-[264px] bottom-0" />
-      <img :src="bottom_lines8" class="absolute right-[250px] bottom-0" />
-    </div>
-  </footer>
-</template>
+    <!-- Decorative lines for the footer background -->
+    <div class="relative opacity-[0.6] z-[15]">
+      <img :src="bottom_lines1" class="absolute left-[952.25px] bottom-0" />
+      <img :src="bottom_lines2" class="absolute left-[910.13px] bottom-0" />
+      <img :src="bottom_lines3" class="absolute left-[991.68px] bottom-0" />
+      <img :src="bottom_lines4" class="absolute left-[920.47px] bottom-0" />
+      <img :src="bottom_lines5" class="absolute left-[936.9px] bottom-0" />
+      <img :src="bottom_lines6" class="absolute left-[927.77px] bottom-0" />
+      <img :src="bottom_lines7" class="absolute left-[903.82px] bottom-0" />
+      <img :src="bottom_lines8" class="absolute left-[917.23px] bottom-0" />
+  </div>
+</footer></template>
