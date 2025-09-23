@@ -116,6 +116,14 @@
     font-style: normal;
 }
 
+/* ==================== Kanit ==================== */
+@font-face {
+    font-family: "Kanit";
+    src: url("../fonts/kanit-latin-400-normal.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* ==================== Raleway 100 → 900 ==================== */
 @font-face {
     font-family: "Raleway";

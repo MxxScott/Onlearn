@@ -10,6 +10,7 @@ export default {
         mavenpro: ["Maven Pro", "sans-serif"],
         iranyekan: ["IRANYekan", "sans-serif"],
         picoblackal: ["Picoblackal", "sans-serif"],
+        kanit: ["Kanit", "sans-serif"],
       },
     },
   },

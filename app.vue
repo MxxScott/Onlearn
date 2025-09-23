@@ -25,6 +25,16 @@ import giftcards from "~/assets/images/giftcards.png";
 import pana from "~/assets/images/pana.png";
 import id_front from "~/assets/images/id_card_front.png";
 import id_back from "~/assets/images/id_card_back.png";
+import pmbc from "~/assets/images/pmbc.png"
+import bdspc from "~/assets/images/bdspc.png"
+import tsowb from "~/assets/images/tsowb.png"
+import pfes from "~/assets/images/pfes.png"
+import blink from "~/assets/images/blink.png"
+import ander from "~/assets/images/ander.png"
+import bird from "~/assets/images/bird.png"
+import bartender from "~/assets/images/bartender.png"
+import bill from "~/assets/images/bill.png"
+
 
 // SVG Icons used for decorative purposes and UI elements
 import line1 from "~/assets/icons/line1.svg";
@@ -56,6 +66,7 @@ import slides from "~/assets/icons/slides.svg";
 import teachers from "~/assets/icons/teachers.svg";
 import vector1 from "~/assets/icons/popular_vector.svg";
 import vector2 from "~/assets/icons/course_vector.svg";
+import strikethrough from "~/assets/icons/strikethrough.svg";
 </script>
 
 <template>
@@ -140,9 +151,9 @@ import vector2 from "~/assets/icons/course_vector.svg";
       <!-- Social Proof: Reviewer avatars and star rating -->
       <div class="mx-[5px] flex flex-row h-fit w-fit gap-[8.7px]">
         <div class="flex -space-x-[14.795px] h-fit">
-          <img :src="reviewer1" alt="Reviewer profile 1" class="w-[52.21px] h-[52.21px] rounded-full border-[#0B7077]" />
-          <img :src="reviewer2" alt="Reviewer profile 2" class="w-[52.21px] h-[52.21px] rounded-full border-[#0B7077]" />
-          <img :src="reviewer3" alt="Reviewer profile 3" class="w-[52.21px] h-[52.21px] rounded-full border-[#0B7077]" />
+          <img :src="reviewer1" alt="Reviewer profile 1" class="size-[52.21px]" />
+          <img :src="reviewer2" alt="Reviewer profile 2" class="size-[52.21px]" />
+          <img :src="reviewer3" alt="Reviewer profile 3" class="size-[52.21px]" />
         </div>
         <div class="h-fit">
           <!-- Star Rating Display (uses custom CSS for fill) -->
@@ -199,10 +210,224 @@ import vector2 from "~/assets/icons/course_vector.svg";
   <!-- Contains all sections below the hero. -->
   <!-- ========================================================================= -->
   <section class="pt-[185px] pb-[245px] px-[80px] gap-[110px] flex flex-col ">
-    <!-- This div appears to be an empty placeholder. -->
-    <div class="mx[10.5px] flex gap-[39px]">
 
+    <div class="flex flex-col w-full justify-center gap-[61px] px-[10.5px]">
+      <!-- Section Header -->
+      <div class="flex flex-col gap-[39.68px] text-center items-center relative">
+        <h1 class="font-inter font-[700] text-[48px] leading-[62.4px] text-[#FD661F] tracking-[-0.06em]">Popular Courses
+        </h1>
+        <div class="grid grid-cols-6 gap-[24px]">
+          <button type="button"
+            class="rounded-[5px] px-[20px] py-[10px] bg-[#0B7077] text-[white] font-raleway font-[500] text-[12px] leading-none ">All
+            Programme</button>
+          <button type="button"
+            class="rounded-[5px] px-[20px] py-[10px] text-[#0B7077] bg-[white] font-raleway font-[500] text-[12px] leading-none border border-[#C4C4C4] hover:bg-[#0B7077] hover:text-[white] transition duration-500">Ui/Ux
+            Design</button>
+          <button type="button"
+            class="rounded-[5px] px-[20px] py-[10px] text-[#0B7077] bg-[white] font-raleway font-[500] text-[12px] leading-none border border-[#C4C4C4] hover:bg-[#0B7077] hover:text-[white] transition duration-500">Program
+            Design</button>
+          <button type="button"
+            class="rounded-[5px] px-[20px] py-[10px] text-[#0B7077] bg-[white] font-raleway font-[500] text-[12px] leading-none border border-[#C4C4C4] hover:bg-[#0B7077] hover:text-[white] transition duration-500">Program
+            Design</button>
+          <button type="button"
+            class="rounded-[5px] px-[20px] py-[10px] text-[#0B7077] bg-[white] font-raleway font-[500] text-[12px] leading-none border border-[#C4C4C4] hover:bg-[#0B7077] hover:text-[white] transition duration-500">Program
+            Design</button>
+          <button type="button"
+            class="rounded-[5px] px-[20px] py-[10px] text-[#0B7077] bg-[white] font-raleway font-[500] text-[12px] leading-none border border-[#C4C4C4] hover:bg-[#0B7077] hover:text-[white] transition duration-500">Program
+            Design</button>
+        </div>
+        <img :src="vector1" class="absolute top-[64.05px] left-[653px]" />
+      </div>
+
+      <div class="grid grid-cols-4 gap-[25px]">
+
+        <div
+          class="bg-white flex flex-col w-full h-[428px] transition-shadow duration-500 rounded-[14px] relative shadow-[0px_10px_60px_0px_#262D7614] overflow-hidden">
+          <div class="flex items-center justify-between left-[17px] right-[17.69px] absolute top-[372px]">
+            <div class="flex relative">
+              <span class="text-[#FD661F] w-[52.82px] font-inter font-[700] text-[16.68px] leading-[1.5]">$ 123</span>
+              <span class="font-inter font-[400] text-[14.83px] leading-[1.5] text-[#230F0F]">
+                <img :src="strikethrough" class="relative opacity-50 z-10 top-[12.05px] object-cover">$ 500
+              </span>
+            </div>
+            <button class="
+              rounded-[5px] px-[20px] py-[10px]
+            hover:bg-white hover:text-[#0B7077]
+              font-raleway font-[500] text-[12px] leading-none
+              transition duration-500
+            bg-[#0B7077] text-white hover:border hover:border-[#0B7077]
+              ">
+              Enroll Now
+            </button>
+          </div>
+          <div
+            class="bg-[#FAFAFA] absolute items-center top-[165px] rounded-[40px] left-1/2 -translate-x-1/2 justify-between w-[233.75px] px-[10px] py-[5px] flex gap-[5px]">
+            <div class="flex -space-x-[8.27px] h-fit object-contain">
+              <img :src="blink" class="size-[29.19] z-50  object-contain" />
+              <img :src="ander" class="size-[29.19] z-40  object-contain" />
+              <img :src="bird" class="size-[29.19] z-30 object-contain" />
+              <img :src="bartender" class="size-[29.19] z-20 object-contain" />
+              <img :src="bill" class="size-[29.19] object-contain" />
+            </div>
+            <span
+              class="font-kanit font-[400] text-[16px] leading-[28px] tracking-[0.02em] text-[#263238] rotate-[0.17deg]">+</span>
+            <div class="justify-between flex">
+              <span class="font-raleway font-[500] text-[16px] leading-[18px] text-[#263238] items-center">40</span>
+              <span class="font-raleway font-[500] text-[14px] leading-[18px] text-[#263238] items-center">students</span>
+            </div>
+          </div>
+          <img :src="pmbc" class="w-full h-[179px] size-[50px] object-cover" />
+          <div class="w-[264.27px] mt-[47px] ml-[17px] mb-[31px] flex flex-col">
+            <span class="font-raleway font-[400] text-[10px] leading-[1.5] text-[#777795]">1 - 28 July 2022</span>
+            <span class="font-raleway font-[800] text-[15.52px] leading-[1.5] tracking-[0.39px] text-[#0B7077]">Product
+              Management Basic - Course</span>
+            <span class="w-[251.69px] font-raleway font-[400] text-[10px] leading-[1.6] text-[#4D4D4D]">Product Management
+              Masterclass, you will learn with Sarah Johnson - Head of Product Customer Platform Gojek Indonesia.</span>
+          </div>
+        </div>
+
+        <div
+          class="bg-white flex flex-col w-full h-[428px] transition-shadow duration-500 rounded-[14px] relative shadow-[0px_10px_60px_0px_#262D7614] overflow-hidden">
+          <div class="flex items-center justify-between left-[17px] right-[17.69px] absolute top-[372px]">
+            <div class="flex relative">
+              <span class="text-[#FD661F] w-[52.82px] font-inter font-[700] text-[16.68px] leading-[1.5]">$ 123</span>
+              <span class="font-inter font-[400] text-[14.83px] leading-[1.5] text-[#230F0F]">
+                <img :src="strikethrough" class="relative opacity-50 z-10 top-[12.05px] object-cover">$ 500
+              </span>
+            </div>
+            <button class="
+              rounded-[5px] px-[20px] py-[10px]
+            hover:bg-white hover:text-[#0B7077]
+              font-raleway font-[500] text-[12px] leading-none
+              transition duration-500
+            bg-[#0B7077] text-white hover:border hover:border-[#0B7077]
+              ">
+              Enroll Now
+            </button>
+          </div>
+          <div
+            class="bg-[#FAFAFA] absolute items-center top-[165px] rounded-[40px] left-1/2 -translate-x-1/2 justify-between w-[233.75px] px-[10px] py-[5px] flex gap-[5px]">
+            <div class="flex -space-x-[8.27px] h-fit object-contain">
+              <img :src="blink" class="size-[29.19] z-50  object-contain" />
+              <img :src="ander" class="size-[29.19] z-40  object-contain" />
+              <img :src="bird" class="size-[29.19] z-30 object-contain" />
+              <img :src="bartender" class="size-[29.19] z-20 object-contain" />
+              <img :src="bill" class="size-[29.19] object-contain" />
+            </div>
+            <span
+              class="font-kanit font-[400] text-[16px] leading-[28px] tracking-[0.02em] text-[#263238] rotate-[0.17deg]">+</span>
+            <div class="justify-between flex">
+              <span class="font-raleway font-[500] text-[16px] leading-[18px] text-[#263238] items-center">11</span>
+              <span class="font-raleway font-[500] text-[14px] leading-[18px] text-[#263238] items-center">students</span>
+            </div>
+          </div>
+          <img :src="bdspc" class="w-full h-[179px] size-[50px] object-cover" />
+          <div class="w-[264.27px] mt-[47px] ml-[17px] mb-[31px] flex flex-col">
+            <span class="font-raleway font-[400] text-[10px] leading-[1.5] text-[#777795]">1 - 28 July 2022</span>
+            <span class="font-raleway font-[800] text-[15.52px] leading-[1.5] tracking-[0.39px] text-[#0B7077]">BM Data
+              Science Professional Certificate</span>
+            <span class="w-[251.69px] font-raleway font-[400] text-[10px] leading-[1.6] text-[#4D4D4D]">Product Management
+              Masterclass, you will learn with Sarah Johnson - Head of Product Customer Platform Gojek Indonesia.</span>
+          </div>
+
+        </div>
+
+        <div
+          class="bg-white flex flex-col w-full h-[428px] transition-shadow duration-500 rounded-[14px] relative shadow-[0px_10px_60px_0px_#262D7614] overflow-hidden">
+          <div class="flex items-center justify-between left-[17px] right-[17.69px] absolute top-[372px]">
+            <div class="flex relative">
+              <span class="text-[#FD661F] w-[52.82px] font-inter font-[700] text-[16.68px] leading-[1.5]">$ 123</span>
+              <span class="font-inter font-[400] text-[14.83px] leading-[1.5] text-[#230F0F]">
+                <img :src="strikethrough" class="relative opacity-50 z-10 top-[12.05px] object-cover">$ 500
+              </span>
+            </div>
+            <button class="
+              rounded-[5px] px-[20px] py-[10px]
+            hover:bg-white hover:text-[#0B7077]
+              font-raleway font-[500] text-[12px] leading-none
+              transition duration-500
+            bg-[#0B7077] text-white hover:border hover:border-[#0B7077]
+              ">
+              Enroll Now
+            </button>
+          </div>
+          <div
+            class="bg-[#FAFAFA] absolute items-center top-[165px] rounded-[40px] left-1/2 -translate-x-1/2 justify-between w-[233.75px] px-[10px] py-[5px] flex gap-[5px]">
+            <div class="flex -space-x-[8.27px] h-fit object-contain">
+              <img :src="blink" class="size-[29.19] z-50  object-contain" />
+              <img :src="ander" class="size-[29.19] z-40  object-contain" />
+              <img :src="bird" class="size-[29.19] z-30 object-contain" />
+              <img :src="bartender" class="size-[29.19] z-20 object-contain" />
+              <img :src="bill" class="size-[29.19] object-contain" />
+            </div>
+            <span
+              class="font-kanit font-[400] text-[16px] leading-[28px] tracking-[0.02em] text-[#263238] rotate-[0.17deg]">+</span>
+            <div class="justify-between flex">
+              <span class="font-raleway font-[500] text-[16px] leading-[18px] text-[#263238] items-center">234</span>
+              <span class="font-raleway font-[500] text-[14px] leading-[18px] text-[#263238] items-center">students</span>
+            </div>
+          </div>
+          <img :src="tsowb" class="w-full h-[179px] size-[50px] object-cover" />
+          <div class="w-[264.27px] mt-[47px] ml-[17px] mb-[31px] flex flex-col">
+            <span class="font-raleway font-[400] text-[10px] leading-[1.5] text-[#777795]">1 - 28 July 2022</span>
+            <span class="font-raleway font-[800] text-[15.52px] leading-[1.5] tracking-[0.39px] text-[#0B7077]">The
+              Science of Well-Being</span>
+            <span class="w-[251.69px] font-raleway font-[400] text-[10px] leading-[1.6] text-[#4D4D4D]">Product Management
+              Masterclass, you will learn with Sarah Johnson - Head of Product Customer Platform Gojek Indonesia.</span>
+          </div>
+        </div>
+
+        <div
+          class="bg-white flex flex-col w-full h-[428px] transition-shadow duration-500 rounded-[14px] relative shadow-[0px_10px_60px_0px_#262D7614] overflow-hidden">
+          <div class="flex items-center mb-[22px] justify-between left-[17px] right-[17.69px] absolute top-[372px]">
+            <div class="flex relative">
+              <span class="text-[#FD661F] w-[52.82px] font-inter font-[700] text-[16.68px] leading-[1.5]">$ 123</span>
+              <span class="font-inter font-[400] text-[14.83px] leading-[1.5] text-[#230F0F]">
+                <img :src="strikethrough" class="relative opacity-50 z-10 top-[12.05px] object-cover">$ 500
+              </span>
+            </div>
+            <button class="
+              rounded-[5px] px-[20px] py-[10px]
+            hover:bg-white hover:text-[#0B7077]
+              font-raleway font-[500] text-[12px] leading-none
+              transition duration-500
+            bg-[#0B7077] text-white hover:border hover:border-[#0B7077]
+              ">
+              Enroll Now
+            </button>
+          </div>
+          <div
+            class="bg-[#FAFAFA] absolute items-center top-[165px] rounded-[40px] left-1/2 -translate-x-1/2 justify-between w-[233.75px] px-[10px] py-[5px] flex gap-[5px]">
+            <div class="flex -space-x-[8.27px] h-fit object-contain">
+              <img :src="blink" class="size-[29.19] z-50  object-contain" />
+              <img :src="ander" class="size-[29.19] z-40  object-contain" />
+              <img :src="bird" class="size-[29.19] z-30 object-contain" />
+              <img :src="bartender" class="size-[29.19] z-20 object-contain" />
+              <img :src="bill" class="size-[29.19] object-contain" />
+            </div>
+            <span
+              class="font-kanit font-[400] text-[16px] leading-[28px] tracking-[0.02em] text-[#263238] rotate-[0.17deg]">+</span>
+            <div class="justify-between flex">
+              <span class="font-raleway font-[500] text-[16px] leading-[18px] text-[#263238] items-center">342</span>
+              <span class="font-raleway font-[500] text-[14px] leading-[18px] text-[#263238] items-center">students</span>
+            </div>
+          </div>
+          <img :src="pfes" class="w-full h-[179px] size-[50px] object-cover" />
+          <div class="w-[264.27px] mt-[47px] ml-[17px] flex flex-col">
+            <span class="font-raleway font-[400] text-[10px] leading-[1.5] text-[#777795]">1 - 28 July 2022</span>
+            <span class="font-raleway font-[800] text-[15.52px] leading-[1.5] tracking-[0.39px] text-[#0B7077]">Python for
+              Everybody Specialization</span>
+            <span class="w-[251.69px] font-raleway font-[400] text-[10px] leading-[1.6] text-[#4D4D4D]">Product Management
+              Masterclass, you will learn with Sarah Johnson - Head of Product Customer Platform Gojek Indonesia.</span>
+          </div>
+
+        </div>
+
+
+      </div>
     </div>
+
+
 
     <!-- Course Category Section -->
     <div class="w-fit flex flex-col gap-[83px] justify-center items-center">
@@ -239,7 +464,7 @@ import vector2 from "~/assets/icons/course_vector.svg";
             bg-white text-[#0B7077]
             font-raleway font-[500] text-[15px] leading-none text-center
             shadow-[0px_10px_60px_0px_#262D7614]
-            transition-all ease-in-out duration-300
+            transition-all ease-in-out duration-500
             group-hover:bg-[#FD661F] group-hover:text-white group-hover:px-[40px]
             group-hover:hover:bg-white group-hover:hover:text-[#0B7077] group-hover:hover:border group-hover:hover:border-[#0B7077]">
               <span class="hidden group-hover:block">Explore courses</span>
@@ -265,7 +490,7 @@ import vector2 from "~/assets/icons/course_vector.svg";
             bg-white text-[#0B7077]
             font-raleway font-[500] text-[15px] leading-none text-center
             shadow-[0px_10px_60px_0px_#262D7614]
-            transition-all ease-in-out duration-300
+            transition-all ease-in-out duration-500
             group-hover:bg-[#FD661F] group-hover:text-white group-hover:px-[40px]
             group-hover:hover:bg-white group-hover:hover:text-[#0B7077] group-hover:hover:border group-hover:hover:border-[#0B7077]">
               <span class="hidden group-hover:block">Explore courses</span>
@@ -291,7 +516,7 @@ import vector2 from "~/assets/icons/course_vector.svg";
             bg-white text-[#0B7077]
             font-raleway font-[500] text-[15px] leading-none text-center
             shadow-[0px_10px_60px_0px_#262D7614]
-            transition-all ease-in-out duration-300
+            transition-all ease-in-out duration-500
             group-hover:bg-[#FD661F] group-hover:text-white group-hover:px-[40px]
             group-hover:hover:bg-white group-hover:hover:text-[#0B7077] group-hover:hover:border group-hover:hover:border-[#0B7077]">
               <span class="hidden group-hover:block">Explore courses</span>
@@ -317,7 +542,7 @@ import vector2 from "~/assets/icons/course_vector.svg";
             bg-white text-[#0B7077]
             font-raleway font-[500] text-[15px] leading-none text-center
             shadow-[0px_10px_60px_0px_#262D7614]
-            transition-all ease-in-out duration-300
+            transition-all ease-in-out duration-500
             group-hover:bg-[#FD661F] group-hover:text-white group-hover:px-[40px]
             group-hover:hover:bg-white group-hover:hover:text-[#0B7077] group-hover:hover:border group-hover:hover:border-[#0B7077]">
               <span class="hidden group-hover:block">Explore courses</span>
