@@ -1,10 +1,15 @@
 <script setup>
+import { ref } from 'vue';
+
 /**
- * @file This Vue component renders the complete landing page for the "Onlearn" online learning platform.
- * @description It includes a hero section, course categories, feature highlights, a promotional section for gift cards, and a comprehensive footer.
+ * @file This Vue component renders a fully responsive landing page for the "Onlearn" online learning platform.
+ * @description It includes a hero section, course categories, feature highlights, a promotional section for gift cards, and a comprehensive footer, all optimized for various screen sizes.
  * @author [Your Name/Team Name]
- * @version 1.0.0
+ * @version 2.1.0
  */
+
+// State for controlling the mobile menu's visibility.
+const isMenuOpen = ref(false);
 
 // Import all necessary assets for the component.
 // Grouping imports by type (images, icons) can improve readability.
@@ -75,9 +80,9 @@ import strikethrough from "~/assets/icons/strikethrough.svg";
   <!-- HERO SECTION -->
   <!-- The main landing view with navigation, headline, and call-to-action. -->
   <!-- ========================================================================= -->
-  <section class="relative bg-[#D2E6E4] h-screen rounded-b-[50px] overflow-hidden justify-between">
-    <!-- Decorative background lines for visual flair -->
-    <div class="relative opacity-[0.6] z-[15] w-full">
+  <section class="relative bg-[#D2E6E4] min-h-screen rounded-b-[50px] overflow-hidden flex flex-col">
+    <!-- Decorative background lines for visual flair (hidden on smaller screens) -->
+    <div class="absolute inset-0 opacity-[0.6] z-0 hidden lg:block">
       <img :src="top_lines1" class="absolute left-[165.28px]" />
       <img :src="top_lines2" class="absolute left-[123.15px]" />
       <img :src="top_lines3" class="absolute left-[204.7px]" />
@@ -86,593 +91,406 @@ import strikethrough from "~/assets/icons/strikethrough.svg";
       <img :src="top_lines6" class="absolute left-[140.8px]" />
       <img :src="top_lines7" class="absolute left-[116.86px]" />
       <img :src="top_lines8" class="absolute left-[130.25px]" />
+      <img :src="line1" alt="line 1" class="absolute z-[0] bottom-[339.33px] left-[171.12px] ">
+      <img :src="line2" alt="line 2" class="absolute z-[0] left-[219.16px] bottom-[260px]">
+      <img :src="line3" alt="line 3" class="absolute z-[0] bottom-[413.72px] left-[526.16px] ">
     </div>
 
     <!-- Header: Contains the logo, navigation links, and authentication buttons. -->
-    <header class="header relative z-[30] grid grid-cols-[auto_auto_auto] py-[43px] items-center">
-      <!-- Logo -->
-      <div class="logo flex items-center lg:gap-[15px] w-auto h-fit absolute left-[119px] top-[53.66px]">
-        <img :src="logo" alt="Logo" class="lg:h-[37.69px] w-[62.42px]" />
-        <span class=" w-[105px] font-extrabold font-picoblackal not-italic text-[30px] leading-[100%]  text-[#0B7077]">
-          Onlearn
-        </span>
+    <header class="relative z-30 w-full px-4 sm:px-8 lg:px-20 py-8">
+      <div class="flex justify-between items-center max-w-screen-xl mx-auto">
+        <!-- Logo -->
+        <div class="logo flex items-center gap-2 lg:gap-4 flex-shrink-0">
+          <img :src="logo" alt="Logo" class="h-8 lg:h-10 w-auto" />
+          <span class="font-extrabold font-picoblackal text-2xl lg:text-3xl text-[#0B7077]">
+            Onlearn
+          </span>
+        </div>
+
+        <!-- Desktop Navigation & Auth -->
+        <div class="hidden lg:flex items-center gap-10">
+          <nav class="flex h-fit gap-10 xl:gap-20">
+            <NuxtLink to="/" class="h-fit text-[#FD661F] font-raleway font-bold text-lg leading-none tracking-wide">Home
+            </NuxtLink>
+            <NuxtLink to="/careers" class="h-fit text-[#252641] font-raleway font-medium text-lg leading-none tracking-wide">Careers
+            </NuxtLink>
+            <NuxtLink to="/blog" class="h-fit text-[#252641] font-raleway font-medium text-lg leading-none tracking-wide">Blog
+            </NuxtLink>
+            <NuxtLink to="/about" class="h-fit text-[#252641] font-raleway font-medium text-lg leading-none tracking-wide">About Us
+            </NuxtLink>
+          </nav>
+          <div class="flex items-center gap-4">
+            <button type="button" class="btn-primary btn-outline">
+              LOG IN
+            </button>
+            <button type="button" class="btn-primary btn-filled">
+              SIGN UP
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="lg:hidden">
+          <button @click="isMenuOpen = !isMenuOpen" class="text-[#0B7077] focus:outline-none">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+          </button>
+        </div>
       </div>
 
-      <!-- Main Navigation -->
-      <nav class="absolute flex h-fit lg:gap-[80px] w-auto self-center top-[62px] left-[437.42px] ">
-        <NuxtLink to="/" class="h-fit text-[#FD661F] font-raleway font-bold text-[18px] leading-[100%] tracking-wide">Home
-        </NuxtLink>
-        <NuxtLink to="/careers"
-          class="h-fit text-[#252641] font-raleway font-medium text-[18px] leading-[100%] tracking-wide">Careers
-        </NuxtLink>
-        <NuxtLink to="/blog"
-          class="h-fit text-[#252641] font-raleway font-medium text-[18px] leading-[100%] tracking-wide">Blog</NuxtLink>
-        <NuxtLink to="/about"
-          class="h-fit text-[#252641] font-raleway font-medium text-[18px] leading-[100%] tracking-wide">About Us
-        </NuxtLink>
-      </nav>
-
-      <!-- User Authentication Buttons -->
-      <div class="flex justify-between w-[301.58px] h-fit absolute right-[82px] top-[43px]">
-        <button type="button" class="btn-primary btn-outline h-fit">
-          LOG IN
-        </button>
-        <button type="button" class="btn-primary btn-filled h-fit">
-          SIGN UP
-        </button>
+      <!-- Mobile Menu -->
+      <div v-if="isMenuOpen" class="lg:hidden mt-4 bg-white/80 backdrop-blur-md rounded-lg p-6 space-y-4">
+        <nav class="flex flex-col items-center gap-4">
+          <NuxtLink to="/" class="text-[#FD661F] font-bold text-lg">Home</NuxtLink>
+          <NuxtLink to="/careers" class="text-[#252641] font-medium text-lg">Careers</NuxtLink>
+          <NuxtLink to="/blog" class="text-[#252641] font-medium text-lg">Blog</NuxtLink>
+          <NuxtLink to="/about" class="text-[#252641] font-medium text-lg">About Us</NuxtLink>
+        </nav>
+        <div class="flex flex-col items-center gap-4 pt-4 border-t">
+          <button type="button" class="btn-primary btn-outline w-full">LOG IN</button>
+          <button type="button" class="btn-primary btn-filled w-full">SIGN UP</button>
+        </div>
       </div>
     </header>
 
-    <!-- Additional decorative background lines -->
-    <img :src="line1" alt="line 1" class="absolute z-[0] bottom-[339.33px] left-[171.12px] ">
-    <img :src="line2" alt="line 2" class="absolute z-[0] left-[219.16px] bottom-[260px]">
-    <img :src="line3" alt="line 3" class="absolute z-[0] bottom-[413.72px] left-[526.16px] ">
+    <!-- Hero Body -->
+    <main class="relative flex-grow flex items-center px-4 sm:px-8 lg:px-20">
+      <div class="w-full max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-8 z-10">
+        <!-- Hero Content -->
+        <div class="text-center lg:text-left order-2 lg:order-1 relative pb-20 lg:pb-0">
+          <span class="bg-white w-fit rounded-md font-raleway font-medium text-base md:text-lg text-[#252641] py-2 px-5">
+            Never stop learning
+          </span>
+          <h1 class="mt-4 font-raleway text-4xl md:text-5xl lg:text-[64px] font-bold lg:leading-[75px] text-[#0B7077]">
+            Grow up your skills by online courses with Onlearning
+          </h1>
 
-    <!-- Student Illustration -->
-    <img :src="student" alt="Student illustration" class="absolute bottom-0 right-0 z-[10]" />
-
-    <!-- Hero Content: Main headline and introductory text. -->
-    <span
-      class="absolute z-[20] left-[105px] bottom-[480px] bg-white w-fit h-fit rounded-[10px] font-raleway font-[500] text-[18px] leading-none tracking-wide text-[#252641] py-[10px] px-[25px]">
-      Never stop learning
-    </span>
-    <h1
-      class="absolute z-[20] left-[105px] bottom-[240px] w-[688px] font-raleway text-[64px] font-bold leading-[75px]  text-[#0B7077]">
-      Grow up your skills by online courses with Onlearning
-    </h1>
-
-    <!-- Call to Action & Social Proof -->
-    <div class="absolute z-[20] left-[112px] bottom-[153px] flex flex-row items-center">
-      <!-- Primary CTA Button -->
-      <button
-        class="bg-[#FD661F] mx-[7px] text-white px-[30px] py-[20px] rounded-[10px] h-fit w-fit font-raleway font-[500] text-[16px] leading-none tracking-[0.02em] uppercase">
-        EXPLORE PATH
-      </button>
-
-      <!-- Social Proof: Reviewer avatars and star rating -->
-      <div class="mx-[5px] flex flex-row h-fit w-fit gap-[8.7px]">
-        <div class="flex -space-x-[14.795px] h-fit">
-          <img :src="reviewer1" alt="Reviewer profile 1" class="size-[52.21px]" />
-          <img :src="reviewer2" alt="Reviewer profile 2" class="size-[52.21px]" />
-          <img :src="reviewer3" alt="Reviewer profile 3" class="size-[52.21px]" />
-        </div>
-        <div class="h-fit">
-          <!-- Star Rating Display (uses custom CSS for fill) -->
-          <div class="h-fit flex flex-row gap-[1.74px] p-[1.74px]">
-            <div class="star">
-              <div class="star-fill"></div>
-            </div>
-            <div class="star">
-              <div class="star-fill"></div>
-            </div>
-            <div class="star">
-              <div class="star-fill"></div>
-            </div>
-            <div class="star">
-              <div class="star-fill"></div>
-            </div>
-            <div class="star">
-              <div class="star-fill half"></div>
+          <!-- Call to Action & Social Proof -->
+          <div class="mt-8 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+            <button class="btn-primary bg-[#FD661F] text-white hover:bg-opacity-90">
+              EXPLORE PATH
+            </button>
+            <div class="flex items-center gap-2">
+              <div class="flex -space-x-4">
+                <img :src="reviewer1" alt="Reviewer profile 1" class="size-12 md:size-14 border-2 border-white rounded-full" />
+                <img :src="reviewer2" alt="Reviewer profile 2" class="size-12 md:size-14 border-2 border-white rounded-full" />
+                <img :src="reviewer3" alt="Reviewer profile 3" class="size-12 md:size-14 border-2 border-white rounded-full" />
+              </div>
+              <div>
+                <div class="flex gap-1">
+                  <div v-for="i in 5" :key="i" class="star">
+                    <div class="star-fill" :class="{'half': i === 5}"></div>
+                  </div>
+                </div>
+                <span class="font-raleway font-semibold text-sm text-[#230F0F]">
+                  (10k+ Reviews)
+                </span>
+              </div>
             </div>
           </div>
-          <span class="font-raleway font-semibold text-[12.18px] leading-[165%]  text-[#230F0F]">
-            (10k+ Reviews)
-          </span>
+        </div>
+
+        <!-- Student Illustration & Floating Cards -->
+        <div class="relative order-1 lg:order-2 flex justify-center items-center">
+          <img :src="student" alt="Student illustration" class="max-w-full h-auto md:max-w-lg lg:max-w-none lg:h-auto" />
+          <div class="absolute flex gap-4 items-center px-6 py-3 -bottom-8 sm:bottom-10 lg:bottom-auto lg:top-1/2 lg:-left-20 h-fit rounded-2xl bg-white/80 backdrop-blur-lg z-20 shadow-lg">
+            <div class="size-12 p-3 bg-[#23BDEE] rounded-lg flex items-center justify-center">
+              <img :src="calendar" alt="calendar" class="w-full h-full" />
+            </div>
+            <div class="flex flex-col">
+              <span class="font-bold font-nunito text-2xl text-[#595959]">250k</span>
+              <span class="font-semibold -mt-2 font-nunito text-lg text-[#545567]">Assisted Student</span>
+            </div>
+          </div>
+          <div class="absolute top-10 right-0 sm:right-10 lg:bottom-20 lg:right-5 size-16 rounded-xl bg-[#FD661F] shadow-lg p-3 z-20">
+            <img :src="chart" alt="chart" class="w-full h-full" />
+          </div>
         </div>
       </div>
-    </div>
-
-    <!-- Floating Card: Displays key metrics or stats -->
-    <div
-      class="absolute flex gap-[32px] items-center px-[28px] py-[15px] bottom-[184.11px] right-[420px] h-[100px] rounded-[20px] bg-white opacity-80 backdrop-blur-[20px] z-[20]">
-      <div class="size-[50px] p-[11.25px] bg-[#23BDEE] rounded-[8px] text-center items-center">
-        <img :src="calendar" alt="calendar" class="size-[27.5px]" />
-      </div>
-      <div class="flex flex-col">
-        <span
-          class="font-[700] h-fit items-center font-nunito text-[24px] leading-[180%] tracking-[0.02em] text-[#595959]">
-          250k
-        </span>
-        <span class="font-[600] mt-[-9px] h-fit font-nunito text-[20px] leading-[180%] tracking-[0.02em] text-[#545567]">
-          Assisted Student
-        </span>
-      </div>
-    </div>
-
-    <!-- Floating Chart Icon -->
-    <div
-      class="absolute bottom-[327px] right-[121px] size-[69px] rounded-[14px] border bg-[#FD661F] shadow-[0px_8px_40px_0px_#D24D6542] border-[#FD661F] p-[12px] z-[20]">
-      <img :src="chart" alt="chart" class="w-[47.3px] h-[44.85px] rounded-[8px]" />
-    </div>
+    </main>
   </section>
 
   <!-- ========================================================================= -->
   <!-- MAIN CONTENT SECTION -->
   <!-- Contains all sections below the hero. -->
   <!-- ========================================================================= -->
-  <section class="pt-[185px] pb-[245px] px-[80px] gap-[110px] flex flex-col ">
+  <section class="py-20 lg:py-32 px-4 sm:px-8 lg:px-20 space-y-20 lg:space-y-32">
 
-    <div class="flex flex-col w-full justify-center gap-[61px] px-[10.5px]">
-      <!-- Section Header -->
-      <div class="flex flex-col gap-[39.68px] text-center items-center relative">
-        <h1 class="font-inter font-[700] text-[48px] leading-[62.4px] text-[#FD661F] tracking-[-0.06em]">Popular Courses
-        </h1>
-        <div class="grid grid-cols-6 gap-[24px]">
-          <button type="button"
-            class="rounded-[5px] px-[20px] py-[10px] bg-[#0B7077] text-[white] font-raleway font-[500] text-[12px] leading-none ">All
-            Programme</button>
-          <button type="button"
-            class="rounded-[5px] px-[20px] py-[10px] text-[#0B7077] bg-[white] font-raleway font-[500] text-[12px] leading-none border border-[#C4C4C4] hover:bg-[#0B7077] hover:text-[white] transition duration-500">Ui/Ux
-            Design</button>
-          <button type="button"
-            class="rounded-[5px] px-[20px] py-[10px] text-[#0B7077] bg-[white] font-raleway font-[500] text-[12px] leading-none border border-[#C4C4C4] hover:bg-[#0B7077] hover:text-[white] transition duration-500">Program
-            Design</button>
-          <button type="button"
-            class="rounded-[5px] px-[20px] py-[10px] text-[#0B7077] bg-[white] font-raleway font-[500] text-[12px] leading-none border border-[#C4C4C4] hover:bg-[#0B7077] hover:text-[white] transition duration-500">Program
-            Design</button>
-          <button type="button"
-            class="rounded-[5px] px-[20px] py-[10px] text-[#0B7077] bg-[white] font-raleway font-[500] text-[12px] leading-none border border-[#C4C4C4] hover:bg-[#0B7077] hover:text-[white] transition duration-500">Program
-            Design</button>
-          <button type="button"
-            class="rounded-[5px] px-[20px] py-[10px] text-[#0B7077] bg-[white] font-raleway font-[500] text-[12px] leading-none border border-[#C4C4C4] hover:bg-[#0B7077] hover:text-[white] transition duration-500">Program
-            Design</button>
+    <!-- Popular Courses Section -->
+    <div class="flex flex-col w-full justify-center gap-10 lg:gap-16 max-w-screen-xl mx-auto">
+      <div class="flex flex-col gap-8 text-center items-center relative">
+        <h1 class="font-inter font-bold text-4xl lg:text-5xl text-[#FD661F] tracking-tighter">Popular Courses</h1>
+        <div class="flex flex-wrap justify-center gap-3 sm:gap-6">
+          <button type="button" class="btn-filter-active">All Programme</button>
+          <button type="button" class="btn-filter">Ui/Ux Design</button>
+          <button type="button" class="btn-filter">Program Design</button>
+          <button type="button" class="btn-filter">Marketing</button>
+          <button type="button" class="btn-filter">Finance</button>
+          <button type="button" class="btn-filter">Science</button>
         </div>
-        <img :src="vector1" class="absolute top-[64.05px] left-[653px]" />
+        <img :src="vector1" class="absolute top-10 right-1/4 hidden lg:block" />
       </div>
 
-      <div class="grid grid-cols-4 gap-[25px]">
-
-        <div
-          class="bg-white flex flex-col w-full h-[428px] transition-shadow duration-500 rounded-[14px] relative shadow-[0px_10px_60px_0px_#262D7614] overflow-hidden">
-          <div class="flex items-center justify-between left-[17px] right-[17.69px] absolute top-[372px]">
-            <div class="flex relative">
-              <span class="text-[#FD661F] w-[52.82px] font-inter font-[700] text-[16.68px] leading-[1.5]">$ 123</span>
-              <span class="font-inter font-[400] text-[14.83px] leading-[1.5] text-[#230F0F]">
-                <img :src="strikethrough" class="relative opacity-50 z-10 top-[12.05px] object-cover">$ 500
-              </span>
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
+        <!-- Course Card 1 -->
+        <div class="course-card">
+          <img :src="pmbc" class="w-full h-48 object-cover" />
+          <div class="p-4 flex flex-col flex-grow">
+            <div class="student-avatars">
+              <div class="flex -space-x-2 h-fit object-contain">
+                <img :src="blink" class="size-8 rounded-full border-2 border-white" />
+                <img :src="ander" class="size-8 rounded-full border-2 border-white" />
+                <img :src="bird" class="size-8 rounded-full border-2 border-white" />
+                <img :src="bartender" class="size-8 rounded-full border-2 border-white" />
+              </div>
+              <span class="font-raleway text-sm text-[#263238]">+40 students</span>
             </div>
-            <button class="
-              rounded-[5px] px-[20px] py-[10px]
-            hover:bg-white hover:text-[#0B7077]
-              font-raleway font-[500] text-[12px] leading-none
-              transition duration-500
-            bg-[#0B7077] text-white hover:border hover:border-[#0B7077]
-              ">
-              Enroll Now
-            </button>
-          </div>
-          <div
-            class="bg-[#FAFAFA] absolute items-center top-[165px] rounded-[40px] left-1/2 -translate-x-1/2 justify-between w-[233.75px] px-[10px] py-[5px] flex gap-[5px]">
-            <div class="flex -space-x-[8.27px] h-fit object-contain">
-              <img :src="blink" class="size-[29.19] z-50  object-contain" />
-              <img :src="ander" class="size-[29.19] z-40  object-contain" />
-              <img :src="bird" class="size-[29.19] z-30 object-contain" />
-              <img :src="bartender" class="size-[29.19] z-20 object-contain" />
-              <img :src="bill" class="size-[29.19] object-contain" />
-            </div>
-            <span
-              class="font-kanit font-[400] text-[16px] leading-[28px] tracking-[0.02em] text-[#263238] rotate-[0.17deg]">+</span>
-            <div class="justify-between flex">
-              <span class="font-raleway font-[500] text-[16px] leading-[18px] text-[#263238] items-center">40</span>
-              <span class="font-raleway font-[500] text-[14px] leading-[18px] text-[#263238] items-center">students</span>
+            <div class="mt-4 flex flex-col flex-grow">
+              <span class="font-raleway text-xs text-[#777795]">1 - 28 July 2022</span>
+              <span class="font-raleway font-extrabold text-base text-[#0B7077] mt-1">Product Management Basic - Course</span>
+              <span class="font-raleway text-xs text-[#4D4D4D] mt-2 flex-grow">Product Management Masterclass, you will learn with Sarah Johnson.</span>
             </div>
           </div>
-          <img :src="pmbc" class="w-full h-[179px] size-[50px] object-cover" />
-          <div class="w-[264.27px] mt-[47px] ml-[17px] mb-[31px] flex flex-col">
-            <span class="font-raleway font-[400] text-[10px] leading-[1.5] text-[#777795]">1 - 28 July 2022</span>
-            <span class="font-raleway font-[800] text-[15.52px] leading-[1.5] tracking-[0.39px] text-[#0B7077]">Product
-              Management Basic - Course</span>
-            <span class="w-[251.69px] font-raleway font-[400] text-[10px] leading-[1.6] text-[#4D4D4D]">Product Management
-              Masterclass, you will learn with Sarah Johnson - Head of Product Customer Platform Gojek Indonesia.</span>
+          <div class="p-4 border-t flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <span class="text-[#FD661F] font-inter font-bold text-lg">$123</span>
+              <span class="font-inter text-sm text-gray-400 line-through">$500</span>
+            </div>
+            <button class="btn-enroll">Enroll Now</button>
           </div>
         </div>
 
-        <div
-          class="bg-white flex flex-col w-full h-[428px] transition-shadow duration-500 rounded-[14px] relative shadow-[0px_10px_60px_0px_#262D7614] overflow-hidden">
-          <div class="flex items-center justify-between left-[17px] right-[17.69px] absolute top-[372px]">
-            <div class="flex relative">
-              <span class="text-[#FD661F] w-[52.82px] font-inter font-[700] text-[16.68px] leading-[1.5]">$ 123</span>
-              <span class="font-inter font-[400] text-[14.83px] leading-[1.5] text-[#230F0F]">
-                <img :src="strikethrough" class="relative opacity-50 z-10 top-[12.05px] object-cover">$ 500
-              </span>
+        <!-- Course Card 2 -->
+        <div class="course-card">
+          <img :src="bdspc" class="w-full h-48 object-cover" />
+          <div class="p-4 flex flex-col flex-grow">
+            <div class="student-avatars">
+               <div class="flex -space-x-2 h-fit object-contain">
+                <img :src="blink" class="size-8 rounded-full border-2 border-white" />
+                <img :src="ander" class="size-8 rounded-full border-2 border-white" />
+              </div>
+              <span class="font-raleway text-sm text-[#263238]">+11 students</span>
             </div>
-            <button class="
-              rounded-[5px] px-[20px] py-[10px]
-            hover:bg-white hover:text-[#0B7077]
-              font-raleway font-[500] text-[12px] leading-none
-              transition duration-500
-            bg-[#0B7077] text-white hover:border hover:border-[#0B7077]
-              ">
-              Enroll Now
-            </button>
-          </div>
-          <div
-            class="bg-[#FAFAFA] absolute items-center top-[165px] rounded-[40px] left-1/2 -translate-x-1/2 justify-between w-[233.75px] px-[10px] py-[5px] flex gap-[5px]">
-            <div class="flex -space-x-[8.27px] h-fit object-contain">
-              <img :src="blink" class="size-[29.19] z-50  object-contain" />
-              <img :src="ander" class="size-[29.19] z-40  object-contain" />
-              <img :src="bird" class="size-[29.19] z-30 object-contain" />
-              <img :src="bartender" class="size-[29.19] z-20 object-contain" />
-              <img :src="bill" class="size-[29.19] object-contain" />
-            </div>
-            <span
-              class="font-kanit font-[400] text-[16px] leading-[28px] tracking-[0.02em] text-[#263238] rotate-[0.17deg]">+</span>
-            <div class="justify-between flex">
-              <span class="font-raleway font-[500] text-[16px] leading-[18px] text-[#263238] items-center">11</span>
-              <span class="font-raleway font-[500] text-[14px] leading-[18px] text-[#263238] items-center">students</span>
+            <div class="mt-4 flex flex-col flex-grow">
+              <span class="font-raleway text-xs text-[#777795]">1 - 28 July 2022</span>
+              <span class="font-raleway font-extrabold text-base text-[#0B7077] mt-1">BM Data Science Professional Certificate</span>
+              <span class="font-raleway text-xs text-[#4D4D4D] mt-2 flex-grow">Product Management Masterclass, you will learn with Sarah Johnson.</span>
             </div>
           </div>
-          <img :src="bdspc" class="w-full h-[179px] size-[50px] object-cover" />
-          <div class="w-[264.27px] mt-[47px] ml-[17px] mb-[31px] flex flex-col">
-            <span class="font-raleway font-[400] text-[10px] leading-[1.5] text-[#777795]">1 - 28 July 2022</span>
-            <span class="font-raleway font-[800] text-[15.52px] leading-[1.5] tracking-[0.39px] text-[#0B7077]">BM Data
-              Science Professional Certificate</span>
-            <span class="w-[251.69px] font-raleway font-[400] text-[10px] leading-[1.6] text-[#4D4D4D]">Product Management
-              Masterclass, you will learn with Sarah Johnson - Head of Product Customer Platform Gojek Indonesia.</span>
-          </div>
-
-        </div>
-
-        <div
-          class="bg-white flex flex-col w-full h-[428px] transition-shadow duration-500 rounded-[14px] relative shadow-[0px_10px_60px_0px_#262D7614] overflow-hidden">
-          <div class="flex items-center justify-between left-[17px] right-[17.69px] absolute top-[372px]">
-            <div class="flex relative">
-              <span class="text-[#FD661F] w-[52.82px] font-inter font-[700] text-[16.68px] leading-[1.5]">$ 123</span>
-              <span class="font-inter font-[400] text-[14.83px] leading-[1.5] text-[#230F0F]">
-                <img :src="strikethrough" class="relative opacity-50 z-10 top-[12.05px] object-cover">$ 500
-              </span>
+          <div class="p-4 border-t flex items-center justify-between">
+             <div class="flex items-center gap-2">
+              <span class="text-[#FD661F] font-inter font-bold text-lg">$123</span>
+              <span class="font-inter text-sm text-gray-400 line-through">$500</span>
             </div>
-            <button class="
-              rounded-[5px] px-[20px] py-[10px]
-            hover:bg-white hover:text-[#0B7077]
-              font-raleway font-[500] text-[12px] leading-none
-              transition duration-500
-            bg-[#0B7077] text-white hover:border hover:border-[#0B7077]
-              ">
-              Enroll Now
-            </button>
-          </div>
-          <div
-            class="bg-[#FAFAFA] absolute items-center top-[165px] rounded-[40px] left-1/2 -translate-x-1/2 justify-between w-[233.75px] px-[10px] py-[5px] flex gap-[5px]">
-            <div class="flex -space-x-[8.27px] h-fit object-contain">
-              <img :src="blink" class="size-[29.19] z-50  object-contain" />
-              <img :src="ander" class="size-[29.19] z-40  object-contain" />
-              <img :src="bird" class="size-[29.19] z-30 object-contain" />
-              <img :src="bartender" class="size-[29.19] z-20 object-contain" />
-              <img :src="bill" class="size-[29.19] object-contain" />
-            </div>
-            <span
-              class="font-kanit font-[400] text-[16px] leading-[28px] tracking-[0.02em] text-[#263238] rotate-[0.17deg]">+</span>
-            <div class="justify-between flex">
-              <span class="font-raleway font-[500] text-[16px] leading-[18px] text-[#263238] items-center">234</span>
-              <span class="font-raleway font-[500] text-[14px] leading-[18px] text-[#263238] items-center">students</span>
-            </div>
-          </div>
-          <img :src="tsowb" class="w-full h-[179px] size-[50px] object-cover" />
-          <div class="w-[264.27px] mt-[47px] ml-[17px] mb-[31px] flex flex-col">
-            <span class="font-raleway font-[400] text-[10px] leading-[1.5] text-[#777795]">1 - 28 July 2022</span>
-            <span class="font-raleway font-[800] text-[15.52px] leading-[1.5] tracking-[0.39px] text-[#0B7077]">The
-              Science of Well-Being</span>
-            <span class="w-[251.69px] font-raleway font-[400] text-[10px] leading-[1.6] text-[#4D4D4D]">Product Management
-              Masterclass, you will learn with Sarah Johnson - Head of Product Customer Platform Gojek Indonesia.</span>
+            <button class="btn-enroll">Enroll Now</button>
           </div>
         </div>
 
-        <div
-          class="bg-white flex flex-col w-full h-[428px] transition-shadow duration-500 rounded-[14px] relative shadow-[0px_10px_60px_0px_#262D7614] overflow-hidden">
-          <div class="flex items-center mb-[22px] justify-between left-[17px] right-[17.69px] absolute top-[372px]">
-            <div class="flex relative">
-              <span class="text-[#FD661F] w-[52.82px] font-inter font-[700] text-[16.68px] leading-[1.5]">$ 123</span>
-              <span class="font-inter font-[400] text-[14.83px] leading-[1.5] text-[#230F0F]">
-                <img :src="strikethrough" class="relative opacity-50 z-10 top-[12.05px] object-cover">$ 500
-              </span>
+        <!-- Course Card 3 -->
+        <div class="course-card">
+          <img :src="tsowb" class="w-full h-48 object-cover" />
+          <div class="p-4 flex flex-col flex-grow">
+            <div class="student-avatars">
+               <div class="flex -space-x-2 h-fit object-contain">
+                <img :src="blink" class="size-8 rounded-full border-2 border-white" />
+                <img :src="ander" class="size-8 rounded-full border-2 border-white" />
+                <img :src="bird" class="size-8 rounded-full border-2 border-white" />
+              </div>
+              <span class="font-raleway text-sm text-[#263238]">+234 students</span>
             </div>
-            <button class="
-              rounded-[5px] px-[20px] py-[10px]
-            hover:bg-white hover:text-[#0B7077]
-              font-raleway font-[500] text-[12px] leading-none
-              transition duration-500
-            bg-[#0B7077] text-white hover:border hover:border-[#0B7077]
-              ">
-              Enroll Now
-            </button>
-          </div>
-          <div
-            class="bg-[#FAFAFA] absolute items-center top-[165px] rounded-[40px] left-1/2 -translate-x-1/2 justify-between w-[233.75px] px-[10px] py-[5px] flex gap-[5px]">
-            <div class="flex -space-x-[8.27px] h-fit object-contain">
-              <img :src="blink" class="size-[29.19] z-50  object-contain" />
-              <img :src="ander" class="size-[29.19] z-40  object-contain" />
-              <img :src="bird" class="size-[29.19] z-30 object-contain" />
-              <img :src="bartender" class="size-[29.19] z-20 object-contain" />
-              <img :src="bill" class="size-[29.19] object-contain" />
-            </div>
-            <span
-              class="font-kanit font-[400] text-[16px] leading-[28px] tracking-[0.02em] text-[#263238] rotate-[0.17deg]">+</span>
-            <div class="justify-between flex">
-              <span class="font-raleway font-[500] text-[16px] leading-[18px] text-[#263238] items-center">342</span>
-              <span class="font-raleway font-[500] text-[14px] leading-[18px] text-[#263238] items-center">students</span>
+            <div class="mt-4 flex flex-col flex-grow">
+              <span class="font-raleway text-xs text-[#777795]">1 - 28 July 2022</span>
+              <span class="font-raleway font-extrabold text-base text-[#0B7077] mt-1">The Science of Well-Being</span>
+              <span class="font-raleway text-xs text-[#4D4D4D] mt-2 flex-grow">Product Management Masterclass, you will learn with Sarah Johnson.</span>
             </div>
           </div>
-          <img :src="pfes" class="w-full h-[179px] size-[50px] object-cover" />
-          <div class="w-[264.27px] mt-[47px] ml-[17px] flex flex-col">
-            <span class="font-raleway font-[400] text-[10px] leading-[1.5] text-[#777795]">1 - 28 July 2022</span>
-            <span class="font-raleway font-[800] text-[15.52px] leading-[1.5] tracking-[0.39px] text-[#0B7077]">Python for
-              Everybody Specialization</span>
-            <span class="w-[251.69px] font-raleway font-[400] text-[10px] leading-[1.6] text-[#4D4D4D]">Product Management
-              Masterclass, you will learn with Sarah Johnson - Head of Product Customer Platform Gojek Indonesia.</span>
+          <div class="p-4 border-t flex items-center justify-between">
+             <div class="flex items-center gap-2">
+              <span class="text-[#FD661F] font-inter font-bold text-lg">$123</span>
+              <span class="font-inter text-sm text-gray-400 line-through">$500</span>
+            </div>
+            <button class="btn-enroll">Enroll Now</button>
           </div>
-
         </div>
 
-
+        <!-- Course Card 4 -->
+        <div class="course-card">
+          <img :src="pfes" class="w-full h-48 object-cover" />
+          <div class="p-4 flex flex-col flex-grow">
+            <div class="student-avatars">
+              <div class="flex -space-x-2 h-fit object-contain">
+                <img :src="blink" class="size-8 rounded-full border-2 border-white" />
+                <img :src="ander" class="size-8 rounded-full border-2 border-white" />
+                <img :src="bird" class="size-8 rounded-full border-2 border-white" />
+                 <img :src="bartender" class="size-8 rounded-full border-2 border-white" />
+              </div>
+              <span class="font-raleway text-sm text-[#263238]">+342 students</span>
+            </div>
+            <div class="mt-4 flex flex-col flex-grow">
+              <span class="font-raleway text-xs text-[#777795]">1 - 28 July 2022</span>
+              <span class="font-raleway font-extrabold text-base text-[#0B7077] mt-1">Python for Everybody Specialization</span>
+              <span class="font-raleway text-xs text-[#4D4D4D] mt-2 flex-grow">Product Management Masterclass, you will learn with Sarah Johnson.</span>
+            </div>
+          </div>
+          <div class="p-4 border-t flex items-center justify-between">
+             <div class="flex items-center gap-2">
+              <span class="text-[#FD661F] font-inter font-bold text-lg">$123</span>
+              <span class="font-inter text-sm text-gray-400 line-through">$500</span>
+            </div>
+            <button class="btn-enroll">Enroll Now</button>
+          </div>
+        </div>
       </div>
     </div>
-
-
 
     <!-- Course Category Section -->
-    <div class="w-fit flex flex-col gap-[83px] justify-center items-center">
-      <div class="flex flex-col w-full justify-center gap-[59px]">
-        <!-- Section Header -->
-        <div class="flex flex-col gap-[39.83px] text-center items-center relative">
-          <h1 class="font-inter font-[700] text-[48px] leading-[62.4px] text-[#0B7077] tracking-[-0.06em]">Courses
-            Category
-          </h1>
-          <span class="font-raleway w-[828px] font-[400] text-[22px] leading-[1.6] text-[#696984]">Onlearing is one
-            powerful online software suite that combines all the tools needed to run a successful school or office.</span>
-          <img :src="vector2" class="absolute top-[64.05px] left-[653px]" />
+    <div class="flex flex-col gap-12 lg:gap-20 items-center max-w-screen-xl mx-auto">
+      <div class="flex flex-col gap-8 text-center items-center relative">
+        <h1 class="font-inter font-bold text-4xl lg:text-5xl text-[#0B7077] tracking-tighter">Courses Category</h1>
+        <span class="font-raleway max-w-3xl text-lg lg:text-xl text-[#696984]">Onlearing is one powerful online software suite that combines all the tools needed to run a successful school or office.</span>
+        <img :src="vector2" class="absolute top-10 right-1/4 hidden lg:block" />
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 w-full">
+        <!-- Category Card 1: Beauty -->
+        <div class="category-card group">
+          <span class="relative inline-block rounded-full size-16 bg-[#A3D3FF] flex items-center justify-center">
+            <img :src="beauty" class="size-10 object-contain" />
+          </span>
+          <span class="mt-6 font-raleway font-semibold text-2xl text-[#0B7077]">Beauty</span>
+          <span class="text-center mt-4 w-full max-w-xs font-raleway text-base text-[#696984]">One powerful online software suite that combines</span>
+          <button class="category-button">
+            <span class="hidden group-hover:block">Explore courses</span>
+            <span class="block group-hover:hidden">more</span>
+          </button>
         </div>
 
-        <!-- Grid of Course Category Cards -->
-        <div class="grid grid-cols-4 gap-[40px]">
+        <!-- Category Card 2: Medical -->
+        <div class="category-card group">
+          <span class="relative inline-block rounded-full size-16 bg-[#F1C9FF] flex items-center justify-center">
+            <img :src="medical" class="size-12 object-contain" />
+          </span>
+          <span class="mt-6 font-raleway font-semibold text-2xl text-[#0B7077]">Medical</span>
+          <span class="text-center mt-4 w-full max-w-xs font-raleway text-base text-[#696984]">One powerful online software suite that combines</span>
+          <button class="category-button">
+            <span class="hidden group-hover:block">Explore courses</span>
+            <span class="block group-hover:hidden">more</span>
+          </button>
+        </div>
 
-          <!-- Card 1: Beauty -->
-          <div
-            class="relative h-[329px] group bg-white px-[15px] transition-shadow duration-500 flex flex-col items-center rounded-[15px] hover:shadow-[0px_50px_80px_0px_#0000000D]">
-            <span class="relative inline-block mt-[30px] rounded-full size-[50px] bg-[#A3D3FF]">
-              <img :src="beauty"
-                class="absolute size-[50px] object-cover left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" />
-            </span>
-            <span class="mt-[24px] font-raleway font-[600] text-[27px] leading-none text-[#0B7077]">Beauty</span>
-            <span
-              class="text-center mt-[23px] mb-[112px] w-[260px] font-raleway font-[500] text-[18px] leading-[29px] text-[#696984]">
-              One powerful online software suite that combines
-            </span>
-            <!-- Interactive button changes text and style on hover -->
-            <button
-              class="
-            top-[255px] absolute rounded-[10px] px-[62px] py-[12px]
-            bg-white text-[#0B7077]
-            font-raleway font-[500] text-[15px] leading-none text-center
-            shadow-[0px_10px_60px_0px_#262D7614]
-            transition-all ease-in-out duration-500
-            group-hover:bg-[#FD661F] group-hover:text-white group-hover:px-[40px]
-            group-hover:hover:bg-white group-hover:hover:text-[#0B7077] group-hover:hover:border group-hover:hover:border-[#0B7077]">
-              <span class="hidden group-hover:block">Explore courses</span>
-              <span class="block group-hover:hidden">more</span>
-            </button>
-          </div>
+        <!-- Category Card 3: Sports -->
+        <div class="category-card group">
+          <span class="relative inline-block rounded-full size-16 bg-[#FFE3AF] flex items-center justify-center">
+            <img :src="sports" class="h-12 w-auto object-contain" />
+          </span>
+          <span class="mt-6 font-raleway font-semibold text-2xl text-[#0B7077]">Sports</span>
+          <span class="text-center mt-4 w-full max-w-xs font-raleway text-base text-[#696984]">One powerful online software suite that combines</span>
+          <button class="category-button">
+            <span class="hidden group-hover:block">Explore courses</span>
+            <span class="block group-hover:hidden">more</span>
+          </button>
+        </div>
 
-          <!-- Card 2: Medical -->
-          <div
-            class="relative h-[329px] group bg-white px-[15px] transition-shadow duration-500 flex flex-col items-center rounded-[15px] hover:shadow-[0px_50px_80px_0px_#0000000D]">
-            <div class="relative mt-[30px] flex items-center justify-center rounded-full size-[50px] bg-[#F1C9FF]">
-              <img :src="medical"
-                class="absolute size-[72px] object-cover left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" />
-            </div>
-            <span class="mt-[24px] font-raleway font-[600] text-[27px] leading-none text-[#0B7077]">Medical</span>
-            <span
-              class="text-center mt-[23px] mb-[112px] w-[260px] font-raleway font-[500] text-[18px] leading-[29px] text-[#696984]">
-              One powerful online software suite that combines
-            </span>
-            <button
-              class="
-            top-[255px] absolute rounded-[10px] px-[62px] py-[12px]
-            bg-white text-[#0B7077]
-            font-raleway font-[500] text-[15px] leading-none text-center
-            shadow-[0px_10px_60px_0px_#262D7614]
-            transition-all ease-in-out duration-500
-            group-hover:bg-[#FD661F] group-hover:text-white group-hover:px-[40px]
-            group-hover:hover:bg-white group-hover:hover:text-[#0B7077] group-hover:hover:border group-hover:hover:border-[#0B7077]">
-              <span class="hidden group-hover:block">Explore courses</span>
-              <span class="block group-hover:hidden">more</span>
-            </button>
-          </div>
-
-          <!-- Card 3: Sports -->
-          <div
-            class="relative h-[329px] group bg-white px-[15px] transition-shadow duration-500 flex flex-col items-center rounded-[15px] hover:shadow-[0px_50px_80px_0px_#0000000D]">
-            <div class="relative inline-block mt-[30px] rounded-full h-[50px] w-[103px]">
-              <img :src="sports"
-                class="absolute size-[103px] object-cover left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" />
-            </div>
-            <span class="mt-[24px] font-raleway font-[600] text-[27px] leading-none text-[#0B7077]">Sports</span>
-            <span
-              class="text-center mt-[23px] mb-[112px] w-[260px] font-raleway font-[500] text-[18px] leading-[29px] text-[#696984]">
-              One powerful online software suite that combines
-            </span>
-            <button
-              class="
-            top-[255px] absolute rounded-[10px] px-[62px] py-[12px]
-            bg-white text-[#0B7077]
-            font-raleway font-[500] text-[15px] leading-none text-center
-            shadow-[0px_10px_60px_0px_#262D7614]
-            transition-all ease-in-out duration-500
-            group-hover:bg-[#FD661F] group-hover:text-white group-hover:px-[40px]
-            group-hover:hover:bg-white group-hover:hover:text-[#0B7077] group-hover:hover:border group-hover:hover:border-[#0B7077]">
-              <span class="hidden group-hover:block">Explore courses</span>
-              <span class="block group-hover:hidden">more</span>
-            </button>
-          </div>
-
-          <!-- Card 4: Nutrition -->
-          <div
-            class="relative h-[329px] group bg-white px-[15px] transition-shadow duration-500 flex flex-col items-center rounded-[15px] hover:shadow-[0px_50px_80px_0px_#0000000D]">
-            <span class="relative inline-block mt-[30px] rounded-full size-[50px] bg-[#CAC9FF]">
-              <img :src="nutrition"
-                class="absolute size-[50px] object-cover left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" />
-            </span>
-            <span class="mt-[24px] font-raleway font-[600] text-[27px] leading-none text-[#0B7077]">Nutrition</span>
-            <span
-              class="text-center mt-[23px] mb-[112px] w-[260px] font-raleway font-[500] text-[18px] leading-[29px] text-[#696984]">
-              One powerful online software suite that combines
-            </span>
-            <button
-              class="
-            top-[255px] absolute rounded-[10px] px-[62px] py-[12px]
-            bg-white text-[#0B7077]
-            font-raleway font-[500] text-[15px] leading-none text-center
-            shadow-[0px_10px_60px_0px_#262D7614]
-            transition-all ease-in-out duration-500
-            group-hover:bg-[#FD661F] group-hover:text-white group-hover:px-[40px]
-            group-hover:hover:bg-white group-hover:hover:text-[#0B7077] group-hover:hover:border group-hover:hover:border-[#0B7077]">
-              <span class="hidden group-hover:block">Explore courses</span>
-              <span class="block group-hover:hidden">more</span>
-            </button>
-          </div>
-
+        <!-- Category Card 4: Nutrition -->
+        <div class="category-card group">
+          <span class="relative inline-block rounded-full size-16 bg-[#CAC9FF] flex items-center justify-center">
+            <img :src="nutrition" class="size-10 object-contain" />
+          </span>
+          <span class="mt-6 font-raleway font-semibold text-2xl text-[#0B7077]">Nutrition</span>
+          <span class="text-center mt-4 w-full max-w-xs font-raleway text-base text-[#696984]">One powerful online software suite that combines</span>
+          <button class="category-button">
+            <span class="hidden group-hover:block">Explore courses</span>
+            <span class="block group-hover:hidden">more</span>
+          </button>
         </div>
       </div>
-      <button type="button"
-        class="w-fit rounded-[10px] transition duration-500 border px-[62px] py-[12px] hover:text-white hover:bg-[#0B7077] bg-white border-[#0B7077] shadow-[0px_10px_60px_0px_#262D7614] font-raleway font-[500] text-[15px] leading-none  text-center text-[#0B7077]">view
-        all</button>
+      <button type="button" class="btn-outline-primary-big">View All</button>
     </div>
 
-    <!-- Student ID Card Benefit Section -->
-    <div class="mx-[49.3px] flex gap-[39px]">
-      <!-- Text Content -->
-      <div class="flex flex-col gap-[44px]">
-        <div class="gap-[24px] flex flex-col">
-          <span
-            class="rounded-[10px] px-[25px] py-[10px] bg-[#F5F5F5] font-raleway font-[500] text-[18px] leading-none tracking-[0.02em] w-fit h-fit text-[#0B7077]">Benefits</span>
-          <h1 class="font-inter font-[700] text-[48px] text-[#0B7077] leading-[62.4px] tracking-[-0.06em] w-fit h-fit">Get
-            Student ID card</h1>
+    <!-- Feature Section (e.g., Student ID Card) -->
+    <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20 max-w-screen-xl mx-auto">
+      <div class="flex-1 space-y-8 text-center lg:text-left">
+        <div class="space-y-4">
+          <span class="rounded-lg px-5 py-2 bg-[#F5F5F5] font-raleway font-medium text-lg tracking-wide text-[#0B7077]">Benefits</span>
+          <h1 class="font-inter font-bold text-4xl lg:text-5xl text-[#0B7077] tracking-tighter">Get Student ID card</h1>
         </div>
-        <!-- List of Features -->
-        <div class="flex flex-col gap-[40px]">
-          <div class="flex gap-[32px]">
-            <span class="my-[2px] size-[60px] bg-[#FBFBFB] shadow-[0px_15px_44px_0px_#0D0F1C1F] rounded-full">
-              <img :src="grid" alt="Grid icon" class="my-[19px] mx-[17px]" />
-            </span>
-            <span
-              class="font-raleway font-[500] text-[18px] leading-[1.8] tracking-[0.02em] text-[#696984] w-[443px] h-[64px] ">Teachers
-              don’t get lost in the grid view and have a dedicated Podium space.</span>
+        <div class="space-y-6">
+          <div class="feature-item">
+            <span class="feature-icon"><img :src="grid" alt="Grid icon" /></span>
+            <span class="feature-text">Teachers don’t get lost in the grid view and have a dedicated Podium space.</span>
           </div>
-          <div class="flex gap-[32px]">
-            <span class="my-[2px] size-[60px] bg-[#FBFBFB] shadow-[0px_15px_44px_0px_#0D0F1C1F] rounded-full">
-              <img :src="slides" alt="Slides icon" class="my-[19px] mx-[17px]" />
-            </span>
-            <span
-              class="font-raleway font-[500] text-[18px] leading-[1.8] tracking-[0.02em] text-[#696984] w-[443px] h-[64px] ">TA’s
-              and presenters can be moved to the front of the class.</span>
+          <div class="feature-item">
+            <span class="feature-icon"><img :src="slides" alt="Slides icon" /></span>
+            <span class="feature-text">TA’s and presenters can be moved to the front of the class.</span>
           </div>
-          <div class="flex gap-[32px]">
-            <span class="my-[2px] size-[60px] bg-[#FBFBFB] shadow-[0px_15px_44px_0px_#0D0F1C1F] rounded-full">
-              <img :src="teachers" alt="Teachers icon" class="my-[19px] mx-[17px]" />
-            </span>
-            <span
-              class="font-raleway font-[500] text-[18px] leading-[1.8] tracking-[0.02em] text-[#696984] w-[443px] h-[64px] ">Teachers
-              can easily see all students and class data at one time.</span>
+          <div class="feature-item">
+            <span class="feature-icon"><img :src="teachers" alt="Teachers icon" /></span>
+            <span class="feature-text">Teachers can easily see all students and class data at one time.</span>
           </div>
         </div>
       </div>
-      <!-- Visual Content: ID Card Images -->
-      <div class="my-[12.7px] rounded-[20px] px-[75px] py-[37px] bg-[#D2E6E4] gap-[10px] flex flex-shrink-0 max-w-full">
-        <img :src="id_front" alt="Student ID Card front page" class="w-[211.6px] h-[344.6px]" />
-        <img :src="id_back" alt="Student ID Card back page" class="w-[211.6px] h-[344.6px]" />
+      <div class="flex-1 w-full flex justify-center p-8 bg-[#D2E6E4] rounded-2xl">
+        <div class="flex gap-4 sm:gap-6">
+          <img :src="id_front" alt="Student ID Card front page" class="w-1/2 max-w-xs" />
+          <img :src="id_back" alt="Student ID Card back page" class="w-1/2 max-w-xs" />
+        </div>
       </div>
     </div>
 
-    <!-- Staff Training Section -->
-    <div class="mx-[50.21px] flex gap-[94px]">
-      <img :src="pana" alt="Team Meeting Visual" class="mt-[91.59px]">
-      <!-- Text Content -->
-      <div class="flex flex-col gap-[44px]">
-        <div class="gap-[24px] flex flex-col">
-          <span
-            class="rounded-[10px] px-[25px] py-[10px] bg-[#D4E1FF] font-raleway font-[500] text-[#0B7077] text-[18px] leading-none tracking-[0.02em] w-fit h-fit">Training</span>
-          <h1 class="font-inter font-[700] text-[48px] text-[#FD661F] leading-[62.4px] tracking-[-0.06em] w-fit h-fit">
-            Staff
-            training</h1>
+    <!-- Feature Section (e.g., Staff Training) -->
+    <div class="flex flex-col lg:flex-row-reverse items-center gap-12 lg:gap-20 max-w-screen-xl mx-auto">
+      <div class="flex-1 space-y-8 text-center lg:text-left">
+        <div class="space-y-4">
+          <span class="rounded-lg px-5 py-2 bg-[#D4E1FF] font-raleway font-medium text-lg tracking-wide text-[#0B7077]">Training</span>
+          <h1 class="font-inter font-bold text-4xl lg:text-5xl text-[#FD661F] tracking-tighter">Staff training</h1>
         </div>
-        <!-- List of Features -->
-        <div class="flex flex-col gap-[40px]">
-          <div class="flex gap-[32px]">
-            <span class="my-[2px] size-[60px] bg-[#FBFBFB] shadow-[0px_15px_44px_0px_#0D0F1C1F] rounded-full">
-              <img :src="grid" alt="Grid icon" class="my-[19px] mx-[17px]" />
-            </span>
-            <span
-              class="font-raleway font-[500] text-[18px] leading-[1.8] tracking-[0.02em] text-[#696984] w-[443px] h-[64px] ">Teachers
-              don’t get lost in the grid view and have a dedicated Podium space.</span>
+        <div class="space-y-6">
+          <div class="feature-item">
+            <span class="feature-icon"><img :src="grid" alt="Grid icon" /></span>
+            <span class="feature-text">Teachers don’t get lost in the grid view and have a dedicated Podium space.</span>
           </div>
-          <div class="flex gap-[32px]">
-            <span class="my-[2px] size-[60px] bg-[#FBFBFB] shadow-[0px_15px_44px_0px_#0D0F1C1F] rounded-full">
-              <img :src="slides" alt="Slides icon" class="my-[19px] mx-[17px]" />
-            </span>
-            <span
-              class="font-raleway font-[500] text-[18px] leading-[1.8] tracking-[0.02em] text-[#696984] w-[443px] h-[64px] ">TA’s
-              and presenters can be moved to the front of the class.</span>
+          <div class="feature-item">
+            <span class="feature-icon"><img :src="slides" alt="Slides icon" /></span>
+            <span class="feature-text">TA’s and presenters can be moved to the front of the class.</span>
           </div>
-          <div class="flex gap-[32px]">
-            <span class="my-[2px] size-[60px] bg-[#FBFBFB] shadow-[0px_15px_44px_0px_#0D0F1C1F] rounded-full">
-              <img :src="teachers" alt="Teachers icon" class="my-[19px] mx-[17px]" />
-            </span>
-            <span
-              class="font-raleway font-[500] text-[18px] leading-[1.8] tracking-[0.02em] text-[#696984] w-[443px] h-[64px] ">Teachers
-              can easily see all students and class data at one time.</span>
+          <div class="feature-item">
+            <span class="feature-icon"><img :src="teachers" alt="Teachers icon" /></span>
+            <span class="feature-text">Teachers can easily see all students and class data at one time.</span>
           </div>
         </div>
+      </div>
+      <div class="flex-1 flex justify-center items-center">
+        <img :src="pana" alt="Team Meeting Visual" class="w-full max-w-md">
       </div>
     </div>
 
     <!-- Gift Cards Promotional Section -->
-    <div class="mx-[33px] overflow-hidden h-[542px] w-full">
-      <img :src="giftcards" alt="Giftcards Visual" class="absolute ml-[521px] z-10">
-      <div
-        class="mx-[33px] mt-[141px] px-[59px] py-[29px] flex flex-col w-auto h-[401px] bg-[#DF1C25] z-0 rounded-[16px]">
-        <h1
-          class="h-[141.2px] font-[700] mt-[22.1px] font-inter text-[48px] leading-[62.4px] tracking-[-0.06em] text-white ">
-          Why You should buy<br>gift cards ?</h1>
-        <ul class="mt-[10.7px] gap-[9px] flex flex-col">
-          <li class="flex gap-[5px] ">
-            <img :src="star_outline" class="size-[20px]" />
-            <span class="font-raleway text-white font-[500] text-[14px] leading-[1.2] tracking-wide">Teachers don’t get
-              lost in the grid view and have a dedicated Podium space.</span>
-          </li>
-          <li class="flex gap-[5px] ">
-            <img :src="star_outline" class="size-[20px]" />
-            <span class="font-raleway text-white font-[500] text-[14px] leading-[1.2] tracking-wide">Teachers don’t get
-              lost in the grid view and have a dedicated Podium space.</span>
-          </li>
-          <li class="flex gap-[5px] ">
-            <img :src="star_outline" class="size-[20px]" />
-            <span class="font-raleway text-white font-[500] text-[14px] leading-[1.2] tracking-wide">Teachers don’t get
-              lost in the grid view and have a dedicated Podium space.</span>
-          </li>
-        </ul>
-        <button type="button"
-          class="hover:text-white hover:bg-[#0B7077] transition-all ease-in-out duration-500 mt-[30px] px-[30px] py-[15px] rounded-[10px] w-fit h-fit bg-white font-raleway font-[500] text-[16px] leading-none tracking-wide text-[#0B7077]">BUY
-          NOW</button>
+    <div class="relative bg-[#DF1C25] rounded-2xl p-8 md:p-12 lg:p-16 max-w-screen-xl mx-auto overflow-hidden">
+      <div class="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+        <div class="text-white space-y-8">
+          <h1 class="font-inter font-bold text-4xl lg:text-5xl tracking-tighter">Why You should buy gift cards?</h1>
+          <ul class="space-y-4">
+            <li class="flex gap-3 items-start">
+              <img :src="star_outline" class="size-5 mt-1 flex-shrink-0" />
+              <span class="font-raleway text-base">Teachers don’t get lost in the grid view and have a dedicated Podium space.</span>
+            </li>
+            <li class="flex gap-3 items-start">
+              <img :src="star_outline" class="size-5 mt-1 flex-shrink-0" />
+              <span class="font-raleway text-base">TA’s and presenters can be moved to the front of the class.</span>
+            </li>
+            <li class="flex gap-3 items-start">
+              <img :src="star_outline" class="size-5 mt-1 flex-shrink-0" />
+              <span class="font-raleway text-base">Teachers can easily see all students and class data at one time.</span>
+            </li>
+          </ul>
+          <button type="button" class="bg-white text-[#0B7077] hover:bg-gray-200 transition-colors px-8 py-4 rounded-lg font-raleway font-semibold text-base tracking-wide">
+            BUY NOW
+          </button>
+        </div>
+        <div class="hidden lg:flex justify-center">
+            <img :src="giftcards" alt="Giftcards Visual" class="w-full max-w-lg">
+        </div>
       </div>
     </div>
   </section>
@@ -681,173 +499,174 @@ import strikethrough from "~/assets/icons/strikethrough.svg";
   <!-- FOOTER SECTION -->
   <!-- Contains contact info, links, and newsletter subscription. -->
   <!-- ========================================================================= -->
-  <footer class="footer h-fit overflow-hidden">
-    <div class="main relative w-full h-[447.38px]">
-      <!-- Contact and Brand Information -->
-      <div class="flex flex-col gap-[28px] absolute left-[144px] top-[105px] bottom-[69.69px]">
-        <div class="logo flex items-center lg:gap-[15px] w-full h-fit text-left">
-          <img :src="logo" alt="Onlearn Logo" class="lg:h-[37.69px] w-[62.42px]" />
-          <span
-            class="font-extrabold text-left font-picoblackal not-italic text-[30px] leading-[100%]  w-full text-[#0B7077]">
-            Onlearn
-          </span>
-        </div>
-        <!-- Contact Details List -->
-        <div class="flex flex-col gap-[17px]">
-          <div class="flex flex-col">
-            <div class="flex flex-col">
-              <div class="flex gap-[12px]">
-                <img :src="Location" alt="Location">
-                <span
-                  class="w-[56px] h-[26px] text-[#0B7077] font-iranyekan font-[700] text-[14px]  leading-[26px]">Address:</span>
+  <footer class="footer relative overflow-hidden pt-20">
+    <div class="relative z-20 container mx-auto px-4 sm:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 text-[#0B7077]">
+        <!-- Contact and Brand Information -->
+        <div class="space-y-6">
+          <div class="logo flex items-center gap-4">
+            <img :src="logo" alt="Onlearn Logo" class="h-10 w-auto" />
+            <span class="font-extrabold font-picoblackal text-3xl text-[#0B7077]">Onlearn</span>
+          </div>
+          <div class="space-y-4 font-raleway font-medium text-sm">
+            <div class="flex items-start gap-3">
+              <img :src="Location" alt="Location" class="mt-1">
+              <div>
+                <span class="font-bold">Address:</span>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
               </div>
-              <p class="w-[279px] h-[52px] text-[#0B7077] font-raleway font-[500] text-[14px] leading-[26px] ">
-                Lorem ipsum
-                dolor sit amet, consectetur adipiscing elit,</p>
             </div>
-            <div></div>
-          </div>
-          <div class="flex gap-[12px]">
-            <img :src="Calling" alt="Calling">
-            <span class="w-[237.73px] h-[26px] text-[#0B7077] font-raleway font-[500] text-[14px] leading-[26px] ">Tel
-              :+9229341037</span>
-          </div>
-          <div class="flex gap-[12px]">
-            <img :src="Time" alt="Time">
-            <span
-              class="w-[237.73px] h-[26px] text-[#0B7077] font-raleway font-[500] text-[14px] leading-[26px] ">Response
-              hours: 8 to 20</span>
-          </div>
-          <div class="flex gap-[12px]">
-            <img :src="Message" alt="Message">
-            <span class="w-[237.73px] h-[26px] text-[#0B7077] font-raleway font-[500] text-[14px] leading-[26px] ">Email:
-              info@onlearn.com</span>
+            <div class="flex items-center gap-3">
+              <img :src="Calling" alt="Calling">
+              <span>Tel: +9229341037</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <img :src="Time" alt="Time">
+              <span>Response hours: 8 to 20</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <img :src="Message" alt="Message">
+              <span>Email: info@onlearn.com</span>
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- Footer Navigation Links -->
-      <div class="flex gap-[56px] absolute left-[556px] top-[134px]">
         <!-- Categories Links -->
-        <div class="flex flex-col gap-[29px] w-[155px] h-[171px]">
-          <span
-            class="w-[79px] h-[18px] font-raleway font-[700] text-[15px] leading-[100%]  text-[#0A033C]">Categories</span>
-          <ul class="flex flex-col gap-[20px]">
-            <li class="w-[74px] h-[16px] font-raleway font-[500] text-[14px] leading-[100%]  text-[#0B7077]">
-              Counseling</li>
-            <li class="w-[118px] h-[16px] font-raleway font-[500] text-[14px] leading-[100%]  text-[#0B7077]">
-              Health
-              and fitness</li>
-            <li class="w-[155px] h-[16px] font-raleway font-[500] text-[14px] leading-[100%]  text-[#0B7077]">
-              Individual
-              development</li>
-            <li class="w-[35px] h-[16px] font-raleway font-[500] text-[14px] leading-[100%]  text-[#0B7077]">
-              more</li>
+        <div class="space-y-6">
+          <h3 class="font-raleway font-bold text-lg text-[#0A033C]">Categories</h3>
+          <ul class="space-y-3 font-raleway font-medium text-sm">
+            <li><a href="#" class="hover:text-[#FD661F]">Counseling</a></li>
+            <li><a href="#" class="hover:text-[#FD661F]">Health and fitness</a></li>
+            <li><a href="#" class="hover:text-[#FD661F]">Individual development</a></li>
+            <li><a href="#" class="hover:text-[#FD661F]">More</a></li>
           </ul>
         </div>
+
         <!-- General Links -->
-        <div class="flex flex-col gap-[29px] w-[59px] h-[99px]">
-          <span class="w-[79px] h-[18px] font-raleway font-[700] text-[15px] leading-[100%]  text-[#0A033C]">Links</span>
-          <ul class="flex flex-col gap-[20px]">
-            <li class="w-[59px] h-[16px] font-raleway font-[500] text-[14px] leading-[100%]  text-[#0B7077]">
-              About
-              us</li>
-            <li class="w-[30px] h-[16px] font-raleway font-[500] text-[14px] leading-[100%]  text-[#0B7077]">
-              blog</li>
+        <div class="space-y-6">
+          <h3 class="font-raleway font-bold text-lg text-[#0A033C]">Links</h3>
+          <ul class="space-y-3 font-raleway font-medium text-sm">
+            <li><a href="#" class="hover:text-[#FD661F]">About us</a></li>
+            <li><a href="#" class="hover:text-[#FD661F]">Blog</a></li>
+            <li><a href="#" class="hover:text-[#FD661F]">Careers</a></li>
           </ul>
+        </div>
+
+        <!-- Newsletter Subscription Form -->
+        <div class="space-y-4">
+          <h3 class="font-raleway font-medium text-base text-center lg:text-left text-[#0A033C]">Stay up to date with the latest courses</h3>
+          <div class="flex flex-col sm:flex-row h-fit w-full rounded-lg bg-white shadow-lg p-2 gap-2">
+            <input type="email" name="Email" placeholder="Your Email" class="w-full py-3 px-4 outline-none text-[#0B7077] placeholder:text-[#0B7077]/50">
+            <button type="submit" class="w-full sm:w-auto rounded-lg px-8 py-3 bg-[#0B7077] font-medium text-base text-white hover:bg-opacity-90">
+              Send
+            </button>
+          </div>
         </div>
       </div>
-
-      <!-- Newsletter Subscription Form -->
-      <div class="flex flex-col gap-[20px] absolute left-[880px] top-[152px]">
-        <span class="w-full text-center h-[18px] font-raleway font-[400] text-[15px] text-[#0A033C] leading-[100%] ">
-          Stay up to date with the latest courses
-        </span>
-        <div
-          class="flex h-[73.68px] w-fit rounded-[15px] bg-white shadow-[0px_10px_60px_0px_#262D7614] px-[11.14px] py-[9.84px]">
-          <input type="email" name="Email" placeholder="Email" id="e_mail"
-            class="py-[13px] px-[11px] border-none outline-none font-iranyekan placeholder:font-iranyekan w-[264px] placeholder:text-[#0B7077] placeholder:font-[400] placeholder:text-[16px] placeholder:leading-[30px] placeholder: placeholder:opacity-[0.5] text-[#0B7077] font-[400] text-[16px] leading-[30px] ">
-          <button type="submit"
-            class=" rounded-[20px] px-[50px] py-[13px] bg-[#0B7077] font-iranyekan font-[500] text-[16px] leading-[100%]  text-white">Send</button>
-        </div>
+      <div class="text-center text-sm text-[#0B7077] py-8 mt-12 border-t border-[#0B7077]/20">
+        © 2025 Onlearn. All Rights Reserved.
       </div>
     </div>
-    <!-- Decorative lines for the footer background -->
-    <div class="relative opacity-[0.6] z-[15]">
-      <img :src="bottom_lines1" class="absolute left-[952.25px] bottom-0" />
-      <img :src="bottom_lines2" class="absolute left-[910.13px] bottom-0" />
-      <img :src="bottom_lines3" class="absolute left-[991.68px] bottom-0" />
-      <img :src="bottom_lines4" class="absolute left-[920.47px] bottom-0" />
-      <img :src="bottom_lines5" class="absolute left-[936.9px] bottom-0" />
-      <img :src="bottom_lines6" class="absolute left-[927.77px] bottom-0" />
-      <img :src="bottom_lines7" class="absolute left-[903.82px] bottom-0" />
-      <img :src="bottom_lines8" class="absolute left-[917.23px] bottom-0" />
+    
+    <!-- Decorative lines for the footer background (hidden on smaller screens) -->
+    <div class="absolute bottom-0 right-0 opacity-60 z-10 hidden lg:block">
+      <img :src="bottom_lines1" class="absolute right-[215px] bottom-0" />
+      <img :src="bottom_lines2" class="absolute right-[257px] bottom-0" />
+      <img :src="bottom_lines3" class="absolute right-[176px] bottom-0" />
+      <img :src="bottom_lines4" class="absolute right-[247px] bottom-0" />
+      <img :src="bottom_lines5" class="absolute right-[231px] bottom-0" />
+      <img :src="bottom_lines6" class="absolute right-[240px] bottom-0" />
+      <img :src="bottom_lines7" class="absolute right-[264px] bottom-0" />
+      <img :src="bottom_lines8" class="absolute right-[250px] bottom-0" />
     </div>
   </footer>
 </template>
 
 <style>
 /**
- * Custom styles for the Onlearn landing page component.
- * These styles handle specific visual effects not easily achieved with Tailwind CSS utility classes.
+ * Custom and utility styles for the Onlearn landing page component.
  */
 
-/* Debugging helper: Uncomment to visualize the layout of all elements. */
-/* 
-* {
-  border: 0.2px solid red;
-} 
-*/
-
-/**
- * Sets a background image for the footer.
- * The image is positioned at the bottom and covers the entire footer area without repeating.
- */
+/* Sets a background image for the footer. */
 .footer {
   background: url("~/assets/images/footer_bgimg.png") no-repeat bottom/cover;
 }
 
-/**
- * Ensures that all direct children of the footer's main content area
- * appear above the decorative background lines.
- */
-.footer .main>* {
-  z-index: 30;
+/* === UPDATED BUTTON STYLES === */
+.btn-primary {
+    @apply font-raleway font-[500] text-[16px] rounded-[10px] px-[40px] py-[20px] w-fit h-fit transition-all duration-300;
+}
+.btn-outline {
+    @apply bg-white text-[#0B7077] border-2 border-transparent hover:bg-transparent hover:border-[#0B7077];
+}
+.btn-filled {
+    @apply bg-[#0B7077] text-white hover:bg-opacity-90;
+}
+/* ============================= */
+
+.btn-outline-primary-big {
+  @apply rounded-lg transition duration-500 border px-12 py-4 hover:text-white hover:bg-[#0B7077] bg-white border-[#0B7077] shadow-lg font-raleway font-medium text-base text-center text-[#0B7077];
 }
 
-/**
- * Custom styling for the star rating component.
- */
+/* Filter buttons for course section */
+.btn-filter {
+  @apply rounded-md px-4 py-2 text-[#0B7077] bg-white font-raleway font-medium text-sm leading-none border border-[#C4C4C4] hover:bg-[#0B7077] hover:text-white transition duration-300;
+}
+.btn-filter-active {
+  @apply rounded-md px-4 py-2 bg-[#0B7077] text-white font-raleway font-medium text-sm leading-none;
+}
+
+/* Course card styles */
+.course-card {
+  @apply bg-white flex flex-col w-full min-h-[450px] transition-shadow duration-300 rounded-xl shadow-lg hover:shadow-2xl overflow-hidden;
+}
+.student-avatars {
+  @apply bg-gray-100/80 backdrop-blur-sm absolute items-center top-40 rounded-full left-1/2 -translate-x-1/2 justify-between w-fit px-3 py-1.5 flex gap-2;
+}
+.btn-enroll {
+  @apply rounded-md px-5 py-2 hover:bg-white hover:text-[#0B7077] font-raleway font-medium text-xs leading-none transition duration-300 bg-[#0B7077] text-white hover:border hover:border-[#0B7077];
+}
+
+/* Category card styles */
+.category-card {
+  @apply relative min-h-[330px] bg-white px-4 py-8 transition-shadow duration-300 flex flex-col items-center rounded-2xl shadow-md hover:shadow-xl;
+}
+
+.category-button {
+  @apply absolute bottom-[-20px] rounded-lg px-16 py-3 bg-white text-[#0B7077] font-raleway font-medium text-base text-center shadow-lg transition-all ease-in-out duration-300 group-hover:bg-[#FD661F] group-hover:text-white group-hover:px-10 group-hover:bottom-6;
+}
+
+/* Feature section item styles */
+.feature-item {
+  @apply flex flex-col sm:flex-row items-center text-center sm:text-left gap-4 lg:gap-8;
+}
+
+.feature-icon {
+  @apply flex-shrink-0 size-16 bg-[#FBFBFB] shadow-lg rounded-full flex items-center justify-center p-4;
+}
+.feature-text {
+  @apply font-raleway text-lg leading-relaxed text-[#696984];
+}
+
+/* Star rating component styles */
 .star {
   position: relative;
   width: 17.4px;
   height: 16.55px;
-  /* The background is the empty star icon. */
   background: url("~/assets/icons/star.svg") no-repeat center/contain;
 }
 
-/**
- * The filled part of the star.
- * A CSS mask is used to clip the background color into the shape of the filled star icon.
- * This allows for easy coloring and dynamic filling (e.g., half-stars).
- */
 .star-fill {
   position: absolute;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
-  background: #161618;
-  /* Color of the filled star */
+  background: #161618; /* Color of the filled star */
   -webkit-mask: url("~/assets/icons/star_filled.svg") no-repeat center/contain;
   mask: url("~/assets/icons/star_filled.svg") no-repeat center/contain;
 }
 
-/**
- * Modifier class for a half-filled star.
- * A linear gradient is used as the background, creating a sharp color stop at 50%
- * to give the appearance of a half-filled star.
- */
 .half {
   background: linear-gradient(to right, #161618 50%, transparent 50%);
 }
