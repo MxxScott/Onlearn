@@ -70,7 +70,7 @@ import strikethrough from "~/assets/icons/strikethrough.svg";
 </script>
 
 <template>
-  <title>Onlearn</title>
+  <title>Onlearn - Online Courses</title>
   <!-- ========================================================================= -->
   <!-- HERO SECTION -->
   <!-- The main landing view with navigation, headline, and call-to-action. -->
