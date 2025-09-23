@@ -80,7 +80,7 @@ import strikethrough from "~/assets/icons/strikethrough.svg";
   <!-- HERO SECTION -->
   <!-- The main landing view with navigation, headline, and call-to-action. -->
   <!-- ========================================================================= -->
-  <section class="relative bg-[#D2E6E4] min-h-screen rounded-b-[50px] overflow-hidden flex flex-col">
+  <section class="relative bg-[#D2E6E4] h-screen rounded-b-[50px] overflow-hidden flex flex-col">
     <!-- Decorative background lines for visual flair (hidden on smaller screens) -->
     <div class="absolute inset-0 opacity-[0.6] z-0 hidden lg:block">
       <img :src="top_lines1" class="absolute left-[165.28px]" />
@@ -91,10 +91,8 @@ import strikethrough from "~/assets/icons/strikethrough.svg";
       <img :src="top_lines6" class="absolute left-[140.8px]" />
       <img :src="top_lines7" class="absolute left-[116.86px]" />
       <img :src="top_lines8" class="absolute left-[130.25px]" />
-      <img :src="line1" alt="line 1" class="absolute z-[0] bottom-[339.33px] left-[171.12px] ">
-      <img :src="line2" alt="line 2" class="absolute z-[0] left-[219.16px] bottom-[260px]">
-      <img :src="line3" alt="line 3" class="absolute z-[0] bottom-[413.72px] left-[526.16px] ">
     </div>
+
 
     <!-- Header: Contains the logo, navigation links, and authentication buttons. -->
     <header class="relative z-30 w-full px-4 sm:px-8 lg:px-20 py-8">
@@ -112,11 +110,14 @@ import strikethrough from "~/assets/icons/strikethrough.svg";
           <nav class="flex h-fit gap-10 xl:gap-20">
             <NuxtLink to="/" class="h-fit text-[#FD661F] font-raleway font-bold text-lg leading-none tracking-wide">Home
             </NuxtLink>
-            <NuxtLink to="/careers" class="h-fit text-[#252641] font-raleway font-medium text-lg leading-none tracking-wide">Careers
+            <NuxtLink to="/careers"
+              class="h-fit text-[#252641] font-raleway font-medium text-lg leading-none tracking-wide">Careers
             </NuxtLink>
-            <NuxtLink to="/blog" class="h-fit text-[#252641] font-raleway font-medium text-lg leading-none tracking-wide">Blog
+            <NuxtLink to="/blog" class="h-fit text-[#252641] font-raleway font-medium text-lg leading-none tracking-wide">
+              Blog
             </NuxtLink>
-            <NuxtLink to="/about" class="h-fit text-[#252641] font-raleway font-medium text-lg leading-none tracking-wide">About Us
+            <NuxtLink to="/about"
+              class="h-fit text-[#252641] font-raleway font-medium text-lg leading-none tracking-wide">About Us
             </NuxtLink>
           </nav>
           <div class="flex items-center gap-4">
@@ -158,13 +159,22 @@ import strikethrough from "~/assets/icons/strikethrough.svg";
     <main class="relative flex-grow flex items-center px-4 sm:px-8 lg:px-20">
       <div class="w-full max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-8 z-10">
         <!-- Hero Content -->
-        <div class="text-center lg:text-left order-2 lg:order-1 relative pb-20 lg:pb-0">
+        <div class="text-center lg:text-left order-2 lg:order-1 relative pb-20">
           <span class="bg-white w-fit rounded-md font-raleway font-medium text-base md:text-lg text-[#252641] py-2 px-5">
             Never stop learning
           </span>
-          <h1 class="mt-4 font-raleway text-4xl md:text-5xl lg:text-[64px] font-bold lg:leading-[75px] text-[#0B7077]">
-            Grow up your skills by online courses with Onlearning
-          </h1>
+
+          <div class="lg:relative">
+            <h1
+              class="lg:relative lg:z-50 mt-4 font-raleway text-4xl md:text-5xl lg:text-[64px] font-bold lg:leading-[75px] text-[#0B7077] lg:w-[688px]">
+              Grow up your skills by online courses with Onlearning
+            </h1>
+            <div class="absolute inset-0 z-0 hidden lg:block">
+              <img :src="line1" alt="line 1" class="absolute z-[0] top-[115.67px] left-[76.12px] ">
+              <img :src="line2" alt="line 2" class="absolute z-[0] top-[184.78px] left-[124.16px]">
+              <img :src="line3" alt="line 3" class="absolute z-[0] top-[41.28px] left-[431.16px] ">
+            </div>            
+          </div>
 
           <!-- Call to Action & Social Proof -->
           <div class="mt-8 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
@@ -173,14 +183,14 @@ import strikethrough from "~/assets/icons/strikethrough.svg";
             </button>
             <div class="flex items-center gap-2">
               <div class="flex -space-x-4">
-                <img :src="reviewer1" alt="Reviewer profile 1" class="size-12 md:size-14 border-2 border-white rounded-full" />
-                <img :src="reviewer2" alt="Reviewer profile 2" class="size-12 md:size-14 border-2 border-white rounded-full" />
-                <img :src="reviewer3" alt="Reviewer profile 3" class="size-12 md:size-14 border-2 border-white rounded-full" />
+                <img :src="reviewer1" alt="Reviewer profile 1" class="size-12 md:size-14 rounded-full" />
+                <img :src="reviewer2" alt="Reviewer profile 2" class="size-12 md:size-14 rounded-full" />
+                <img :src="reviewer3" alt="Reviewer profile 3" class="size-12 md:size-14 rounded-full" />
               </div>
               <div>
                 <div class="flex gap-1">
                   <div v-for="i in 5" :key="i" class="star">
-                    <div class="star-fill" :class="{'half': i === 5}"></div>
+                    <div class="star-fill" :class="{ 'half': i === 5 }"></div>
                   </div>
                 </div>
                 <span class="font-raleway font-semibold text-sm text-[#230F0F]">
@@ -193,9 +203,9 @@ import strikethrough from "~/assets/icons/strikethrough.svg";
 
         <!-- Student Illustration & Floating Cards -->
         <div class="relative order-1 lg:order-2 flex justify-center items-center">
-          <img :src="student" alt="Student illustration" class="max-w-full h-auto md:max-w-lg lg:max-w-none lg:h-auto" />
-          <div class="absolute flex gap-4 items-center px-6 py-3 -bottom-8 sm:bottom-10 lg:bottom-auto lg:top-1/2 lg:-left-20 h-fit rounded-2xl bg-white/80 backdrop-blur-lg z-20 shadow-lg">
-            <div class="size-12 p-3 bg-[#23BDEE] rounded-lg flex items-center justify-center">
+          <div
+            class="absolute flex gap-4 items-center px-6 py-3 scale-[75%] lg:scale-[100%] left-[10px] bottom-[100px] lg:bottom-[184.11px] lg:left-[23px] h-fit rounded-2xl bg-white/80 backdrop-blur-lg z-20 shadow-lg">
+            <div class="size-12 p-3 bg-[#23BDEE] rounded-lg lg:size-16 flex items-center justify-center">
               <img :src="calendar" alt="calendar" class="w-full h-full" />
             </div>
             <div class="flex flex-col">
@@ -203,7 +213,9 @@ import strikethrough from "~/assets/icons/strikethrough.svg";
               <span class="font-semibold -mt-2 font-nunito text-lg text-[#545567]">Assisted Student</span>
             </div>
           </div>
-          <div class="absolute top-10 right-0 sm:right-10 lg:bottom-20 lg:right-5 size-16 rounded-xl bg-[#FD661F] shadow-lg p-3 z-20">
+          <img :src="student" alt="Student illustration" class="max-w-full h-auto md:max-w-lg lg:max-w-none lg:h-auto" />
+          <div
+            class="absolute right-[40px] bottom-[200px] lg:bottom-[326.11px] lg:left-[564.35px] lg:right-[auto] size-16 rounded-xl bg-[#FD661F] shadow-lg p-3 z-20">
             <img :src="chart" alt="chart" class="w-full h-full" />
           </div>
         </div>
@@ -218,7 +230,7 @@ import strikethrough from "~/assets/icons/strikethrough.svg";
   <section class="py-20 lg:py-32 px-4 sm:px-8 lg:px-20 space-y-20 lg:space-y-32">
 
     <!-- Popular Courses Section -->
-    <div class="flex flex-col w-full justify-center gap-10 lg:gap-16 max-w-screen-xl mx-auto">
+    <div class="flex flex-col w-full justify-center items-center gap-10 lg:gap-16 max-w-screen-xl mx-auto">
       <div class="flex flex-col gap-8 text-center items-center relative">
         <h1 class="font-inter font-bold text-4xl lg:text-5xl text-[#FD661F] tracking-tighter">Popular Courses</h1>
         <div class="flex flex-wrap justify-center gap-3 sm:gap-6">
@@ -235,24 +247,27 @@ import strikethrough from "~/assets/icons/strikethrough.svg";
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
         <!-- Course Card 1 -->
         <div class="course-card">
-          <img :src="pmbc" class="w-full h-48 object-cover" />
-          <div class="p-4 flex flex-col flex-grow">
-            <div class="student-avatars">
-              <div class="flex -space-x-2 h-fit object-contain">
-                <img :src="blink" class="size-8 rounded-full border-2 border-white" />
-                <img :src="ander" class="size-8 rounded-full border-2 border-white" />
-                <img :src="bird" class="size-8 rounded-full border-2 border-white" />
-                <img :src="bartender" class="size-8 rounded-full border-2 border-white" />
-              </div>
-              <span class="font-raleway text-sm text-[#263238]">+40 students</span>
+          <div class="student-avatars">
+            <div class="flex -space-x-2 h-fit object-contain">
+              <img :src="blink" class="size-8 rounded-full" />
+              <img :src="ander" class="size-8 rounded-full" />
+              <img :src="bird" class="size-8 rounded-full" />
+              <img :src="bartender" class="size-8 rounded-full" />
             </div>
+            <span class="font-raleway text-sm text-[#263238]">+40 students</span>
+          </div>
+          <img :src="pmbc" class="w-full h-48 object-cover" />
+          <div class=" p-4 flex flex-col flex-grow">
+
             <div class="mt-4 flex flex-col flex-grow">
               <span class="font-raleway text-xs text-[#777795]">1 - 28 July 2022</span>
-              <span class="font-raleway font-extrabold text-base text-[#0B7077] mt-1">Product Management Basic - Course</span>
-              <span class="font-raleway text-xs text-[#4D4D4D] mt-2 flex-grow">Product Management Masterclass, you will learn with Sarah Johnson.</span>
+              <span class="font-raleway font-extrabold text-base text-[#0B7077] mt-1">Product Management Basic -
+                Course</span>
+              <span class="font-raleway text-xs text-[#4D4D4D] mt-2 flex-grow">Product Management Masterclass, you will
+                learn with Sarah Johnson.</span>
             </div>
           </div>
-          <div class="p-4 border-t flex items-center justify-between">
+          <div class="p-4 border-t w-full flex items-center justify-between">
             <div class="flex items-center gap-2">
               <span class="text-[#FD661F] font-inter font-bold text-lg">$123</span>
               <span class="font-inter text-sm text-gray-400 line-through">$500</span>
@@ -263,23 +278,27 @@ import strikethrough from "~/assets/icons/strikethrough.svg";
 
         <!-- Course Card 2 -->
         <div class="course-card">
+          <div class="student-avatars">
+            <div class="flex -space-x-2 h-fit object-contain">
+              <img :src="blink" class="size-8 rounded-full" />
+              <img :src="ander" class="size-8 rounded-full" />
+              <img :src="bird" class="size-8 rounded-full" />
+              <img :src="bartender" class="size-8 rounded-full" />
+            </div>
+            <span class="font-raleway text-sm text-[#263238]">+11 students</span>
+          </div>
           <img :src="bdspc" class="w-full h-48 object-cover" />
           <div class="p-4 flex flex-col flex-grow">
-            <div class="student-avatars">
-               <div class="flex -space-x-2 h-fit object-contain">
-                <img :src="blink" class="size-8 rounded-full border-2 border-white" />
-                <img :src="ander" class="size-8 rounded-full border-2 border-white" />
-              </div>
-              <span class="font-raleway text-sm text-[#263238]">+11 students</span>
-            </div>
             <div class="mt-4 flex flex-col flex-grow">
               <span class="font-raleway text-xs text-[#777795]">1 - 28 July 2022</span>
-              <span class="font-raleway font-extrabold text-base text-[#0B7077] mt-1">BM Data Science Professional Certificate</span>
-              <span class="font-raleway text-xs text-[#4D4D4D] mt-2 flex-grow">Product Management Masterclass, you will learn with Sarah Johnson.</span>
+              <span class="font-raleway font-extrabold text-base text-[#0B7077] mt-1">BM Data Science Professional
+                Certificate</span>
+              <span class="font-raleway text-xs text-[#4D4D4D] mt-2 flex-grow">Product Management Masterclass, you will
+                learn with Sarah Johnson.</span>
             </div>
           </div>
-          <div class="p-4 border-t flex items-center justify-between">
-             <div class="flex items-center gap-2">
+          <div class="p-4 border-t w-full flex items-center justify-between">
+            <div class="flex items-center gap-2">
               <span class="text-[#FD661F] font-inter font-bold text-lg">$123</span>
               <span class="font-inter text-sm text-gray-400 line-through">$500</span>
             </div>
@@ -289,24 +308,26 @@ import strikethrough from "~/assets/icons/strikethrough.svg";
 
         <!-- Course Card 3 -->
         <div class="course-card">
+          <div class="student-avatars">
+            <div class="flex -space-x-2 h-fit object-contain">
+              <img :src="blink" class="size-8 rounded-full" />
+              <img :src="ander" class="size-8 rounded-full" />
+              <img :src="bird" class="size-8 rounded-full" />
+              <img :src="bartender" class="size-8 rounded-full" />
+            </div>
+            <span class="font-raleway text-sm text-[#263238]">+234 students</span>
+          </div>
           <img :src="tsowb" class="w-full h-48 object-cover" />
           <div class="p-4 flex flex-col flex-grow">
-            <div class="student-avatars">
-               <div class="flex -space-x-2 h-fit object-contain">
-                <img :src="blink" class="size-8 rounded-full border-2 border-white" />
-                <img :src="ander" class="size-8 rounded-full border-2 border-white" />
-                <img :src="bird" class="size-8 rounded-full border-2 border-white" />
-              </div>
-              <span class="font-raleway text-sm text-[#263238]">+234 students</span>
-            </div>
             <div class="mt-4 flex flex-col flex-grow">
               <span class="font-raleway text-xs text-[#777795]">1 - 28 July 2022</span>
               <span class="font-raleway font-extrabold text-base text-[#0B7077] mt-1">The Science of Well-Being</span>
-              <span class="font-raleway text-xs text-[#4D4D4D] mt-2 flex-grow">Product Management Masterclass, you will learn with Sarah Johnson.</span>
+              <span class="font-raleway text-xs text-[#4D4D4D] mt-2 flex-grow">Product Management Masterclass, you will
+                learn with Sarah Johnson.</span>
             </div>
           </div>
-          <div class="p-4 border-t flex items-center justify-between">
-             <div class="flex items-center gap-2">
+          <div class="p-4 border-t w-full flex items-center justify-between">
+            <div class="flex items-center gap-2">
               <span class="text-[#FD661F] font-inter font-bold text-lg">$123</span>
               <span class="font-inter text-sm text-gray-400 line-through">$500</span>
             </div>
@@ -316,25 +337,27 @@ import strikethrough from "~/assets/icons/strikethrough.svg";
 
         <!-- Course Card 4 -->
         <div class="course-card">
+          <div class="student-avatars">
+            <div class="flex -space-x-2 h-fit object-contain">
+              <img :src="blink" class="size-8 rounded-full" />
+              <img :src="ander" class="size-8 rounded-full" />
+              <img :src="bird" class="size-8 rounded-full" />
+              <img :src="bartender" class="size-8 rounded-full " />
+            </div>
+            <span class="font-raleway text-sm text-[#263238]">+342 students</span>
+          </div>
           <img :src="pfes" class="w-full h-48 object-cover" />
           <div class="p-4 flex flex-col flex-grow">
-            <div class="student-avatars">
-              <div class="flex -space-x-2 h-fit object-contain">
-                <img :src="blink" class="size-8 rounded-full border-2 border-white" />
-                <img :src="ander" class="size-8 rounded-full border-2 border-white" />
-                <img :src="bird" class="size-8 rounded-full border-2 border-white" />
-                 <img :src="bartender" class="size-8 rounded-full border-2 border-white" />
-              </div>
-              <span class="font-raleway text-sm text-[#263238]">+342 students</span>
-            </div>
             <div class="mt-4 flex flex-col flex-grow">
               <span class="font-raleway text-xs text-[#777795]">1 - 28 July 2022</span>
-              <span class="font-raleway font-extrabold text-base text-[#0B7077] mt-1">Python for Everybody Specialization</span>
-              <span class="font-raleway text-xs text-[#4D4D4D] mt-2 flex-grow">Product Management Masterclass, you will learn with Sarah Johnson.</span>
+              <span class="font-raleway font-extrabold text-base text-[#0B7077] mt-1">Python for Everybody
+                Specialization</span>
+              <span class="font-raleway text-xs text-[#4D4D4D] mt-2 flex-grow">Product Management Masterclass, you will
+                learn with Sarah Johnson.</span>
             </div>
           </div>
-          <div class="p-4 border-t flex items-center justify-between">
-             <div class="flex items-center gap-2">
+          <div class="p-4 border-t w-full flex items-center justify-between">
+            <div class="flex items-center gap-2">
               <span class="text-[#FD661F] font-inter font-bold text-lg">$123</span>
               <span class="font-inter text-sm text-gray-400 line-through">$500</span>
             </div>
@@ -348,18 +371,20 @@ import strikethrough from "~/assets/icons/strikethrough.svg";
     <div class="flex flex-col gap-12 lg:gap-20 items-center max-w-screen-xl mx-auto">
       <div class="flex flex-col gap-8 text-center items-center relative">
         <h1 class="font-inter font-bold text-4xl lg:text-5xl text-[#0B7077] tracking-tighter">Courses Category</h1>
-        <span class="font-raleway max-w-3xl text-lg lg:text-xl text-[#696984]">Onlearing is one powerful online software suite that combines all the tools needed to run a successful school or office.</span>
+        <span class="font-raleway max-w-3xl text-lg lg:text-xl text-[#696984]">Onlearing is one powerful online software
+          suite that combines all the tools needed to run a successful school or office.</span>
         <img :src="vector2" class="absolute top-10 right-1/4 hidden lg:block" />
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 w-full">
         <!-- Category Card 1: Beauty -->
         <div class="category-card group">
-          <span class="relative inline-block rounded-full size-16 bg-[#A3D3FF] flex items-center justify-center">
-            <img :src="beauty" class="size-10 object-contain" />
+          <span class="relative inline-block rounded-full size-[50px] bg-[#A3D3FF] items-center justify-center">
+            <img :src="beauty" class="absolute size-[50px] object-cover" />
           </span>
           <span class="mt-6 font-raleway font-semibold text-2xl text-[#0B7077]">Beauty</span>
-          <span class="text-center mt-4 w-full max-w-xs font-raleway text-base text-[#696984]">One powerful online software suite that combines</span>
+          <span class="text-center mt-4 w-full max-w-xs font-raleway text-base text-[#696984]">One powerful online
+            software suite that combines</span>
           <button class="category-button">
             <span class="hidden group-hover:block">Explore courses</span>
             <span class="block group-hover:hidden">more</span>
@@ -368,11 +393,12 @@ import strikethrough from "~/assets/icons/strikethrough.svg";
 
         <!-- Category Card 2: Medical -->
         <div class="category-card group">
-          <span class="relative inline-block rounded-full size-16 bg-[#F1C9FF] flex items-center justify-center">
-            <img :src="medical" class="size-12 object-contain" />
+          <span class="relative inline-block rounded-full size-[50px] bg-[#F1C9FF] items-center justify-center">
+            <img :src="medical" class="absolute size-[50px] object-cover" />
           </span>
           <span class="mt-6 font-raleway font-semibold text-2xl text-[#0B7077]">Medical</span>
-          <span class="text-center mt-4 w-full max-w-xs font-raleway text-base text-[#696984]">One powerful online software suite that combines</span>
+          <span class="text-center mt-4 w-full max-w-xs font-raleway text-base text-[#696984]">One powerful online
+            software suite that combines</span>
           <button class="category-button">
             <span class="hidden group-hover:block">Explore courses</span>
             <span class="block group-hover:hidden">more</span>
@@ -381,11 +407,12 @@ import strikethrough from "~/assets/icons/strikethrough.svg";
 
         <!-- Category Card 3: Sports -->
         <div class="category-card group">
-          <span class="relative inline-block rounded-full size-16 bg-[#FFE3AF] flex items-center justify-center">
-            <img :src="sports" class="h-12 w-auto object-contain" />
+          <span class="inline-block rounded-full size-[50px] bg-[#FFB800] items-center justify-center">
+            <img :src="sports" class="absolute size-[50px] object-cover" />
           </span>
           <span class="mt-6 font-raleway font-semibold text-2xl text-[#0B7077]">Sports</span>
-          <span class="text-center mt-4 w-full max-w-xs font-raleway text-base text-[#696984]">One powerful online software suite that combines</span>
+          <span class="text-center mt-4 w-full max-w-xs font-raleway text-base text-[#696984]">One powerful online
+            software suite that combines</span>
           <button class="category-button">
             <span class="hidden group-hover:block">Explore courses</span>
             <span class="block group-hover:hidden">more</span>
@@ -394,11 +421,12 @@ import strikethrough from "~/assets/icons/strikethrough.svg";
 
         <!-- Category Card 4: Nutrition -->
         <div class="category-card group">
-          <span class="relative inline-block rounded-full size-16 bg-[#CAC9FF] flex items-center justify-center">
-            <img :src="nutrition" class="size-10 object-contain" />
+          <span class="inline-block rounded-full size-[50px] bg-[#CAC9FF] items-center justify-center">
+            <img :src="nutrition" class="absolute size-[50px] object-cover" />
           </span>
           <span class="mt-6 font-raleway font-semibold text-2xl text-[#0B7077]">Nutrition</span>
-          <span class="text-center mt-4 w-full max-w-xs font-raleway text-base text-[#696984]">One powerful online software suite that combines</span>
+          <span class="text-center mt-4 w-full max-w-xs font-raleway text-base text-[#696984]">One powerful online
+            software suite that combines</span>
           <button class="category-button">
             <span class="hidden group-hover:block">Explore courses</span>
             <span class="block group-hover:hidden">more</span>
@@ -412,7 +440,8 @@ import strikethrough from "~/assets/icons/strikethrough.svg";
     <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20 max-w-screen-xl mx-auto">
       <div class="flex-1 space-y-8 text-center lg:text-left">
         <div class="space-y-4">
-          <span class="rounded-lg px-5 py-2 bg-[#F5F5F5] font-raleway font-medium text-lg tracking-wide text-[#0B7077]">Benefits</span>
+          <span
+            class="rounded-lg px-5 py-2 bg-[#F5F5F5] font-raleway font-medium text-lg tracking-wide text-[#0B7077]">Benefits</span>
           <h1 class="font-inter font-bold text-4xl lg:text-5xl text-[#0B7077] tracking-tighter">Get Student ID card</h1>
         </div>
         <div class="space-y-6">
@@ -442,7 +471,8 @@ import strikethrough from "~/assets/icons/strikethrough.svg";
     <div class="flex flex-col lg:flex-row-reverse items-center gap-12 lg:gap-20 max-w-screen-xl mx-auto">
       <div class="flex-1 space-y-8 text-center lg:text-left">
         <div class="space-y-4">
-          <span class="rounded-lg px-5 py-2 bg-[#D4E1FF] font-raleway font-medium text-lg tracking-wide text-[#0B7077]">Training</span>
+          <span
+            class="rounded-lg px-5 py-2 bg-[#D4E1FF] font-raleway font-medium text-lg tracking-wide text-[#0B7077]">Training</span>
           <h1 class="font-inter font-bold text-4xl lg:text-5xl text-[#FD661F] tracking-tighter">Staff training</h1>
         </div>
         <div class="space-y-6">
@@ -473,7 +503,8 @@ import strikethrough from "~/assets/icons/strikethrough.svg";
           <ul class="space-y-4">
             <li class="flex gap-3 items-start">
               <img :src="star_outline" class="size-5 mt-1 flex-shrink-0" />
-              <span class="font-raleway text-base">Teachers don’t get lost in the grid view and have a dedicated Podium space.</span>
+              <span class="font-raleway text-base">Teachers don’t get lost in the grid view and have a dedicated Podium
+                space.</span>
             </li>
             <li class="flex gap-3 items-start">
               <img :src="star_outline" class="size-5 mt-1 flex-shrink-0" />
@@ -484,12 +515,13 @@ import strikethrough from "~/assets/icons/strikethrough.svg";
               <span class="font-raleway text-base">Teachers can easily see all students and class data at one time.</span>
             </li>
           </ul>
-          <button type="button" class="bg-white text-[#0B7077] hover:bg-gray-200 transition-colors px-8 py-4 rounded-lg font-raleway font-semibold text-base tracking-wide">
+          <button type="button"
+            class="bg-white text-[#0B7077] hover:bg-gray-200 transition-colors px-8 py-4 rounded-lg font-raleway font-semibold text-base tracking-wide">
             BUY NOW
           </button>
         </div>
         <div class="hidden lg:flex justify-center">
-            <img :src="giftcards" alt="Giftcards Visual" class="w-full max-w-lg">
+          <img :src="giftcards" alt="Giftcards Visual" class="w-full max-w-lg">
         </div>
       </div>
     </div>
@@ -501,9 +533,9 @@ import strikethrough from "~/assets/icons/strikethrough.svg";
   <!-- ========================================================================= -->
   <footer class="footer relative overflow-hidden pt-20">
     <div class="relative z-20 container mx-auto px-4 sm:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 text-[#0B7077]">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[12px] text-[#0B7077]">
         <!-- Contact and Brand Information -->
-        <div class="space-y-6">
+        <div class="space-y-8">
           <div class="logo flex items-center gap-4">
             <img :src="logo" alt="Onlearn Logo" class="h-10 w-auto" />
             <span class="font-extrabold font-picoblackal text-3xl text-[#0B7077]">Onlearn</span>
@@ -532,7 +564,7 @@ import strikethrough from "~/assets/icons/strikethrough.svg";
         </div>
 
         <!-- Categories Links -->
-        <div class="space-y-6">
+        <div class="space-y-4">
           <h3 class="font-raleway font-bold text-lg text-[#0A033C]">Categories</h3>
           <ul class="space-y-3 font-raleway font-medium text-sm">
             <li><a href="#" class="hover:text-[#FD661F]">Counseling</a></li>
@@ -543,7 +575,7 @@ import strikethrough from "~/assets/icons/strikethrough.svg";
         </div>
 
         <!-- General Links -->
-        <div class="space-y-6">
+        <div class="space-y-4">
           <h3 class="font-raleway font-bold text-lg text-[#0A033C]">Links</h3>
           <ul class="space-y-3 font-raleway font-medium text-sm">
             <li><a href="#" class="hover:text-[#FD661F]">About us</a></li>
@@ -553,11 +585,14 @@ import strikethrough from "~/assets/icons/strikethrough.svg";
         </div>
 
         <!-- Newsletter Subscription Form -->
-        <div class="space-y-4">
-          <h3 class="font-raleway font-medium text-base text-center lg:text-left text-[#0A033C]">Stay up to date with the latest courses</h3>
+        <div class="space-y-4 lg:relative lg:right-[134.72px] lg:items-center lg:justify-center lg:w-[425.28px] ">
+          <h3 class="font-raleway font-medium text-base text-center text-[#0A033C] lg:relative lg:w-full">Stay up to date with the
+            latest courses</h3>
           <div class="flex flex-col sm:flex-row h-fit w-full rounded-lg bg-white shadow-lg p-2 gap-2">
-            <input type="email" name="Email" placeholder="Your Email" class="w-full py-3 px-4 outline-none text-[#0B7077] placeholder:text-[#0B7077]/50">
-            <button type="submit" class="w-full sm:w-auto rounded-lg px-8 py-3 bg-[#0B7077] font-medium text-base text-white hover:bg-opacity-90">
+            <input type="email" name="Email" placeholder="Your Email"
+              class="w-full py-3 px-4 outline-none text-[#0B7077] placeholder:text-[#0B7077]/50">
+            <button type="submit"
+              class="w-full sm:w-auto rounded-[20px] px-8 py-3 bg-[#0B7077] font-medium text-base text-white hover:bg-opacity-90">
               Send
             </button>
           </div>
@@ -567,7 +602,7 @@ import strikethrough from "~/assets/icons/strikethrough.svg";
         © 2025 Onlearn. All Rights Reserved.
       </div>
     </div>
-    
+
     <!-- Decorative lines for the footer background (hidden on smaller screens) -->
     <div class="absolute bottom-0 right-0 opacity-60 z-10 hidden lg:block">
       <img :src="bottom_lines1" class="absolute right-[215px] bottom-0" />
@@ -581,93 +616,3 @@ import strikethrough from "~/assets/icons/strikethrough.svg";
     </div>
   </footer>
 </template>
-
-<style>
-/**
- * Custom and utility styles for the Onlearn landing page component.
- */
-
-/* Sets a background image for the footer. */
-.footer {
-  background: url("~/assets/images/footer_bgimg.png") no-repeat bottom/cover;
-}
-
-/* === UPDATED BUTTON STYLES === */
-.btn-primary {
-    @apply font-raleway font-[500] text-[16px] rounded-[10px] px-[40px] py-[20px] w-fit h-fit transition-all duration-300;
-}
-.btn-outline {
-    @apply bg-white text-[#0B7077] border-2 border-transparent hover:bg-transparent hover:border-[#0B7077];
-}
-.btn-filled {
-    @apply bg-[#0B7077] text-white hover:bg-opacity-90;
-}
-/* ============================= */
-
-.btn-outline-primary-big {
-  @apply rounded-lg transition duration-500 border px-12 py-4 hover:text-white hover:bg-[#0B7077] bg-white border-[#0B7077] shadow-lg font-raleway font-medium text-base text-center text-[#0B7077];
-}
-
-/* Filter buttons for course section */
-.btn-filter {
-  @apply rounded-md px-4 py-2 text-[#0B7077] bg-white font-raleway font-medium text-sm leading-none border border-[#C4C4C4] hover:bg-[#0B7077] hover:text-white transition duration-300;
-}
-.btn-filter-active {
-  @apply rounded-md px-4 py-2 bg-[#0B7077] text-white font-raleway font-medium text-sm leading-none;
-}
-
-/* Course card styles */
-.course-card {
-  @apply bg-white flex flex-col w-full min-h-[450px] transition-shadow duration-300 rounded-xl shadow-lg hover:shadow-2xl overflow-hidden;
-}
-.student-avatars {
-  @apply bg-gray-100/80 backdrop-blur-sm absolute items-center top-40 rounded-full left-1/2 -translate-x-1/2 justify-between w-fit px-3 py-1.5 flex gap-2;
-}
-.btn-enroll {
-  @apply rounded-md px-5 py-2 hover:bg-white hover:text-[#0B7077] font-raleway font-medium text-xs leading-none transition duration-300 bg-[#0B7077] text-white hover:border hover:border-[#0B7077];
-}
-
-/* Category card styles */
-.category-card {
-  @apply relative min-h-[330px] bg-white px-4 py-8 transition-shadow duration-300 flex flex-col items-center rounded-2xl shadow-md hover:shadow-xl;
-}
-
-.category-button {
-  @apply absolute bottom-[-20px] rounded-lg px-16 py-3 bg-white text-[#0B7077] font-raleway font-medium text-base text-center shadow-lg transition-all ease-in-out duration-300 group-hover:bg-[#FD661F] group-hover:text-white group-hover:px-10 group-hover:bottom-6;
-}
-
-/* Feature section item styles */
-.feature-item {
-  @apply flex flex-col sm:flex-row items-center text-center sm:text-left gap-4 lg:gap-8;
-}
-
-.feature-icon {
-  @apply flex-shrink-0 size-16 bg-[#FBFBFB] shadow-lg rounded-full flex items-center justify-center p-4;
-}
-.feature-text {
-  @apply font-raleway text-lg leading-relaxed text-[#696984];
-}
-
-/* Star rating component styles */
-.star {
-  position: relative;
-  width: 17.4px;
-  height: 16.55px;
-  background: url("~/assets/icons/star.svg") no-repeat center/contain;
-}
-
-.star-fill {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: #161618; /* Color of the filled star */
-  -webkit-mask: url("~/assets/icons/star_filled.svg") no-repeat center/contain;
-  mask: url("~/assets/icons/star_filled.svg") no-repeat center/contain;
-}
-
-.half {
-  background: linear-gradient(to right, #161618 50%, transparent 50%);
-}
-</style>
