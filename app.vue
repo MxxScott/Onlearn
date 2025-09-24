@@ -67,7 +67,7 @@ import strikethrough from "~/assets/icons/strikethrough.svg";
   <!-- HERO SECTION -->
   <!-- The main landing view with navigation, headline, and call-to-action. -->
   <!-- ========================================================================= -->
-  <section class="relative bg-[#D2E6E4] h-screen rounded-b-[50px] overflow-hidden flex flex-col">
+  <section class="relative bg-[#D2E6E4] lg:h-screen rounded-b-[50px] overflow-hidden flex flex-col">
     <!-- Decorative background lines for visual flair (hidden on smaller screens) -->
     <img :src="bg_top" class="absolute top-0 left-[69.34px] hidden lg:block" />
 
