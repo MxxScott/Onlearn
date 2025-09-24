@@ -39,6 +39,9 @@ import ander from "~/assets/images/ander.png"
 import bird from "~/assets/images/bird.png"
 import bartender from "~/assets/images/bartender.png"
 import bill from "~/assets/images/bill.png"
+import bg_giftcard from "~/assets/images/bg_giftcard.png"
+import bg_top from "~/assets/images/bg_top.png"
+import bg_bottom from "~/assets/images/bg_bottom.png"
 
 
 // SVG Icons used for decorative purposes and UI elements
@@ -49,22 +52,6 @@ import Calling from "~/assets/icons/Calling.svg";
 import Location from "~/assets/icons/Location.svg";
 import Message from "~/assets/icons/Message.svg";
 import Time from "~/assets/icons/Time.svg";
-import top_lines1 from "~/assets/icons/top_lines1.svg";
-import top_lines2 from "~/assets/icons/top_lines2.svg";
-import top_lines3 from "~/assets/icons/top_lines3.svg";
-import top_lines4 from "~/assets/icons/top_lines4.svg";
-import top_lines5 from "~/assets/icons/top_lines5.svg";
-import top_lines6 from "~/assets/icons/top_lines6.svg";
-import top_lines7 from "~/assets/icons/top_lines7.svg";
-import top_lines8 from "~/assets/icons/top_lines8.svg";
-import bottom_lines1 from "~/assets/icons/bottom_lines1.svg";
-import bottom_lines2 from "~/assets/icons/bottom_lines2.svg";
-import bottom_lines3 from "~/assets/icons/bottom_lines3.svg";
-import bottom_lines4 from "~/assets/icons/bottom_lines4.svg";
-import bottom_lines5 from "~/assets/icons/bottom_lines5.svg";
-import bottom_lines6 from "~/assets/icons/bottom_lines6.svg";
-import bottom_lines7 from "~/assets/icons/bottom_lines7.svg";
-import bottom_lines8 from "~/assets/icons/bottom_lines8.svg";
 import star_outline from "~/assets/icons/star_outline.svg";
 import grid from "~/assets/icons/grid.svg";
 import slides from "~/assets/icons/slides.svg";
@@ -82,28 +69,18 @@ import strikethrough from "~/assets/icons/strikethrough.svg";
   <!-- ========================================================================= -->
   <section class="relative bg-[#D2E6E4] h-screen rounded-b-[50px] overflow-hidden flex flex-col">
     <!-- Decorative background lines for visual flair (hidden on smaller screens) -->
-    <div class="absolute inset-0 opacity-[0.6] z-0 hidden lg:block">
-      <img :src="top_lines1" class="absolute left-[165.28px]" />
-      <img :src="top_lines2" class="absolute left-[123.15px]" />
-      <img :src="top_lines3" class="absolute left-[204.7px]" />
-      <img :src="top_lines4" class="absolute left-[133.49px]" />
-      <img :src="top_lines5" class="absolute left-[149.93px]" />
-      <img :src="top_lines6" class="absolute left-[140.8px]" />
-      <img :src="top_lines7" class="absolute left-[116.86px]" />
-      <img :src="top_lines8" class="absolute left-[130.25px]" />
-    </div>
-
+    <img :src="bg_top" class="absolute top-0 left-[69.34px] hidden lg:block" />
 
     <!-- Header: Contains the logo, navigation links, and authentication buttons. -->
     <header class="relative z-30 w-full px-4 sm:px-8 lg:px-20 py-8">
       <div class="flex justify-between items-center max-w-screen-xl mx-auto">
         <!-- Logo -->
-        <div class="logo flex items-center gap-2 lg:gap-4 flex-shrink-0">
+        <NuxtLink to="/" class="logo flex items-center gap-2 lg:gap-4 flex-shrink-0">
           <img :src="logo" alt="Logo" class="h-8 lg:h-10 w-auto" />
           <span class="font-extrabold font-picoblackal text-2xl lg:text-3xl text-[#0B7077]">
             Onlearn
           </span>
-        </div>
+        </NuxtLink>
 
         <!-- Desktop Navigation & Auth -->
         <div class="hidden lg:flex items-center gap-10">
@@ -111,13 +88,16 @@ import strikethrough from "~/assets/icons/strikethrough.svg";
             <NuxtLink to="/" class="h-fit text-[#FD661F] font-raleway font-bold text-lg leading-none tracking-wide">Home
             </NuxtLink>
             <NuxtLink to="/careers"
-              class="h-fit text-[#252641] font-raleway font-medium text-lg leading-none tracking-wide">Careers
+              class="hover:text-[#FD661F] h-fit text-[#252641] font-raleway font-medium text-lg leading-none tracking-wide">
+              Careers
             </NuxtLink>
-            <NuxtLink to="/blog" class="h-fit text-[#252641] font-raleway font-medium text-lg leading-none tracking-wide">
+            <NuxtLink to="/blog"
+              class="hover:text-[#FD661F] h-fit text-[#252641] font-raleway font-medium text-lg leading-none tracking-wide">
               Blog
             </NuxtLink>
             <NuxtLink to="/about"
-              class="h-fit text-[#252641] font-raleway font-medium text-lg leading-none tracking-wide">About Us
+              class="hover:text-[#FD661F] h-fit text-[#252641] font-raleway font-medium text-lg leading-none tracking-wide">
+              About Us
             </NuxtLink>
           </nav>
           <div class="flex items-center gap-4">
@@ -170,15 +150,15 @@ import strikethrough from "~/assets/icons/strikethrough.svg";
               Grow up your skills by online courses with Onlearning
             </h1>
             <div class="absolute inset-0 z-0 hidden lg:block">
-              <img :src="line1" alt="line 1" class="absolute z-[0] top-[115.67px] left-[76.12px] ">
-              <img :src="line2" alt="line 2" class="absolute z-[0] top-[184.78px] left-[124.16px]">
-              <img :src="line3" alt="line 3" class="absolute z-[0] top-[41.28px] left-[431.16px] ">
+              <img :src="line1" alt="line 1" class="absolute z-[0] top-[105.67px] left-[76.12px] ">
+              <img :src="line2" alt="line 2" class="absolute z-[0] top-[174.78px] left-[124.16px]">
+              <img :src="line3" alt="line 3" class="absolute z-[0] top-[31.28px] left-[431.16px] ">
             </div>
           </div>
 
           <!-- Call to Action & Social Proof -->
           <div class="mt-8 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-            <button class="btn-primary bg-[#FD661F] text-white hover:bg-opacity-90">
+            <button class="btn-primary  border-2 border-transparent hover:bg-transparent hover:border-[#FD661F] hover:text-[#FD661F] bg-[#FD661F] text-white">
               EXPLORE PATH
             </button>
             <div class="flex items-center gap-2">
@@ -253,6 +233,7 @@ import strikethrough from "~/assets/icons/strikethrough.svg";
               <img :src="ander" class="size-8 rounded-full" />
               <img :src="bird" class="size-8 rounded-full" />
               <img :src="bartender" class="size-8 rounded-full" />
+              <img :src="bill" class="size-8 rounded-full" />
             </div>
             <span class="font-raleway text-sm text-[#263238]">+40 students</span>
           </div>
@@ -269,7 +250,7 @@ import strikethrough from "~/assets/icons/strikethrough.svg";
           </div>
           <div class="p-4 border-t w-full flex items-center justify-between">
             <div class="flex items-center gap-2">
-              <span class="text-[#FD661F] font-inter font-bold text-lg">$123</span>
+              <span class="text-[#FD661F] font-inter font-bold text-lg">$380</span>
               <span class="font-inter text-sm text-gray-400 line-through">$500</span>
             </div>
             <button class="btn-enroll">Enroll Now</button>
@@ -284,6 +265,7 @@ import strikethrough from "~/assets/icons/strikethrough.svg";
               <img :src="ander" class="size-8 rounded-full" />
               <img :src="bird" class="size-8 rounded-full" />
               <img :src="bartender" class="size-8 rounded-full" />
+              <img :src="bill" class="size-8 rounded-full" />
             </div>
             <span class="font-raleway text-sm text-[#263238]">+11 students</span>
           </div>
@@ -299,7 +281,7 @@ import strikethrough from "~/assets/icons/strikethrough.svg";
           </div>
           <div class="p-4 border-t w-full flex items-center justify-between">
             <div class="flex items-center gap-2">
-              <span class="text-[#FD661F] font-inter font-bold text-lg">$123</span>
+              <span class="text-[#FD661F] font-inter font-bold text-lg">$678</span>
               <span class="font-inter text-sm text-gray-400 line-through">$500</span>
             </div>
             <button class="btn-enroll">Enroll Now</button>
@@ -314,6 +296,7 @@ import strikethrough from "~/assets/icons/strikethrough.svg";
               <img :src="ander" class="size-8 rounded-full" />
               <img :src="bird" class="size-8 rounded-full" />
               <img :src="bartender" class="size-8 rounded-full" />
+              <img :src="bill" class="size-8 rounded-full" />
             </div>
             <span class="font-raleway text-sm text-[#263238]">+234 students</span>
           </div>
@@ -343,6 +326,7 @@ import strikethrough from "~/assets/icons/strikethrough.svg";
               <img :src="ander" class="size-8 rounded-full" />
               <img :src="bird" class="size-8 rounded-full" />
               <img :src="bartender" class="size-8 rounded-full " />
+              <img :src="bill" class="size-8 rounded-full " />
             </div>
             <span class="font-raleway text-sm text-[#263238]">+342 students</span>
           </div>
@@ -358,7 +342,7 @@ import strikethrough from "~/assets/icons/strikethrough.svg";
           </div>
           <div class="p-4 border-t w-full flex items-center justify-between">
             <div class="flex items-center gap-2">
-              <span class="text-[#FD661F] font-inter font-bold text-lg">$123</span>
+              <span class="text-[#FD661F] font-inter font-bold text-lg">$567</span>
               <span class="font-inter text-sm text-gray-400 line-through">$500</span>
             </div>
             <button class="btn-enroll">Enroll Now</button>
@@ -461,8 +445,14 @@ import strikethrough from "~/assets/icons/strikethrough.svg";
       </div>
       <div class="flex-1 w-full flex justify-center p-8 bg-[#D2E6E4] rounded-2xl">
         <div class="flex gap-4 sm:gap-6">
-          <img :src="id_front" alt="Student ID Card front page" class="w-1/2 max-w-xs" />
-          <img :src="id_back" alt="Student ID Card back page" class="w-1/2 max-w-xs" />
+          <div class="relative w-1/2 flex justify-center">
+            <img :src="logo" alt="onlearn logo" class="absolute bottom-[13.61px]" />
+            <img :src="id_front" alt="Student ID Card front page" class="w-full max-w-xs" />
+          </div>
+          <div class="relative w-1/2 flex justify-center w-1/2">
+            <img :src="logo" alt="onlearn logo" class="absolute bottom-[13.61px]" />
+            <img :src="id_back" alt="Student ID Card back page" class="w-full max-w-xs" />
+          </div>
         </div>
       </div>
     </div>
@@ -504,7 +494,7 @@ import strikethrough from "~/assets/icons/strikethrough.svg";
         <!-- The red box, positioned below the image -->
         <div
           class="relative top-[141px] px-[59px] py-[29px] flex flex-col w-full h-[401px] bg-[#DF1C25] z-0 rounded-[16px]">
-
+          <img :src="bg_giftcard" class="bottom-0 left-[147.03px] absolute" />
           <!-- Text content is constrained to the left side to allow for image overlap -->
           <div class="max-w-lg">
             <h1 class="font-[700] mt-[22.1px] font-inter text-[48px] leading-[62.4px] tracking-[-0.06em] text-white ">
@@ -579,10 +569,10 @@ import strikethrough from "~/assets/icons/strikethrough.svg";
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[12px] text-[#0B7077]">
         <!-- Contact and Brand Information -->
         <div class="space-y-8">
-          <div class="logo flex items-center gap-4">
+          <NuxtLink to="/" class="logo flex items-center gap-4">
             <img :src="logo" alt="Onlearn Logo" class="h-10 w-auto" />
             <span class="font-extrabold font-picoblackal text-3xl text-[#0B7077]">Onlearn</span>
-          </div>
+          </NuxtLink>
           <div class="space-y-4 font-raleway font-medium text-sm">
             <div class="flex items-start gap-3">
               <img :src="Location" alt="Location" class="mt-1">
@@ -648,14 +638,6 @@ import strikethrough from "~/assets/icons/strikethrough.svg";
     </div>
 
     <!-- Decorative lines for the footer background -->
-    <div class="relative opacity-[0.6] z-[15]">
-      <img :src="bottom_lines1" class="absolute left-[952.25px] bottom-0" />
-      <img :src="bottom_lines2" class="absolute left-[910.13px] bottom-0" />
-      <img :src="bottom_lines3" class="absolute left-[991.68px] bottom-0" />
-      <img :src="bottom_lines4" class="absolute left-[920.47px] bottom-0" />
-      <img :src="bottom_lines5" class="absolute left-[936.9px] bottom-0" />
-      <img :src="bottom_lines6" class="absolute left-[927.77px] bottom-0" />
-      <img :src="bottom_lines7" class="absolute left-[903.82px] bottom-0" />
-      <img :src="bottom_lines8" class="absolute left-[917.23px] bottom-0" />
-  </div>
-</footer></template>
+    <img :src="bg_bottom" class="absolute left-[883.01px] bottom-0" />
+  </footer>
+</template>
