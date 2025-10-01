@@ -4,8 +4,8 @@ import { ref } from 'vue';
 /**
  * @file This Vue component renders a fully responsive landing page for the "Onlearn" online learning platform.
  * @description It includes a hero section, course categories, feature highlights, a promotional section for gift cards, and a comprehensive footer, all optimized for various screen sizes.
- * @author [Your Name/Team Name]
- * @version 2.1.0
+ * @author [David Lawal]
+ * @version 1.0.0
  */
 
 // State for controlling the mobile menu's visibility.
@@ -449,7 +449,7 @@ import strikethrough from "~/assets/icons/strikethrough.svg";
             <img :src="logo" alt="onlearn logo" class="absolute bottom-[13.61px]" />
             <img :src="id_front" alt="Student ID Card front page" class="w-full max-w-xs" />
           </div>
-          <div class="relative w-1/2 flex justify-center w-1/2">
+          <div class="relative w-1/2 flex justify-center">
             <img :src="logo" alt="onlearn logo" class="absolute bottom-[13.61px]" />
             <img :src="id_back" alt="Student ID Card back page" class="w-full max-w-xs" />
           </div>
@@ -459,6 +459,9 @@ import strikethrough from "~/assets/icons/strikethrough.svg";
 
     <!-- Feature Section (e.g., Staff Training) -->
     <div class="flex flex-col lg:flex-row-reverse items-center gap-12 lg:gap-20 max-w-screen-xl mx-auto">
+      <div class="lg:hidden flex-1 flex justify-center items-center">
+        <img :src="pana" alt="Team Meeting Visual" class="w-full max-w-md">
+      </div>
       <div class="flex-1 space-y-8 text-center lg:text-left">
         <div class="space-y-4">
           <span
@@ -480,7 +483,7 @@ import strikethrough from "~/assets/icons/strikethrough.svg";
           </div>
         </div>
       </div>
-      <div class="flex-1 flex justify-center items-center">
+      <div class="lg:flex hidden flex-1 justify-center items-center">
         <img :src="pana" alt="Team Meeting Visual" class="w-full max-w-md">
       </div>
     </div>
