@@ -629,7 +629,7 @@ import strikethrough from "~/assets/icons/strikethrough.svg";
             <input type="email" name="Email" placeholder="Your Email"
               class="w-full py-3 px-4 outline-none text-[#0B7077] placeholder:text-[#0B7077]/50">
             <button type="submit"
-              class="w-full sm:w-auto rounded-[20px] px-8 py-3 bg-[#0B7077] font-medium text-base text-white hover:bg-opacity-90">
+              class="w-full sm:w-auto rounded-[20px] px-8 py-3 bg-[#0B7077] font-medium text-base text-white hover:bg-white hover:border-[#0B7077] border border-transparent hover:text-[#0B7077]">
               Send
             </button>
           </div>
