@@ -1,75 +1,31 @@
-# Nuxt Minimal Starter
+# Onlearn
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+An online-courses landing page for an e-learning platform, built with **Nuxt** and
+**Tailwind CSS**. A clean, responsive marketing front end with sections for popular courses,
+course categories, student ID cards, and staff training.
 
-## Setup
+## Tech stack
 
-Make sure to install dependencies:
+`Nuxt` · `Vue 3` · `Tailwind CSS` · `nuxt-svgo`
+
+## Run locally
 
 ```bash
-# npm
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
+npm run dev        # http://localhost:3000
 ```
 
-## Development Server
-
-Start the development server on `http://localhost:3000`:
+Build / preview:
 
 ```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
 npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
 npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## Notes
+
+Front-end / UI project — static marketing pages, no backend.
+
+## License
+
+MIT
